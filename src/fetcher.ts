@@ -196,14 +196,12 @@ export async function fetchResources(
  */
 export async function fetchPaymentRequirements(
   resourceUrl: string,
-  timeoutMs: number,
-  _logger: Logger
+  timeoutMs: number
 ): Promise<{
   requirements: unknown | null;
   statusCode: number;
   error?: string;
 }> {
-  // Validate URL before fetching (security: prevent SSRF)
   const urlCheck = validateUrl(resourceUrl);
   if (!urlCheck.valid) {
     return { requirements: null, statusCode: 0, error: urlCheck.error ?? "Invalid URL" };
