@@ -44,7 +44,7 @@ jobs:
         working-directory: indexer
         run: |
           npm start -- \
-            --partners ../x402/typescript/site/app/ecosystem/partners-data \
+            --partners-data ../x402/typescript/site/app/ecosystem/partners-data \
             --output ./data/x402-index.json \
             --pretty
 
