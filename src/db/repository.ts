@@ -4,7 +4,7 @@
  * Data access layer for x402 indexed resources.
  */
 
-import type { Client, Row, Transaction } from "@libsql/client";
+import type { Client, Transaction } from "@libsql/client";
 import type {
   EnrichedResource,
   HealthCheckResult,
@@ -60,58 +60,55 @@ export interface ResourceWithHealth extends ResourceRow {
   pricing: PricingInfo[];
 }
 
-// Helper to safely get row values
-function getRowValue<T>(row: Row, key: string): T {
-  return row[key] as T;
-}
+// Type alias for row data from libsql
+type RowData = Record<string, unknown>;
 
 // Helper to map a joined row to ResourceWithHealth
-function mapRowToResource(row: Row, pricing: PricingInfo[]): ResourceWithHealth {
-  const resourceId = getRowValue<string>(row, "id");
-  const healthCheckedAt = getRowValue<string | null>(row, "health_checked_at");
+function mapRowToResource(row: RowData, pricing: PricingInfo[]): ResourceWithHealth {
+  const resourceId = row["id"] as string;
+  const healthCheckedAt = row["health_checked_at"] as string | null;
 
   return {
     id: resourceId,
-    url: getRowValue<string>(row, "url"),
-    name: getRowValue<string | null>(row, "name"),
-    description: getRowValue<string | null>(row, "description"),
-    category: getRowValue<string | null>(row, "category"),
-    type: getRowValue<string>(row, "type"),
-    x402_version: getRowValue<number>(row, "x402_version"),
-    source: getRowValue<string>(row, "source"),
-    networks_supported: getRowValue<string>(row, "networks_supported"),
-    metadata: getRowValue<string | null>(row, "metadata"),
-    first_seen_at: getRowValue<string>(row, "first_seen_at"),
-    last_seen_at: getRowValue<string>(row, "last_seen_at"),
-    last_updated: getRowValue<string | null>(row, "last_updated"),
-    health:
-      healthCheckedAt !== null
-        ? {
-            resource_id: resourceId,
-            is_alive: getRowValue<number>(row, "health_is_alive"),
-            status_code: getRowValue<number | null>(row, "health_status_code"),
-            latency_ms: getRowValue<number | null>(row, "health_latency_ms"),
-            error: getRowValue<string | null>(row, "health_error"),
-            checked_at: healthCheckedAt,
-            uptime_7d: getRowValue<number | null>(row, "uptime_7d"),
-            avg_latency_7d: getRowValue<number | null>(row, "avg_latency_7d"),
-            check_count_7d: getRowValue<number | null>(row, "check_count_7d"),
-          }
-        : null,
+    url: row["url"] as string,
+    name: row["name"] as string | null,
+    description: row["description"] as string | null,
+    category: row["category"] as string | null,
+    type: row["type"] as string,
+    x402_version: row["x402_version"] as number,
+    source: row["source"] as string,
+    networks_supported: row["networks_supported"] as string,
+    metadata: row["metadata"] as string | null,
+    first_seen_at: row["first_seen_at"] as string,
+    last_seen_at: row["last_seen_at"] as string,
+    last_updated: row["last_updated"] as string | null,
+    health: healthCheckedAt !== null
+      ? {
+          resource_id: resourceId,
+          is_alive: row["health_is_alive"] as number,
+          status_code: row["health_status_code"] as number | null,
+          latency_ms: row["health_latency_ms"] as number | null,
+          error: row["health_error"] as string | null,
+          checked_at: healthCheckedAt,
+          uptime_7d: row["uptime_7d"] as number | null,
+          avg_latency_7d: row["avg_latency_7d"] as number | null,
+          check_count_7d: row["check_count_7d"] as number | null,
+        }
+      : null,
     pricing,
   };
 }
 
 // Helper to map payment requirement rows to PricingInfo array
-function mapPricingRows(rows: Row[]): PricingInfo[] {
+function mapPricingRows(rows: RowData[]): PricingInfo[] {
   return rows.map((p) => ({
-    scheme: getRowValue<string>(p, "scheme"),
-    network: getRowValue<string>(p, "network"),
-    maxAmountRequired: getRowValue<string>(p, "max_amount_required"),
-    formattedAmount: getRowValue<string | undefined>(p, "formatted_amount"),
-    asset: getRowValue<string>(p, "asset"),
-    payTo: getRowValue<string>(p, "pay_to"),
-    maxTimeoutSeconds: getRowValue<number>(p, "max_timeout_seconds"),
+    scheme: p["scheme"] as string,
+    network: p["network"] as string,
+    maxAmountRequired: p["max_amount_required"] as string,
+    formattedAmount: p["formatted_amount"] as string | undefined,
+    asset: p["asset"] as string,
+    payTo: p["pay_to"] as string,
+    maxTimeoutSeconds: p["max_timeout_seconds"] as number,
   }));
 }
 
@@ -173,7 +170,7 @@ export async function upsertResource(
       args: [resource.url],
     });
 
-    const resourceId = getRowValue<string>(result.rows[0]!, "id");
+    const resourceId = result.rows[0]!["id"] as string;
 
     // Upsert payment requirements
     for (const pricing of resource.pricing) {
@@ -276,9 +273,9 @@ async function updateResourceHealthTx(
   });
 
   const row = stats.rows[0]!;
-  const totalChecks = getRowValue<number>(row, "total_checks") ?? 0;
-  const aliveChecks = getRowValue<number>(row, "alive_checks") ?? 0;
-  const avgLatency = getRowValue<number | null>(row, "avg_latency");
+  const totalChecks = (row["total_checks"] as number) ?? 0;
+  const aliveChecks = (row["alive_checks"] as number) ?? 0;
+  const avgLatency = row["avg_latency"] as number | null;
   const uptime7d = totalChecks > 0 ? (aliveChecks / totalChecks) * 100 : null;
 
   await tx.execute({
@@ -378,7 +375,7 @@ export async function getResources(
   }
 
   // Collect all resource IDs
-  const resourceIds = result.rows.map((row) => getRowValue<string>(row, "id"));
+  const resourceIds = result.rows.map((row) => row["id"] as string);
 
   // Fetch all payment requirements in ONE query (fixes N+1)
   const placeholders = resourceIds.map(() => "?").join(",");
@@ -390,23 +387,23 @@ export async function getResources(
   // Group pricing by resource_id
   const pricingByResource = new Map<string, PricingInfo[]>();
   for (const p of pricingResult.rows) {
-    const resId = getRowValue<string>(p, "resource_id");
+    const resId = p["resource_id"] as string;
     const existing = pricingByResource.get(resId) ?? [];
     existing.push({
-      scheme: getRowValue<string>(p, "scheme"),
-      network: getRowValue<string>(p, "network"),
-      maxAmountRequired: getRowValue<string>(p, "max_amount_required"),
-      formattedAmount: getRowValue<string | undefined>(p, "formatted_amount"),
-      asset: getRowValue<string>(p, "asset"),
-      payTo: getRowValue<string>(p, "pay_to"),
-      maxTimeoutSeconds: getRowValue<number>(p, "max_timeout_seconds"),
+      scheme: p["scheme"] as string,
+      network: p["network"] as string,
+      maxAmountRequired: p["max_amount_required"] as string,
+      formattedAmount: p["formatted_amount"] as string | undefined,
+      asset: p["asset"] as string,
+      payTo: p["pay_to"] as string,
+      maxTimeoutSeconds: p["max_timeout_seconds"] as number,
     });
     pricingByResource.set(resId, existing);
   }
 
   // Build final result using helper
   return result.rows.map((row) => {
-    const resourceId = getRowValue<string>(row, "id");
+    const resourceId = row["id"] as string;
     return mapRowToResource(row, pricingByResource.get(resourceId) ?? []);
   });
 }
@@ -442,7 +439,7 @@ export async function getResourceByUrl(
   }
 
   const row = result.rows[0]!;
-  const resourceId = getRowValue<string>(row, "id");
+  const resourceId = row["id"] as string;
 
   // Fetch pricing for this resource
   const pricingResult = await db.execute({
@@ -472,11 +469,11 @@ export async function getHealthHistory(
   });
 
   return result.rows.map((row) => ({
-    isAlive: getRowValue<number>(row, "is_alive") === 1,
-    statusCode: getRowValue<number | undefined>(row, "status_code"),
-    latencyMs: getRowValue<number | undefined>(row, "latency_ms"),
-    error: getRowValue<string | undefined>(row, "error"),
-    checkedAt: getRowValue<string>(row, "checked_at"),
+    isAlive: (row["is_alive"] as number) === 1,
+    statusCode: row["status_code"] as number | undefined,
+    latencyMs: row["latency_ms"] as number | undefined,
+    error: row["error"] as string | undefined,
+    checkedAt: row["checked_at"] as string,
   }));
 }
 
@@ -582,14 +579,14 @@ export async function getIndexRuns(
   });
 
   return result.rows.map((row) => ({
-    id: getRowValue<number>(row, "id"),
-    started_at: getRowValue<string>(row, "started_at"),
-    completed_at: getRowValue<string | null>(row, "completed_at"),
-    total_resources: getRowValue<number | null>(row, "total_resources"),
-    alive_count: getRowValue<number | null>(row, "alive_count"),
-    dead_count: getRowValue<number | null>(row, "dead_count"),
-    duration_ms: getRowValue<number | null>(row, "duration_ms"),
-    status: getRowValue<string>(row, "status"),
+    id: row["id"] as number,
+    started_at: row["started_at"] as string,
+    completed_at: row["completed_at"] as string | null,
+    total_resources: row["total_resources"] as number | null,
+    alive_count: row["alive_count"] as number | null,
+    dead_count: row["dead_count"] as number | null,
+    duration_ms: row["duration_ms"] as number | null,
+    status: row["status"] as string,
   }));
 }
 
@@ -633,7 +630,7 @@ export async function getStats(db: Client): Promise<{
 
   const networkCounts: Record<string, number> = {};
   for (const row of networks.rows) {
-    const nets = JSON.parse(getRowValue<string>(row, "networks_supported")) as string[];
+    const nets = JSON.parse(row["networks_supported"] as string) as string[];
     for (const net of nets) {
       networkCounts[net] = (networkCounts[net] ?? 0) + 1;
     }
@@ -647,26 +644,20 @@ export async function getStats(db: Client): Promise<{
   `);
 
   const totalsRow = totals.rows[0]!;
-  const totalResources = getRowValue<number>(totalsRow, "total") ?? 0;
-  const aliveCount = getRowValue<number>(totalsRow, "alive") ?? 0;
+  const totalResources = (totalsRow["total"] as number) ?? 0;
+  const aliveCount = (totalsRow["alive"] as number) ?? 0;
 
   return {
     totalResources,
     aliveCount,
     deadCount: totalResources - aliveCount,
-    avgLatencyMs: getRowValue<number | null>(totalsRow, "avg_latency"),
+    avgLatencyMs: totalsRow["avg_latency"] as number | null,
     byCategory: Object.fromEntries(
-      categories.rows.map((r) => [
-        getRowValue<string>(r, "category"),
-        getRowValue<number>(r, "count"),
-      ])
+      categories.rows.map((r) => [r["category"] as string, r["count"] as number])
     ),
     byNetwork: networkCounts,
     bySource: Object.fromEntries(
-      sources.rows.map((r) => [
-        getRowValue<string>(r, "source"),
-        getRowValue<number>(r, "count"),
-      ])
+      sources.rows.map((r) => [r["source"] as string, r["count"] as number])
     ),
   };
 }

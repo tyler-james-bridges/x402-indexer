@@ -18,6 +18,7 @@ import { fetchResources } from "./fetcher.js";
 import { checkEndpoints, type EndpointCheckResult } from "./health-checker.js";
 import { createLogger } from "./logger.js";
 import { VERSION } from "./version.js";
+import type { Client } from "@libsql/client";
 import {
   getInitializedDb,
   upsertResource,
@@ -25,6 +26,7 @@ import {
   completeIndexRun,
   failIndexRun,
 } from "./db/index.js";
+import type { Logger } from "./logger.js";
 
 /**
  * Creates an enriched resource from a discovered resource and health check
@@ -119,6 +121,34 @@ function enrichPartnerMetadata(
     },
     source: "partners_data",
   };
+}
+
+/**
+ * Persists indexed resources to SQLite database
+ */
+async function persistToDatabase(
+  db: Client,
+  resources: EnrichedResource[],
+  summary: IndexSummary,
+  facilitatorUrl: string,
+  logger: Logger
+): Promise<void> {
+  const runId = await startIndexRun(db, facilitatorUrl, VERSION);
+
+  try {
+    for (const resource of resources) {
+      await upsertResource(db, resource);
+    }
+    await completeIndexRun(db, runId, summary);
+    logger.info(`Saved ${resources.length} resources to database`);
+  } catch (error) {
+    await failIndexRun(
+      db,
+      runId,
+      error instanceof Error ? error.message : "Unknown error"
+    );
+    throw error;
+  }
 }
 
 /**
@@ -273,25 +303,9 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
 
   // Persist to SQLite database if enabled
   if (config.persistToDb) {
-    logger.info("Persisting to database...");
+    logger.info(`Persisting to database: ${config.dbPath}`);
     const db = await getInitializedDb(config.dbPath);
-
-    const runId = await startIndexRun(db, config.facilitatorUrl, VERSION);
-
-    try {
-      for (const resource of enrichedResources) {
-        await upsertResource(db, resource);
-      }
-      await completeIndexRun(db, runId, summary);
-      logger.info(`Saved ${enrichedResources.length} resources to ${config.dbPath}`);
-    } catch (error) {
-      await failIndexRun(
-        db,
-        runId,
-        error instanceof Error ? error.message : "Unknown error"
-      );
-      throw error;
-    }
+    await persistToDatabase(db, enrichedResources, summary, config.facilitatorUrl, logger);
   }
 
   return {
