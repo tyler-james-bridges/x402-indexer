@@ -1,0 +1,535 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "generatedAt": "2026-01-03T05:44:33.222Z",
+    "facilitatorUrl": "https://x402.org/facilitator"
+  },
+  "summary": {
+    "totalResources": 9,
+    "aliveCount": 7,
+    "deadCount": 2,
+    "avgLatencyMs": 630,
+    "minLatencyMs": 270,
+    "maxLatencyMs": 1145,
+    "byCategory": {
+      "Facilitators": 9
+    },
+    "byNetwork": {
+      "base": 8,
+      "base-sepolia": 8,
+      "solana": 5,
+      "solana-devnet": 6,
+      "monad": 1,
+      "monad-testnet": 1,
+      "polygon": 4,
+      "polygon-amoy": 4,
+      "CAIP-2 EVM": 1,
+      "CAIP-2 SVM": 1,
+      "avalanche": 3,
+      "avalanche-fuji": 3,
+      "sei": 2,
+      "sei-testnet": 2,
+      "peaq": 1,
+      "iotex": 1,
+      "xdc": 1
+    },
+    "indexedAt": "2026-01-03T05:44:33.222Z",
+    "indexDurationMs": 3607,
+    "indexerVersion": "1.0.0"
+  },
+  "resources": [
+    {
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402",
+      "name": "CDP Facilitator",
+      "description": "Best-in-class x402 facilitator. Fee-free USDC settlement on Base Mainnet. KYT/OFAC checks on every transaction.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": false,
+        "statusCode": 401,
+        "latencyMs": 352,
+        "checkedAt": "2026-01-03T05:44:29.948Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base",
+        "base-sepolia",
+        "solana",
+        "solana-devnet"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "cdp",
+        "logoUrl": "/logos/cdp.png",
+        "websiteUrl": "https://docs.cdp.coinbase.com/x402/docs/quickstart-sellers",
+        "facilitatorInfo": {
+          "baseUrl": "https://api.cdp.coinbase.com/platform/v2/x402",
+          "networks": [
+            "base",
+            "base-sepolia",
+            "solana",
+            "solana-devnet"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": true
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://facilitator.corbits.dev",
+      "name": "Corbits",
+      "description": "A production grade facilitator which supports multi-network, multi-token, multi-payment schemes.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 1087,
+        "checkedAt": "2026-01-03T05:44:29.949Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "solana",
+        "solana-devnet",
+        "base",
+        "base-sepolia",
+        "monad",
+        "monad-testnet",
+        "polygon",
+        "polygon-amoy",
+        "CAIP-2 EVM",
+        "CAIP-2 SVM"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "corbits",
+        "logoUrl": "/logos/corbits.png",
+        "websiteUrl": "https://corbits.dev",
+        "facilitatorInfo": {
+          "baseUrl": "https://facilitator.corbits.dev",
+          "networks": [
+            "solana",
+            "solana-devnet",
+            "base",
+            "base-sepolia",
+            "monad",
+            "monad-testnet",
+            "polygon",
+            "polygon-amoy",
+            "CAIP-2 EVM",
+            "CAIP-2 SVM"
+          ],
+          "schemes": [
+            "exact",
+            "@faremeter/x-solana-settlement"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL",
+            "Token-2022"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://facilitator.mogami.tech",
+      "name": "Mogami facilitator",
+      "description": "A free, developer-focused, production-ready facilitator for x402 payments. Use it instantly online, or launch your own Docker image in seconds.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 274,
+        "checkedAt": "2026-01-03T05:44:29.950Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base",
+        "base-sepolia"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "mogami-facilitator",
+        "logoUrl": "/logos/logo_mogami_vertical_small.png",
+        "websiteUrl": "https://facilitator.mogami.tech",
+        "facilitatorInfo": {
+          "baseUrl": "https://facilitator.mogami.tech",
+          "networks": [
+            "base",
+            "base-sepolia"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL",
+            "Token-2022"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://openx402.ai",
+      "name": "OpenX402.ai Facilitator",
+      "description": "The first permissionless, gasless and omnichain x402 facilitator that any x402 server can use without login",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 398,
+        "checkedAt": "2026-01-03T05:44:29.952Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base",
+        "base-sepolia",
+        "solana",
+        "solana-devnet",
+        "avalanche",
+        "avalanche-fuji",
+        "polygon",
+        "polygon-amoy"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "openx402",
+        "logoUrl": "/logos/openx402.png",
+        "websiteUrl": "https://openx402.ai",
+        "facilitatorInfo": {
+          "baseUrl": "https://openx402.ai",
+          "networks": [
+            "base",
+            "base-sepolia",
+            "solana",
+            "solana-devnet",
+            "avalanche",
+            "avalanche-fuji",
+            "polygon",
+            "polygon-amoy"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://facilitator.payai.network",
+      "name": "PayAI Facilitator",
+      "description": "Accept x402 payments on all networks including Avalanche, Base, Polygon, Sei, Solana, and more! Get started in less than 1 minute. Supports all tokens. No API Keys required.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 759,
+        "checkedAt": "2026-01-03T05:44:29.953Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "solana",
+        "solana-devnet",
+        "base",
+        "base-sepolia",
+        "polygon",
+        "polygon-amoy",
+        "avalanche",
+        "avalanche-fuji",
+        "sei",
+        "sei-testnet",
+        "peaq",
+        "iotex"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "payai",
+        "logoUrl": "/logos/payai.svg",
+        "websiteUrl": "https://facilitator.payai.network",
+        "facilitatorInfo": {
+          "baseUrl": "https://facilitator.payai.network",
+          "networks": [
+            "solana",
+            "solana-devnet",
+            "base",
+            "base-sepolia",
+            "polygon",
+            "polygon-amoy",
+            "avalanche",
+            "avalanche-fuji",
+            "sei",
+            "sei-testnet",
+            "peaq",
+            "iotex"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL",
+            "Token-2022"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://x402.treasure.lol/facilitator",
+      "name": "Treasure Facilitator",
+      "description": "Treasure x402 Facilitator available on Base and Base Sepolia. Supports EIP-3009 compliant tokens including USDC, MAGIC, SMOL, MIO, AI Frens tokens, and more.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 478,
+        "checkedAt": "2026-01-03T05:44:31.174Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base",
+        "base-sepolia"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "treasure-facilitator",
+        "logoUrl": "/logos/treasure.png",
+        "websiteUrl": "https://x402.treasure.lol",
+        "facilitatorInfo": {
+          "baseUrl": "https://x402.treasure.lol/facilitator",
+          "networks": [
+            "base",
+            "base-sepolia"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": " https://facilitator.world.fun",
+      "name": "WorldFun Facilitator",
+      "description": "AWE World.fun’s x402 Facilitator enables fee-free EIP-3009 payments in USDC and other ERC-20 tokens, handling verification and settlement on Base so developers don’t need blockchain infrastructure.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 270,
+        "checkedAt": "2026-01-03T05:44:31.175Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "worldfun-facilitator",
+        "logoUrl": "/logos/worldfun.svg",
+        "websiteUrl": "https://facilitator.world.fun",
+        "facilitatorInfo": {
+          "baseUrl": " https://facilitator.world.fun",
+          "networks": [
+            "base"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://www.x402.org/facilitator",
+      "name": "x402.org Facilitator",
+      "description": "Default testnet facilitator for x402",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 31,
+        "checkedAt": "2026-01-03T05:44:31.176Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base-sepolia",
+        "solana-devnet"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "x402-facilitator",
+        "logoUrl": "/logos/x402-logo.png",
+        "websiteUrl": "https://x402.org",
+        "facilitatorInfo": {
+          "baseUrl": "https://www.x402.org/facilitator",
+          "networks": [
+            "base-sepolia",
+            "solana-devnet"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    },
+    {
+      "url": "https://facilitator.x402.rs",
+      "name": "x402.rs Facilitator",
+      "description": "Independent, open-source facilitator in Rust. Easy to self-host, extend to new networks, or use via our hosted instance.",
+      "category": "Facilitators",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 200,
+        "latencyMs": 1145,
+        "checkedAt": "2026-01-03T05:44:31.177Z"
+      },
+      "pricing": [],
+      "networksSupported": [
+        "base",
+        "base-sepolia",
+        "solana",
+        "solana-devnet",
+        "avalanche",
+        "avalanche-fuji",
+        "polygon",
+        "polygon-amoy",
+        "sei",
+        "sei-testnet",
+        "xdc"
+      ],
+      "accepts": [],
+      "lastUpdated": "2026-01-03T05:44:33.222Z",
+      "metadata": {
+        "slug": "x402-rs-facilitator",
+        "logoUrl": "/logos/x402-rs.svg",
+        "websiteUrl": "https://facilitator.x402.rs",
+        "facilitatorInfo": {
+          "baseUrl": "https://facilitator.x402.rs",
+          "networks": [
+            "base",
+            "base-sepolia",
+            "solana",
+            "solana-devnet",
+            "avalanche",
+            "avalanche-fuji",
+            "polygon",
+            "polygon-amoy",
+            "sei",
+            "sei-testnet",
+            "xdc"
+          ],
+          "schemes": [
+            "exact"
+          ],
+          "assets": [
+            "EIP-3009",
+            "SPL"
+          ],
+          "supports": {
+            "verify": true,
+            "settle": true,
+            "supported": true,
+            "list": false
+          }
+        }
+      },
+      "source": "partners_data"
+    }
+  ]
+}
