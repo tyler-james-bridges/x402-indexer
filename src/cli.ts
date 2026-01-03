@@ -25,8 +25,8 @@ interface CLIOptions {
   verbose: boolean;
   pretty: boolean;
   db: string;
-  noDb: boolean;
-  noJson: boolean;
+  skipDb: boolean;
+  skipJson: boolean;
 }
 
 async function main(): Promise<void> {
@@ -70,8 +70,8 @@ async function main(): Promise<void> {
     .option("-v, --verbose", "Enable verbose logging", false)
     .option("--pretty", "Pretty-print the JSON output", false)
     .option("-d, --db <path>", "SQLite database path", "./x402.db")
-    .option("--no-db", "Skip database persistence", false)
-    .option("--no-json", "Skip JSON file output", false)
+    .option("--skip-db", "Skip database persistence", false)
+    .option("--skip-json", "Skip JSON file output", false)
     .action(async (options: CLIOptions) => {
       try {
         // Parse and validate configuration
@@ -85,8 +85,8 @@ async function main(): Promise<void> {
           skipHealthChecks: options.skipHealthChecks,
           verbose: options.verbose,
           dbPath: options.db,
-          persistToDb: !options.noDb,
-          skipJsonOutput: options.noJson,
+          persistToDb: !options.skipDb,
+          skipJsonOutput: options.skipJson,
         };
 
         const configResult = IndexerConfigSchema.safeParse(configInput);

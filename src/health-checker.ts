@@ -7,6 +7,7 @@
 
 import { validateUrl } from "./utils/url-validator.js";
 import { formatAmount } from "./utils/formatting.js";
+import { fetchWithTimeout } from "./utils/fetch-with-timeout.js";
 import {
   type HealthCheckResult,
   type PricingInfo,
@@ -36,25 +37,15 @@ async function checkEndpointHealth(
   const startTime = performance.now();
 
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-
     // Use HEAD request first for efficiency, fall back to GET if needed
     let response: Response;
     try {
-      response = await fetch(url, {
-        method: "HEAD",
-        signal: controller.signal,
-      });
+      response = await fetchWithTimeout(url, { timeoutMs, method: "HEAD" });
     } catch {
       // Some servers don't support HEAD, try GET
-      response = await fetch(url, {
-        method: "GET",
-        signal: controller.signal,
-      });
+      logger.debug(`HEAD failed for ${url}, falling back to GET`);
+      response = await fetchWithTimeout(url, { timeoutMs, method: "GET" });
     }
-
-    clearTimeout(timeoutId);
     const endTime = performance.now();
     const latencyMs = Math.round(endTime - startTime);
 
@@ -100,18 +91,11 @@ async function fetchPaymentInfo(
   const requirements: PaymentRequirements[] = [];
 
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-
-    const response = await fetch(url, {
+    const response = await fetchWithTimeout(url, {
+      timeoutMs,
       method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
-      signal: controller.signal,
+      headers: { Accept: "application/json" },
     });
-
-    clearTimeout(timeoutId);
 
     if (response.status !== 402) {
       return { pricing, requirements };
@@ -145,7 +129,8 @@ async function fetchPaymentInfo(
         }
       }
     } catch {
-      // Response body is not JSON, that's fine
+      // Expected: 402 responses may not have JSON bodies
+      logger.debug(`${url}: Response body is not JSON (expected for some endpoints)`);
     }
 
     return { pricing, requirements };

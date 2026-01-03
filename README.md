@@ -10,6 +10,7 @@ A TypeScript crawler/indexer that enriches x402 ecosystem data from the Bazaar d
 - Parses X-Payment headers and 402 response bodies for pricing info
 - Supports loading local partner metadata from the x402 ecosystem
 - Generates comprehensive statistics and summaries
+- **SQLite persistence** for historical tracking and uptime monitoring
 - CLI with multiple commands for different use cases
 - Fully typed with Zod schema validation
 
@@ -71,11 +72,19 @@ Options:
   --skip-health-checks       Skip health checks and only fetch discovery data
   -v, --verbose              Enable verbose logging
   --pretty                   Pretty-print the JSON output
+  -d, --db <path>            SQLite database path (default: "./x402.db")
+  --skip-db                  Skip database persistence
+  --skip-json                Skip JSON file output
   -h, --help                 display help for command
 
 Commands:
   check <url>                Check a single x402 endpoint
   networks                   List all supported x402 networks
+  stats                      Show statistics from the database
+  list                       List resources from the database
+  history <url>              Show health check history for a resource
+  runs                       Show index run history
+  cleanup                    Clean up old data from the database
 ```
 
 ### Examples
@@ -98,6 +107,24 @@ x402-indexer check https://api.example.com/protected
 
 # List supported networks
 x402-indexer networks
+
+# Skip database persistence (JSON only)
+x402-indexer --skip-db
+
+# Skip JSON output (database only)
+x402-indexer --skip-json
+
+# View database statistics
+x402-indexer stats
+
+# List alive resources from database
+x402-indexer list --status alive
+
+# View health history for a resource
+x402-indexer history https://api.example.com/protected
+
+# Clean up old data
+x402-indexer cleanup --health-days 30 --stale-days 7
 ```
 
 ## Output Format
@@ -249,13 +276,22 @@ npm run clean
 
 ```
 src/
-  cli.ts           # CLI entry point with Commander
-  index.ts         # Public API exports
-  indexer.ts       # Main orchestration logic
-  fetcher.ts       # Discovery API and partner data fetching
+  cli.ts            # CLI entry point with Commander
+  index.ts          # Public API exports
+  indexer.ts        # Main orchestration logic
+  fetcher.ts        # Discovery API and partner data fetching
   health-checker.ts # Endpoint health checks and payment parsing
-  logger.ts        # Simple logging utility
-  schemas.ts       # Zod schemas for all data types
+  logger.ts         # Simple logging utility
+  schemas.ts        # Zod schemas for all data types
+  db/
+    client.ts       # SQLite database connection
+    schema.ts       # Database table definitions
+    repository.ts   # Data access layer
+    index.ts        # Database module exports
+  utils/
+    fetch-with-timeout.ts  # HTTP fetch with timeout handling
+    formatting.ts          # Amount formatting utilities
+    url-validator.ts       # URL validation
 ```
 
 ## Supported Networks

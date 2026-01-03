@@ -15,6 +15,7 @@ import {
   type IndexerConfig,
 } from "./schemas.js";
 import { createLogger, type Logger } from "./logger.js";
+import { fetchWithTimeout } from "./utils/fetch-with-timeout.js";
 
 /**
  * Result of fetching discovery resources
@@ -40,19 +41,14 @@ async function fetchDiscoveryResources(
   logger.info(`Fetching discovery resources from ${url}`);
 
   try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-
-    const response = await fetch(url, {
+    const response = await fetchWithTimeout(url, {
+      timeoutMs,
       method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      signal: controller.signal,
     });
-
-    clearTimeout(timeoutId);
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => "Unknown error");
