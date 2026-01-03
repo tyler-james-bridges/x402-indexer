@@ -1,0 +1,47 @@
+{
+  "name": "x402-indexer",
+  "version": "1.0.0",
+  "description": "A TypeScript crawler/indexer that enriches x402 ecosystem data from the Bazaar discovery layer",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "x402-indexer": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "x402",
+    "http-402",
+    "crypto",
+    "payments",
+    "indexer",
+    "bazaar",
+    "discovery"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coinbase/x402"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "eslint": "^9.16.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
