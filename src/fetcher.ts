@@ -6,7 +6,6 @@
  */
 
 import { readdir, readFile } from "node:fs/promises";
-import { validateUrl } from "./utils/url-validator.js";
 import { join } from "node:path";
 import {
   type DiscoveredResource,
@@ -188,66 +187,3 @@ export async function fetchResources(
   return result;
 }
 
-/**
- * Fetches a single resource's payment requirements via a 402 response
- *
- * This makes a request to the resource URL and expects a 402 response
- * with X-Payment header containing payment requirements.
- */
-export async function fetchPaymentRequirements(
-  resourceUrl: string,
-  timeoutMs: number
-): Promise<{
-  requirements: unknown | null;
-  statusCode: number;
-  error?: string;
-}> {
-  const urlCheck = validateUrl(resourceUrl);
-  if (!urlCheck.valid) {
-    return { requirements: null, statusCode: 0, error: urlCheck.error ?? "Invalid URL" };
-  }
-
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-
-    const response = await fetch(resourceUrl, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
-      signal: controller.signal,
-    });
-
-    clearTimeout(timeoutId);
-
-    // Check for X-Payment header (payment requirements)
-    const xPaymentHeader = response.headers.get("X-Payment");
-
-    if (response.status === 402 && xPaymentHeader) {
-      try {
-        const requirements = JSON.parse(
-          Buffer.from(xPaymentHeader, "base64").toString("utf-8")
-        );
-        return { requirements, statusCode: response.status };
-      } catch {
-        // Try parsing as plain JSON
-        try {
-          const requirements = JSON.parse(xPaymentHeader);
-          return { requirements, statusCode: response.status };
-        } catch {
-          return {
-            requirements: null,
-            statusCode: response.status,
-            error: "Failed to parse X-Payment header",
-          };
-        }
-      }
-    }
-
-    return { requirements: null, statusCode: response.status };
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    return { requirements: null, statusCode: 0, error: message };
-  }
-}

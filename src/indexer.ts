@@ -18,6 +18,13 @@ import { fetchResources } from "./fetcher.js";
 import { checkEndpoints, type EndpointCheckResult } from "./health-checker.js";
 import { createLogger } from "./logger.js";
 import { VERSION } from "./version.js";
+import {
+  getInitializedDb,
+  upsertResource,
+  startIndexRun,
+  completeIndexRun,
+  failIndexRun,
+} from "./db/index.js";
 
 /**
  * Creates an enriched resource from a discovered resource and health check
@@ -262,6 +269,29 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
   logger.info(`  Dead: ${summary.deadCount}`);
   if (summary.avgLatencyMs !== undefined) {
     logger.info(`  Avg latency: ${summary.avgLatencyMs}ms`);
+  }
+
+  // Persist to SQLite database if enabled
+  if (config.persistToDb) {
+    logger.info("Persisting to database...");
+    const db = await getInitializedDb(config.dbPath);
+
+    const runId = await startIndexRun(db, config.facilitatorUrl, VERSION);
+
+    try {
+      for (const resource of enrichedResources) {
+        await upsertResource(db, resource);
+      }
+      await completeIndexRun(db, runId, summary);
+      logger.info(`Saved ${enrichedResources.length} resources to ${config.dbPath}`);
+    } catch (error) {
+      await failIndexRun(
+        db,
+        runId,
+        error instanceof Error ? error.message : "Unknown error"
+      );
+      throw error;
+    }
   }
 
   return {

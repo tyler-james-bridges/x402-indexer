@@ -206,6 +206,10 @@ export const IndexerConfigSchema = z.object({
   partnersDataPath: z.string().optional(),
   skipHealthChecks: z.boolean().default(false),
   verbose: z.boolean().default(false),
+  // Database options
+  dbPath: z.string().default("./x402.db"),
+  persistToDb: z.boolean().default(true),
+  skipJsonOutput: z.boolean().default(false),
 });
 
 export type IndexerConfig = z.infer<typeof IndexerConfigSchema>;
