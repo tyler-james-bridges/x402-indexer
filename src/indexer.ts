@@ -17,8 +17,7 @@ import {
 import { fetchResources } from "./fetcher.js";
 import { checkEndpoints, type EndpointCheckResult } from "./health-checker.js";
 import { createLogger } from "./logger.js";
-
-const INDEXER_VERSION = "1.0.0";
+import { VERSION } from "./version.js";
 
 /**
  * Creates an enriched resource from a discovered resource and health check
@@ -162,7 +161,7 @@ function calculateSummary(
     byNetwork,
     indexedAt: new Date().toISOString(),
     indexDurationMs: Math.round(endTime - startTime),
-    indexerVersion: INDEXER_VERSION,
+    indexerVersion: VERSION,
   };
 }
 
@@ -277,7 +276,7 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
 
   return {
     meta: {
-      version: INDEXER_VERSION,
+      version: VERSION,
       generatedAt: new Date().toISOString(),
       facilitatorUrl: config.facilitatorUrl,
     },

@@ -12,8 +12,7 @@ import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { runIndexer } from "./indexer.js";
 import { IndexerConfigSchema, type IndexerConfig } from "./schemas.js";
-
-const VERSION = "1.0.0";
+import { VERSION } from "./version.js";
 
 interface CLIOptions {
   facilitator: string;

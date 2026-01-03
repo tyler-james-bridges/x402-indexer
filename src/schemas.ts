@@ -44,11 +44,11 @@ export const PaymentRequirementsSchema = z.object({
   resource: z.string().url(),
   description: z.string(),
   mimeType: z.string(),
-  outputSchema: z.record(z.any()).optional(),
+  outputSchema: z.record(z.unknown()).optional(),
   payTo: z.string(),
   maxTimeoutSeconds: z.number().int(),
   asset: z.string(),
-  extra: z.record(z.any()).optional(),
+  extra: z.record(z.unknown()).optional(),
 });
 
 export type PaymentRequirements = z.infer<typeof PaymentRequirementsSchema>;
@@ -63,7 +63,7 @@ export const DiscoveredResourceSchema = z.object({
   x402Version: z.number(),
   accepts: z.array(PaymentRequirementsSchema),
   lastUpdated: z.union([z.date(), z.string()]),
-  metadata: z.record(z.any()).optional(),
+  metadata: z.record(z.unknown()).optional(),
 });
 
 export type DiscoveredResource = z.infer<typeof DiscoveredResourceSchema>;
@@ -179,7 +179,7 @@ export const EnrichedResourceSchema = z.object({
   /** Last updated timestamp from discovery */
   lastUpdated: z.string(),
   /** Additional metadata */
-  metadata: z.record(z.any()).optional(),
+  metadata: z.record(z.unknown()).optional(),
   /** Source of this resource data */
   source: z.enum(["discovery_api", "partners_data", "manual"]),
 });

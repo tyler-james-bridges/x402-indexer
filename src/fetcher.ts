@@ -5,47 +5,8 @@
  * partner metadata files.
  */
 
-/**
- * Validates that a URL is safe to fetch (https:// only, no internal IPs)
- */
-function validateUrl(url: string): { valid: boolean; error?: string } {
-  try {
-    const parsed = new URL(url);
-
-    // Only allow https://
-    if (parsed.protocol !== "https:") {
-      return { valid: false, error: `Invalid protocol: ${parsed.protocol} (only https:// allowed)` };
-    }
-
-    // Block localhost and common internal hostnames
-    const hostname = parsed.hostname.toLowerCase();
-    const blockedHostnames = ["localhost", "127.0.0.1", "0.0.0.0", "::1"];
-    if (blockedHostnames.includes(hostname)) {
-      return { valid: false, error: `Blocked hostname: ${hostname}` };
-    }
-
-    // Block private IP ranges (basic check)
-    const ipv4Match = hostname.match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
-    if (ipv4Match) {
-      const [, a, b] = ipv4Match.map(Number);
-      if (
-        a === 10 ||
-        a === 127 ||
-        (a === 172 && b !== undefined && b >= 16 && b <= 31) ||
-        (a === 192 && b === 168) ||
-        (a === 169 && b === 254)
-      ) {
-        return { valid: false, error: `Blocked private IP: ${hostname}` };
-      }
-    }
-
-    return { valid: true };
-  } catch {
-    return { valid: false, error: `Invalid URL format` };
-  }
-}
-
 import { readdir, readFile } from "node:fs/promises";
+import { validateUrl } from "./utils/url-validator.js";
 import { join } from "node:path";
 import {
   type DiscoveredResource,

@@ -5,47 +5,8 @@
  * verify availability, and parse payment requirement headers.
  */
 
-/**
- * Validates that a URL is safe to fetch (https:// only, no internal IPs)
- */
-function validateUrl(url: string): { valid: boolean; error?: string } {
-  try {
-    const parsed = new URL(url);
-
-    // Only allow https://
-    if (parsed.protocol !== "https:") {
-      return { valid: false, error: `Invalid protocol: ${parsed.protocol} (only https:// allowed)` };
-    }
-
-    // Block localhost and common internal hostnames
-    const hostname = parsed.hostname.toLowerCase();
-    const blockedHostnames = ["localhost", "127.0.0.1", "0.0.0.0", "::1"];
-    if (blockedHostnames.includes(hostname)) {
-      return { valid: false, error: `Blocked hostname: ${hostname}` };
-    }
-
-    // Block private IP ranges (basic check)
-    const ipv4Match = hostname.match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/);
-    if (ipv4Match) {
-      const [, a, b] = ipv4Match.map(Number);
-      // 10.x.x.x, 172.16-31.x.x, 192.168.x.x, 169.254.x.x (link-local/cloud metadata)
-      if (
-        a === 10 ||
-        a === 127 ||
-        (a === 172 && b !== undefined && b >= 16 && b <= 31) ||
-        (a === 192 && b === 168) ||
-        (a === 169 && b === 254)
-      ) {
-        return { valid: false, error: `Blocked private IP: ${hostname}` };
-      }
-    }
-
-    return { valid: true };
-  } catch {
-    return { valid: false, error: `Invalid URL format` };
-  }
-}
-
+import { validateUrl } from "./utils/url-validator.js";
+import { formatAmount } from "./utils/formatting.js";
 import {
   type HealthCheckResult,
   type PricingInfo,
@@ -267,61 +228,6 @@ function convertToPricingInfo(req: PaymentRequirements): PricingInfo {
     payTo: req.payTo,
     maxTimeoutSeconds: req.maxTimeoutSeconds,
   };
-}
-
-/**
- * Formats an atomic amount into a human-readable string
- *
- * This is a simplified formatter that assumes USDC (6 decimals) for common assets.
- * In production, you'd want to look up the actual decimals for each asset.
- */
-function formatAmount(atomicAmount: string, asset: string): string {
-  try {
-    const amount = BigInt(atomicAmount);
-    // Assume 6 decimals for USDC and similar stablecoins
-    const decimals = 6;
-    const divisor = BigInt(10 ** decimals);
-    const wholePart = amount / divisor;
-    const fractionalPart = amount % divisor;
-    const fractionalStr = fractionalPart.toString().padStart(decimals, "0");
-
-    // Truncate trailing zeros in fractional part
-    const trimmedFractional = fractionalStr.replace(/0+$/, "") || "0";
-
-    // Get asset symbol (simplified - just use last part of address or known symbols)
-    const symbol = getAssetSymbol(asset);
-
-    if (trimmedFractional === "0") {
-      return `${wholePart} ${symbol}`;
-    }
-    return `${wholePart}.${trimmedFractional} ${symbol}`;
-  } catch {
-    return `${atomicAmount} (raw)`;
-  }
-}
-
-/**
- * Gets a human-readable symbol for an asset
- */
-function getAssetSymbol(asset: string): string {
-  // Known USDC addresses on various networks
-  const usdcAddresses = new Set([
-    "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913", // Base mainnet
-    "0x036cbd53842c5426634e7929541ec2318f3dcf7e", // Base Sepolia
-    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", // Solana
-  ]);
-
-  const lowerAsset = asset.toLowerCase();
-  if (usdcAddresses.has(lowerAsset) || asset.includes("USDC")) {
-    return "USDC";
-  }
-
-  // Return shortened address if unknown
-  if (asset.startsWith("0x") && asset.length > 10) {
-    return `${asset.slice(0, 6)}...${asset.slice(-4)}`;
-  }
-
-  return asset;
 }
 
 /**

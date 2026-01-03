@@ -21,12 +21,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        # Pinned to v4.2.2 (2024-10-23)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           path: indexer
 
       - name: Checkout x402 repo (pinned commit)
-        uses: actions/checkout@v4
+        # Pinned to v4.2.2 (2024-10-23)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           repository: coinbase/x402
           ref: ${{ env.X402_COMMIT }}
@@ -47,7 +49,8 @@ jobs:
           echo "✓ x402 commit verified: $ACTUAL"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        # Pinned to v4.1.0 (2024-10-24)
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: '20'
           cache: 'npm'
