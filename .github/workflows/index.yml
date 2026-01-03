@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# Pin to verified x402 commit for security
+# Update this periodically after reviewing changes
+env:
+  X402_COMMIT: 226737c6fdb77fbfaf65b9c7d1b6bdc4c19085dd
+
 jobs:
   index:
     runs-on: ubuntu-latest
@@ -17,16 +22,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Need to fetch the x402 repo for partner data
           path: indexer
 
-      - name: Checkout x402 repo
+      - name: Checkout x402 repo (pinned commit)
         uses: actions/checkout@v4
         with:
           repository: coinbase/x402
+          ref: ${{ env.X402_COMMIT }}
           path: x402
           sparse-checkout: |
             typescript/site/app/ecosystem/partners-data
+
+      - name: Verify x402 commit
+        run: |
+          cd x402
+          ACTUAL=$(git rev-parse HEAD)
+          if [ "$ACTUAL" != "$X402_COMMIT" ]; then
+            echo "ERROR: x402 commit mismatch!"
+            echo "Expected: $X402_COMMIT"
+            echo "Got: $ACTUAL"
+            exit 1
+          fi
+          echo "✓ x402 commit verified: $ACTUAL"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -51,6 +68,24 @@ jobs:
             --output ./data/x402-index.json \
             --pretty
 
+      - name: Generate integrity hash
+        working-directory: indexer
+        run: |
+          # Generate SHA256 hash for integrity verification
+          SHA256=$(sha256sum data/x402-index.json | cut -d' ' -f1)
+          echo "SHA256: $SHA256"
+
+          # Write hash file
+          cat > data/x402-index.sha256 << EOF
+          # x402 Bazaar Index Integrity Hash
+          # Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+          # Source commit: $X402_COMMIT
+
+          $SHA256  x402-index.json
+          EOF
+
+          echo "✓ Integrity hash generated"
+
       - name: Commit results
         working-directory: indexer
         run: |
@@ -58,15 +93,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           mkdir -p data
-          git add data/x402-index.json
+          git add data/x402-index.json data/x402-index.sha256
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
+            SHA256=$(sha256sum data/x402-index.json | cut -d' ' -f1)
             git commit -m "chore: update index $(date -u +%Y-%m-%d)
 
             Indexed $(jq '.summary.totalResources' data/x402-index.json) resources
             Alive: $(jq '.summary.aliveCount' data/x402-index.json)
-            Dead: $(jq '.summary.deadCount' data/x402-index.json)"
+            Dead: $(jq '.summary.deadCount' data/x402-index.json)
+
+            Source: coinbase/x402@${X402_COMMIT:0:7}
+            SHA256: ${SHA256:0:16}..."
             git push
           fi
