@@ -1,7 +1,3 @@
-/**
- * Simple logger utility for the x402 indexer
- */
-
 export interface Logger {
   debug(message: string): void;
   info(message: string): void;
@@ -9,12 +5,9 @@ export interface Logger {
   error(message: string): void;
 }
 
-/**
- * Creates a logger instance
- */
-export function createLogger(verbose: boolean): Logger {
-  const timestamp = (): string => new Date().toISOString();
+const timestamp = (): string => new Date().toISOString();
 
+export function createLogger(verbose: boolean): Logger {
   return {
     debug(message: string): void {
       if (verbose) {

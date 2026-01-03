@@ -175,7 +175,6 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
   logger.info("Starting x402 Bazaar Indexer");
   logger.info(`Facilitator URL: ${config.facilitatorUrl}`);
 
-  // Step 1: Fetch all resources
   logger.info("Fetching resources...");
   const fetchResult = await fetchResources(config);
 
@@ -191,26 +190,20 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
     }
   }
 
-  // Step 2: Collect all URLs to check
   const urlsToCheck: string[] = [];
 
-  // URLs from discovery API
   for (const resource of fetchResult.discoveryResources) {
     urlsToCheck.push(resource.resource);
   }
-
-  // URLs from facilitators in partner metadata
   for (const partner of fetchResult.partnerMetadata) {
     if (partner.facilitator?.baseUrl) {
       urlsToCheck.push(partner.facilitator.baseUrl);
     }
   }
 
-  // Deduplicate URLs
   const uniqueUrls = [...new Set(urlsToCheck)];
   logger.info(`Total unique URLs to check: ${uniqueUrls.length}`);
 
-  // Step 3: Perform health checks (if not skipped)
   let checkResults = new Map<string, EndpointCheckResult>();
 
   if (!config.skipHealthChecks && uniqueUrls.length > 0) {
@@ -225,11 +218,9 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
     logger.info("Skipping health checks (--skip-health-checks)");
   }
 
-  // Step 4: Enrich resources
   logger.info("Enriching resources...");
   const enrichedResources: EnrichedResource[] = [];
 
-  // Create a map of partner metadata by website URL for matching
   const partnerByUrl = new Map<string, PartnerMetadata>();
   for (const partner of fetchResult.partnerMetadata) {
     partnerByUrl.set(partner.websiteUrl, partner);
@@ -264,7 +255,6 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
     }
   }
 
-  // Step 5: Calculate summary
   const summary = calculateSummary(enrichedResources, startTime);
 
   logger.info(`Indexing complete: ${summary.totalResources} resources`);

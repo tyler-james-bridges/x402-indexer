@@ -122,65 +122,40 @@ export type PartnerMetadata = z.infer<typeof PartnerMetadataSchema>;
 // =============================================================================
 
 export const PricingInfoSchema = z.object({
-  /** Payment scheme (e.g., "exact") */
   scheme: z.string(),
-  /** Network identifier (e.g., "base", "solana") */
   network: z.string(),
-  /** Maximum amount required in atomic units */
-  maxAmountRequired: z.string(),
-  /** Human-readable formatted amount (e.g., "0.01 USDC") */
+  maxAmountRequired: z.string(), // atomic units
   formattedAmount: z.string().optional(),
-  /** Asset address or identifier */
   asset: z.string(),
-  /** Payment recipient address */
   payTo: z.string(),
-  /** Maximum timeout in seconds */
   maxTimeoutSeconds: z.number(),
 });
 
 export type PricingInfo = z.infer<typeof PricingInfoSchema>;
 
 export const HealthCheckResultSchema = z.object({
-  /** Whether the endpoint is reachable */
   isAlive: z.boolean(),
-  /** HTTP status code returned */
   statusCode: z.number().optional(),
-  /** Response latency in milliseconds */
   latencyMs: z.number().optional(),
-  /** Error message if health check failed */
   error: z.string().optional(),
-  /** Timestamp of the health check */
   checkedAt: z.string(),
 });
 
 export type HealthCheckResult = z.infer<typeof HealthCheckResultSchema>;
 
 export const EnrichedResourceSchema = z.object({
-  /** Resource URL */
   url: z.string(),
-  /** Resource name (from metadata or derived) */
   name: z.string().optional(),
-  /** Resource description */
   description: z.string().optional(),
-  /** Category (e.g., "Services/Endpoints", "Facilitators") */
   category: z.string().optional(),
-  /** Resource type (currently only "http") */
   type: z.enum(["http"]),
-  /** x402 protocol version */
   x402Version: z.number(),
-  /** Health check results */
   health: HealthCheckResultSchema,
-  /** Parsed pricing information from payment requirements */
   pricing: z.array(PricingInfoSchema),
-  /** Networks supported by this resource */
   networksSupported: z.array(z.string()),
-  /** Original payment requirements from discovery */
   accepts: z.array(PaymentRequirementsSchema),
-  /** Last updated timestamp from discovery */
   lastUpdated: z.string(),
-  /** Additional metadata */
   metadata: z.record(z.unknown()).optional(),
-  /** Source of this resource data */
   source: z.enum(["discovery_api", "partners_data", "manual"]),
 });
 
@@ -191,42 +166,28 @@ export type EnrichedResource = z.infer<typeof EnrichedResourceSchema>;
 // =============================================================================
 
 export const IndexSummarySchema = z.object({
-  /** Total number of resources indexed */
   totalResources: z.number(),
-  /** Number of alive/reachable resources */
   aliveCount: z.number(),
-  /** Number of unreachable resources */
   deadCount: z.number(),
-  /** Average latency in milliseconds for alive resources */
   avgLatencyMs: z.number().optional(),
-  /** Minimum latency in milliseconds */
   minLatencyMs: z.number().optional(),
-  /** Maximum latency in milliseconds */
   maxLatencyMs: z.number().optional(),
-  /** Resources grouped by category */
   byCategory: z.record(z.number()),
-  /** Resources grouped by network */
   byNetwork: z.record(z.number()),
-  /** Indexing started at */
   indexedAt: z.string(),
-  /** Indexing duration in milliseconds */
   indexDurationMs: z.number(),
-  /** Version of the indexer */
   indexerVersion: z.string(),
 });
 
 export type IndexSummary = z.infer<typeof IndexSummarySchema>;
 
 export const IndexOutputSchema = z.object({
-  /** Metadata about the index */
   meta: z.object({
     version: z.string(),
     generatedAt: z.string(),
     facilitatorUrl: z.string(),
   }),
-  /** Summary statistics */
   summary: IndexSummarySchema,
-  /** All enriched resources */
   resources: z.array(EnrichedResourceSchema),
 });
 
@@ -237,21 +198,13 @@ export type IndexOutput = z.infer<typeof IndexOutputSchema>;
 // =============================================================================
 
 export const IndexerConfigSchema = z.object({
-  /** Base URL of the facilitator discovery API */
   facilitatorUrl: z.string().url().default("https://x402.org/facilitator"),
-  /** Output file path */
   outputPath: z.string().default("./x402-index.json"),
-  /** Request timeout in milliseconds */
   timeoutMs: z.number().positive().default(10000),
-  /** Number of concurrent health check requests */
   concurrency: z.number().positive().default(5),
-  /** Whether to include partners data from local files */
   includePartnersData: z.boolean().default(false),
-  /** Path to partners data directory (if includePartnersData is true) */
   partnersDataPath: z.string().optional(),
-  /** Whether to skip health checks */
   skipHealthChecks: z.boolean().default(false),
-  /** Verbose logging */
   verbose: z.boolean().default(false),
 });
 

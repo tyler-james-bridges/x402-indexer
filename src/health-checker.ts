@@ -157,62 +157,44 @@ async function fetchPaymentInfo(
 }
 
 /**
+ * Extracts valid payment requirements from parsed JSON data
+ */
+function extractPaymentRequirements(data: unknown): PaymentRequirements[] {
+  const results: PaymentRequirements[] = [];
+  const items = Array.isArray(data) ? data : [data];
+  for (const item of items) {
+    const parsed = PaymentRequirementsSchema.safeParse(item);
+    if (parsed.success) {
+      results.push(parsed.data);
+    }
+  }
+  return results;
+}
+
+/**
  * Parses the X-Payment header which can be base64 or JSON encoded
  */
 function parseXPaymentHeader(
   header: string,
   logger: Logger
 ): PaymentRequirements[] {
-  const results: PaymentRequirements[] = [];
-
   // Try base64 decoding first
   try {
     const decoded = Buffer.from(header, "base64").toString("utf-8");
-    const data: unknown = JSON.parse(decoded);
-
-    if (Array.isArray(data)) {
-      for (const item of data) {
-        const parsed = PaymentRequirementsSchema.safeParse(item);
-        if (parsed.success) {
-          results.push(parsed.data);
-        }
-      }
-    } else {
-      const parsed = PaymentRequirementsSchema.safeParse(data);
-      if (parsed.success) {
-        results.push(parsed.data);
-      }
-    }
-
-    if (results.length > 0) {
-      return results;
-    }
+    const results = extractPaymentRequirements(JSON.parse(decoded));
+    if (results.length > 0) return results;
   } catch {
     // Not base64 encoded, try plain JSON
   }
 
   // Try plain JSON
   try {
-    const data: unknown = JSON.parse(header);
-
-    if (Array.isArray(data)) {
-      for (const item of data) {
-        const parsed = PaymentRequirementsSchema.safeParse(item);
-        if (parsed.success) {
-          results.push(parsed.data);
-        }
-      }
-    } else {
-      const parsed = PaymentRequirementsSchema.safeParse(data);
-      if (parsed.success) {
-        results.push(parsed.data);
-      }
-    }
+    return extractPaymentRequirements(JSON.parse(header));
   } catch {
     logger.debug("Failed to parse X-Payment header as JSON");
   }
 
-  return results;
+  return [];
 }
 
 /**
@@ -240,7 +222,6 @@ export async function checkEndpoint(
 ): Promise<EndpointCheckResult> {
   const logger = createLogger(verbose);
 
-  // Validate URL before fetching (security: prevent SSRF)
   const urlCheck = validateUrl(url);
   if (!urlCheck.valid) {
     logger.debug(`Skipping invalid URL ${url}: ${urlCheck.error}`);
