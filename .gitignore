@@ -4,8 +4,9 @@ node_modules/
 # Build output
 dist/
 
-# Generated files
-x402-index.json
+# Generated files (allow data/ dir for CI output)
+/x402-index.json
+!data/x402-index.json
 *.log
 
 # IDE
