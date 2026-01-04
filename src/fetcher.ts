@@ -3,7 +3,6 @@
  *
  * Fetches x402-enabled resources from multiple sources:
  * - Discovery API (deprecated, optional)
- * - Ecosystem page scraper (primary source)
  * - Local partner metadata files
  */
 
@@ -11,7 +10,6 @@ import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
   type DiscoveredResource,
-  type EcosystemService,
   ListDiscoveryResourcesResponseSchema,
   type PartnerMetadata,
   PartnerMetadataSchema,
@@ -19,7 +17,6 @@ import {
 } from "./schemas.js";
 import { createLogger, type Logger } from "./logger.js";
 import { fetchWithTimeout } from "./utils/fetch-with-timeout.js";
-import { scrapeEcosystem } from "./ecosystem-scraper.js";
 
 /**
  * Result of fetching discovery resources
@@ -27,8 +24,6 @@ import { scrapeEcosystem } from "./ecosystem-scraper.js";
 export interface FetchResult {
   /** Resources from the discovery API */
   discoveryResources: DiscoveredResource[];
-  /** Services from the ecosystem page */
-  ecosystemServices: EcosystemService[];
   /** Partner metadata from local files */
   partnerMetadata: PartnerMetadata[];
   /** Errors encountered during fetching */
@@ -157,7 +152,6 @@ export async function fetchResources(
   const logger = createLogger(config.verbose);
   const result: FetchResult = {
     discoveryResources: [],
-    ecosystemServices: [],
     partnerMetadata: [],
     errors: [],
   };
@@ -179,23 +173,6 @@ export async function fetchResources(
     }
   } else {
     logger.info("Skipping discovery API (--skip-discovery-api)");
-  }
-
-  // Scrape ecosystem page (primary data source)
-  if (config.includeEcosystem) {
-    const ecosystemResult = await scrapeEcosystem(
-      config.ecosystemUrl,
-      config.timeoutMs,
-      config.verbose
-    );
-
-    result.ecosystemServices = ecosystemResult.services;
-    for (const error of ecosystemResult.errors) {
-      result.errors.push({
-        source: config.ecosystemUrl,
-        error,
-      });
-    }
   }
 
   // Load local partners data if configured
