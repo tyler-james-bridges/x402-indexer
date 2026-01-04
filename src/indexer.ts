@@ -11,7 +11,6 @@ import {
   type IndexOutput,
   type IndexSummary,
   type DiscoveredResource,
-  type EcosystemService,
   type PartnerMetadata,
   type PricingInfo,
 } from "./schemas.js";
@@ -125,42 +124,6 @@ function enrichPartnerMetadata(
 }
 
 /**
- * Creates an enriched resource from an ecosystem service
- */
-function enrichEcosystemService(
-  service: EcosystemService,
-  checkResult: EndpointCheckResult | undefined
-): EnrichedResource {
-  const health = checkResult?.health ?? {
-    isAlive: false,
-    error: "Health check skipped",
-    checkedAt: new Date().toISOString(),
-  };
-
-  // Extract networks from payment requirements if available
-  const networksSupported =
-    checkResult?.rawPaymentRequirements
-      ?.map((r) => r.network)
-      .filter((n, i, arr) => arr.indexOf(n) === i) ?? [];
-
-  return {
-    url: service.url,
-    name: service.name,
-    description: service.description,
-    category: service.category,
-    type: "http",
-    x402Version: 1,
-    health,
-    pricing: checkResult?.pricing ?? [],
-    networksSupported,
-    accepts: checkResult?.rawPaymentRequirements ?? [],
-    lastUpdated: new Date().toISOString(),
-    metadata: {},
-    source: "ecosystem",
-  };
-}
-
-/**
  * Persists indexed resources to SQLite database
  */
 async function persistToDatabase(
@@ -255,7 +218,6 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
   logger.info(
     `Fetched ${fetchResult.discoveryResources.length} discovery resources`
   );
-  logger.info(`Fetched ${fetchResult.ecosystemServices.length} ecosystem services`);
   logger.info(`Fetched ${fetchResult.partnerMetadata.length} partner metadata`);
 
   if (fetchResult.errors.length > 0) {
@@ -269,9 +231,6 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
 
   for (const resource of fetchResult.discoveryResources) {
     urlsToCheck.push(resource.resource);
-  }
-  for (const service of fetchResult.ecosystemServices) {
-    urlsToCheck.push(service.url);
   }
   for (const partner of fetchResult.partnerMetadata) {
     if (partner.facilitator?.baseUrl) {
@@ -315,16 +274,6 @@ export async function runIndexer(config: IndexerConfig): Promise<IndexOutput> {
     const enriched = enrichDiscoveredResource(resource, checkResult, partner);
     enrichedResources.push(enriched);
     processedUrls.add(resource.resource);
-  }
-
-  // Enrich ecosystem services (skip if already in discovery)
-  for (const service of fetchResult.ecosystemServices) {
-    if (!processedUrls.has(service.url)) {
-      const checkResult = checkResults.get(service.url);
-      const enriched = enrichEcosystemService(service, checkResult);
-      enrichedResources.push(enriched);
-      processedUrls.add(service.url);
-    }
   }
 
   // Add facilitators from partner metadata (skip if already processed)
