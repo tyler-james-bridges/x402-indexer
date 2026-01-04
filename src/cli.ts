@@ -11,7 +11,7 @@ import { Command } from "commander";
 import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { runIndexer } from "./indexer.js";
-import { IndexerConfigSchema, type IndexerConfig } from "./schemas.js";
+import { IndexerConfigSchema, NetworkSchema, type IndexerConfig } from "./schemas.js";
 import { VERSION } from "./version.js";
 import { closeDatabase } from "./db/index.js";
 import { registerDbCommands } from "./db-commands.js";
@@ -212,25 +212,21 @@ async function main(): Promise<void> {
     .command("networks")
     .description("List all supported x402 networks")
     .action(() => {
-      const networks = [
-        { name: "abstract", type: "EVM", testnet: false },
-        { name: "abstract-testnet", type: "EVM", testnet: true },
-        { name: "base", type: "EVM", testnet: false },
-        { name: "base-sepolia", type: "EVM", testnet: true },
-        { name: "avalanche", type: "EVM", testnet: false },
-        { name: "avalanche-fuji", type: "EVM", testnet: true },
-        { name: "iotex", type: "EVM", testnet: false },
-        { name: "solana", type: "SVM", testnet: false },
-        { name: "solana-devnet", type: "SVM", testnet: true },
-        { name: "sei", type: "EVM", testnet: false },
-        { name: "sei-testnet", type: "EVM", testnet: true },
-        { name: "polygon", type: "EVM", testnet: false },
-        { name: "polygon-amoy", type: "EVM", testnet: true },
-        { name: "peaq", type: "EVM", testnet: false },
-        { name: "story", type: "EVM", testnet: false },
-        { name: "educhain", type: "EVM", testnet: false },
-        { name: "skale-base-sepolia", type: "EVM", testnet: true },
-      ];
+      // Derive networks from schema - metadata for VM type
+      const vmTypes: Record<string, string> = {
+        solana: "SVM",
+        "solana-devnet": "SVM",
+      };
+
+      // Get all networks from schema
+      const allNetworks = NetworkSchema.options;
+      const networks = allNetworks.map((name) => ({
+        name,
+        type: vmTypes[name] ?? "EVM",
+        testnet: name.includes("testnet") || name.includes("sepolia") ||
+                 name.includes("devnet") || name.includes("fuji") ||
+                 name.includes("amoy"),
+      }));
 
       console.log("\nSupported x402 Networks:\n");
       console.log("Mainnets:");
