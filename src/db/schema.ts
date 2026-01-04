@@ -9,7 +9,7 @@ import type { Client } from "@libsql/client";
 /**
  * Current schema version - increment when adding migrations
  */
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 /**
  * Initialize database schema
@@ -34,8 +34,9 @@ export async function initializeSchema(db: Client): Promise<void> {
     await migrateV1(db);
   }
 
-  // Future migrations go here:
-  // if (currentVersion < 2) await migrateV2(db);
+  if (currentVersion < 2) {
+    await migrateV2(db);
+  }
 }
 
 /**
@@ -162,6 +163,68 @@ async function migrateV1(db: Client): Promise<void> {
 
     await tx.commit();
     console.log("Database schema v1 initialized");
+  } finally {
+    tx.close();
+  }
+}
+
+/**
+ * Migration V2: Add 'ecosystem' to source CHECK constraint
+ */
+async function migrateV2(db: Client): Promise<void> {
+  const tx = await db.transaction("write");
+
+  try {
+    // SQLite requires recreating table to modify CHECK constraint
+    // 1. Create new table with updated constraint
+    await tx.execute(`
+      CREATE TABLE IF NOT EXISTS resources_new (
+        id TEXT PRIMARY KEY,
+        url TEXT UNIQUE NOT NULL,
+        name TEXT,
+        description TEXT,
+        category TEXT,
+        type TEXT NOT NULL DEFAULT 'http',
+        x402_version INTEGER NOT NULL DEFAULT 1,
+        source TEXT NOT NULL CHECK (source IN ('discovery_api', 'partners_data', 'manual', 'ecosystem')),
+        networks_supported TEXT NOT NULL DEFAULT '[]',
+        metadata TEXT,
+        first_seen_at TEXT NOT NULL DEFAULT (datetime('now')),
+        last_seen_at TEXT NOT NULL DEFAULT (datetime('now')),
+        last_updated TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+      )
+    `);
+
+    // 2. Copy existing data
+    await tx.execute(`
+      INSERT OR IGNORE INTO resources_new
+      SELECT * FROM resources
+    `);
+
+    // 3. Drop old table
+    await tx.execute(`DROP TABLE resources`);
+
+    // 4. Rename new table
+    await tx.execute(`ALTER TABLE resources_new RENAME TO resources`);
+
+    // 5. Recreate indexes
+    await tx.execute(`
+      CREATE INDEX IF NOT EXISTS idx_resources_category ON resources(category)
+    `);
+    await tx.execute(`
+      CREATE INDEX IF NOT EXISTS idx_resources_source ON resources(source)
+    `);
+
+    // Record migration
+    await tx.execute({
+      sql: "INSERT INTO schema_version (version) VALUES (?)",
+      args: [2],
+    });
+
+    await tx.commit();
+    console.log("Database schema v2 applied: added 'ecosystem' source");
   } finally {
     tx.close();
   }
