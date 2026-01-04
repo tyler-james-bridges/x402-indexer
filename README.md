@@ -277,6 +277,7 @@ npm run clean
 ```
 src/
   cli.ts            # CLI entry point with Commander
+  db-commands.ts    # Database admin commands (stats, list, history, etc.)
   index.ts          # Public API exports
   indexer.ts        # Main orchestration logic
   fetcher.ts        # Discovery API and partner data fetching
