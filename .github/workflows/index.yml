@@ -60,10 +60,6 @@ jobs:
         working-directory: indexer
         run: npm ci
 
-      - name: Install Playwright browsers
-        working-directory: indexer
-        run: npx playwright install chromium
-
       - name: Build
         working-directory: indexer
         run: npm run build

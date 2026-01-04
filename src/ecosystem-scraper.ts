@@ -1,11 +1,11 @@
 /**
  * Ecosystem Page Scraper
  *
- * Scrapes x402 services from the x402.org/ecosystem page using Playwright.
- * Uses headless browser to properly render the React SPA and extract services.
+ * Scrapes x402 services from the x402.org/ecosystem page using cheerio.
+ * Lightweight HTML parsing without requiring a headless browser.
  */
 
-import { chromium, type Browser } from "playwright";
+import * as cheerio from "cheerio";
 import { type EcosystemService } from "./schemas.js";
 import { createLogger, type Logger } from "./logger.js";
 
@@ -45,100 +45,95 @@ function inferCategory(name: string, description: string): string {
 }
 
 /**
- * Scrapes ecosystem page using Playwright (headless browser)
+ * Scrapes ecosystem page using cheerio (lightweight HTML parsing)
  */
-async function scrapeWithPlaywright(
+async function scrapeWithCheerio(
   ecosystemUrl: string,
   timeoutMs: number,
   logger: Logger
 ): Promise<EcosystemService[]> {
-  let browser: Browser | null = null;
+  logger.debug(`Fetching ${ecosystemUrl}...`);
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    logger.debug("Launching headless browser...");
-    browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage();
-
-    logger.debug(`Navigating to ${ecosystemUrl}...`);
-    await page.goto(ecosystemUrl, {
-      waitUntil: "networkidle",
-      timeout: timeoutMs,
+    const response = await fetch(ecosystemUrl, {
+      signal: controller.signal,
+      headers: {
+        "User-Agent": "x402-indexer/1.0",
+        Accept: "text/html",
+      },
     });
 
-    // Wait for content to render
-    await page.waitForTimeout(2000);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
 
-    // Extract service cards from the rendered page
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const rawServices = await page.evaluate((): { name: string; url: string; desc: string }[] => {
-      const results: { name: string; url: string; desc: string }[] = [];
-      const seen = new Set<string>();
+    const html = await response.text();
+    const $ = cheerio.load(html);
 
-      // Find all card-like elements with external links
-      document
-        .querySelectorAll(
-          '[class*="card"], [class*="Card"], article, [class*="item"], [class*="partner"], [class*="service"]'
-        )
-        .forEach((card: Element) => {
-          const link = card.querySelector(
-            'a[href^="http"]:not([href*="x402.org"]):not([href*="coinbase.com/legal"])'
-          );
-          if (!link) return;
+    const services: EcosystemService[] = [];
+    const seen = new Set<string>();
 
-          const url = link.getAttribute("href") || "";
-          if (!url || seen.has(url)) return;
+    // Find all card-like elements with external links
+    $(
+      '[class*="card"], [class*="Card"], article, [class*="item"], [class*="partner"], [class*="service"]'
+    ).each((_, card) => {
+      const $card = $(card);
+      const $link = $card.find(
+        'a[href^="http"]:not([href*="x402.org"]):not([href*="coinbase.com/legal"])'
+      );
 
-          // Get name from heading or link text
-          const name =
-            card
-              .querySelector(
-                'h2, h3, h4, [class*="title"], [class*="name"], [class*="Title"], [class*="Name"]'
-              )
-              ?.textContent?.trim() ||
-            link.textContent?.trim() ||
-            "";
+      if ($link.length === 0) return;
 
-          if (!name || name.length < 2 || name.length > 100) return;
+      const url = $link.attr("href") || "";
+      if (!url || seen.has(url)) return;
 
-          // Get description from paragraph
-          const desc =
-            card
-              .querySelector(
-                'p, [class*="desc"], [class*="Desc"], [class*="description"]'
-              )
-              ?.textContent?.trim() || "";
+      // Get name from heading or link text
+      const name =
+        $card
+          .find(
+            'h2, h3, h4, [class*="title"], [class*="name"], [class*="Title"], [class*="Name"]'
+          )
+          .first()
+          .text()
+          .trim() ||
+        $link.text().trim() ||
+        "";
 
-          seen.add(url);
-          results.push({ name, url, desc });
-        });
+      if (!name || name.length < 2 || name.length > 100) return;
 
-      return results;
+      // Get description from paragraph
+      const desc =
+        $card
+          .find('p, [class*="desc"], [class*="Desc"], [class*="description"]')
+          .first()
+          .text()
+          .trim() || "";
+
+      // Filter out unwanted URLs
+      if (
+        url.includes("x402.org") ||
+        url.includes("coinbase.com/legal") ||
+        url.includes("google.com/forms")
+      ) {
+        return;
+      }
+
+      seen.add(url);
+      services.push({
+        name,
+        url,
+        description: desc,
+        category: inferCategory(name, desc),
+      });
     });
 
-    logger.debug(`Playwright extracted ${rawServices.length} services`);
-
-    // Convert to EcosystemService format with category inference
-    const services: EcosystemService[] = rawServices
-      .filter(
-        (s) =>
-          s.url &&
-          s.name &&
-          !s.url.includes("x402.org") &&
-          !s.url.includes("coinbase.com/legal") &&
-          !s.url.includes("google.com/forms")
-      )
-      .map((s) => ({
-        name: s.name,
-        url: s.url,
-        description: s.desc,
-        category: inferCategory(s.name, s.desc),
-      }));
-
+    logger.debug(`Cheerio extracted ${services.length} services`);
     return services;
   } finally {
-    if (browser) {
-      await browser.close();
-    }
+    clearTimeout(timeoutId);
   }
 }
 
@@ -156,7 +151,7 @@ export async function scrapeEcosystem(
   logger.info(`Scraping ecosystem page: ${ecosystemUrl}`);
 
   try {
-    const services = await scrapeWithPlaywright(ecosystemUrl, timeoutMs, logger);
+    const services = await scrapeWithCheerio(ecosystemUrl, timeoutMs, logger);
     logger.info(`Scraped ${services.length} services from ecosystem page`);
 
     return { services, errors };
