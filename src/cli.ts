@@ -44,8 +44,8 @@ async function main(): Promise<void> {
     .version(VERSION)
     .option(
       "-f, --facilitator <url>",
-      "Base URL of the facilitator discovery API",
-      "https://x402.org/facilitator"
+      "Base URL of the CDP discovery API",
+      "https://api.cdp.coinbase.com/platform/v2/x402"
     )
     .option(
       "-o, --output <path>",

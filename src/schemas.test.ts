@@ -23,10 +23,11 @@ describe("PaymentRequirementsSchema", () => {
     expect(result.success).toBe(true);
   });
 
-  it("rejects invalid network", () => {
+  it("accepts CAIP-2 format networks", () => {
+    // CDP API uses CAIP-2 format like "eip155:8453" for Base mainnet
     const data = {
       scheme: "exact",
-      network: "invalid-network",
+      network: "eip155:8453",
       maxAmountRequired: "10000",
       resource: "https://api.example.com/resource",
       description: "API access",
@@ -37,7 +38,20 @@ describe("PaymentRequirementsSchema", () => {
     };
 
     const result = PaymentRequirementsSchema.safeParse(data);
-    expect(result.success).toBe(false);
+    expect(result.success).toBe(true);
+  });
+
+  it("accepts any string network for CAIP-2 compatibility", () => {
+    // Schema relaxed to accept unknown network formats for forward compatibility
+    const data = {
+      scheme: "exact",
+      network: "unknown-network-format",
+      payTo: "0x1234",
+      asset: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+    };
+
+    const result = PaymentRequirementsSchema.safeParse(data);
+    expect(result.success).toBe(true);
   });
 
   it("rejects invalid resource URL", () => {

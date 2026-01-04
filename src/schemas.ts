@@ -38,15 +38,15 @@ export type Network = z.infer<typeof NetworkSchema>;
 // =============================================================================
 
 export const PaymentRequirementsSchema = z.object({
-  scheme: z.enum(["exact"]),
-  network: NetworkSchema,
-  maxAmountRequired: z.string(),
-  resource: z.string().url(),
-  description: z.string(),
-  mimeType: z.string(),
+  scheme: z.enum(["exact"]).or(z.string()), // Allow other schemes
+  network: NetworkSchema.or(z.string()), // Accept CAIP-2 format like "eip155:8453"
+  maxAmountRequired: z.string().optional(), // Some endpoints don't have this
+  resource: z.string().url().optional(), // Optional in some responses
+  description: z.string().optional(),
+  mimeType: z.string().optional(),
   outputSchema: z.record(z.unknown()).optional(),
   payTo: z.string(),
-  maxTimeoutSeconds: z.number().int(),
+  maxTimeoutSeconds: z.number().int().optional(),
   asset: z.string(),
   extra: z.record(z.unknown()).optional(),
 });
@@ -124,11 +124,11 @@ export type PartnerMetadata = z.infer<typeof PartnerMetadataSchema>;
 export const PricingInfoSchema = z.object({
   scheme: z.string(),
   network: z.string(),
-  maxAmountRequired: z.string(), // atomic units
+  maxAmountRequired: z.string().optional(), // atomic units
   formattedAmount: z.string().optional(),
   asset: z.string(),
   payTo: z.string(),
-  maxTimeoutSeconds: z.number(),
+  maxTimeoutSeconds: z.number().optional(),
 });
 
 export type PricingInfo = z.infer<typeof PricingInfoSchema>;
@@ -211,7 +211,7 @@ export type EcosystemService = z.infer<typeof EcosystemServiceSchema>;
 // =============================================================================
 
 export const IndexerConfigSchema = z.object({
-  facilitatorUrl: z.string().url().default("https://x402.org/facilitator"),
+  facilitatorUrl: z.string().url().default("https://api.cdp.coinbase.com/platform/v2/x402"),
   outputPath: z.string().default("./x402-index.json"),
   timeoutMs: z.number().positive().default(10000),
   concurrency: z.number().positive().default(5),
