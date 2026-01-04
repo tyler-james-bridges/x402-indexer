@@ -188,11 +188,12 @@ function parseXPaymentHeader(
  * Converts PaymentRequirements to PricingInfo
  */
 function convertToPricingInfo(req: PaymentRequirements): PricingInfo {
+  const amount = req.maxAmountRequired ?? "0";
   return {
     scheme: req.scheme,
     network: req.network,
-    maxAmountRequired: req.maxAmountRequired,
-    formattedAmount: formatAmount(req.maxAmountRequired, req.asset),
+    maxAmountRequired: amount,
+    formattedAmount: formatAmount(amount, req.asset),
     asset: req.asset,
     payTo: req.payTo,
     maxTimeoutSeconds: req.maxTimeoutSeconds,

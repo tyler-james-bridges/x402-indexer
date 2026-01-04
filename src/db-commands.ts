@@ -225,4 +225,95 @@ export function registerDbCommands(program: Command): void {
         console.log("\nCleanup complete!\n");
       }
     );
+
+  program
+    .command("add <url>")
+    .description("Manually register an x402 endpoint")
+    .option("-d, --db <path>", "SQLite database path", "./x402.db")
+    .option("-n, --name <name>", "Name for the endpoint")
+    .option("--description <desc>", "Description of the endpoint")
+    .option("-c, --category <category>", "Category for the endpoint")
+    .option("-t, --timeout <ms>", "Request timeout in milliseconds", "10000")
+    .option("-v, --verbose", "Enable verbose logging", false)
+    .option("--skip-check", "Skip health check, just add to database", false)
+    .action(
+      async (
+        url: string,
+        opts: {
+          db: string;
+          name?: string;
+          description?: string;
+          category?: string;
+          timeout: string;
+          verbose?: boolean;
+          skipCheck?: boolean;
+        }
+      ) => {
+        const { checkEndpoint } = await import("./health-checker.js");
+        const { getInitializedDb, upsertResource } = await import("./db/index.js");
+
+        console.log(`\nRegistering endpoint: ${url}\n`);
+
+        // Run health check unless skipped
+        let checkResult: Awaited<ReturnType<typeof checkEndpoint>> | null = null;
+
+        if (!opts.skipCheck) {
+          console.log("Checking endpoint...");
+          checkResult = await checkEndpoint(
+            url,
+            parseInt(opts.timeout, 10),
+            opts.verbose ?? false
+          );
+
+          const health = checkResult.health;
+          console.log(`  Status: ${health.isAlive ? "✓ Alive" : "✗ Dead"}`);
+          if (health.latencyMs) {
+            console.log(`  Latency: ${health.latencyMs}ms`);
+          }
+          if (health.error) {
+            console.log(`  Error: ${health.error}`);
+          }
+          if (checkResult.pricing.length > 0) {
+            const networks = checkResult.rawPaymentRequirements
+              .map((r) => r.network)
+              .filter((n, i, arr) => arr.indexOf(n) === i);
+            console.log(`  Networks: ${networks.join(", ")}`);
+            const firstPricing = checkResult.pricing[0]!;
+            console.log(`  Pricing: ${firstPricing.formattedAmount ?? firstPricing.maxAmountRequired}`);
+          }
+        }
+
+        // Save to database
+        const db = await getInitializedDb(opts.db);
+        const health = checkResult?.health ?? {
+          isAlive: false,
+          error: "Health check skipped",
+          checkedAt: new Date().toISOString(),
+        };
+        const pricing = checkResult?.pricing ?? [];
+        const accepts = checkResult?.rawPaymentRequirements ?? [];
+        const networksSupported = accepts
+          .map((r) => r.network)
+          .filter((n, i, arr) => arr.indexOf(n) === i);
+
+        const resource = {
+          url,
+          name: opts.name,
+          description: opts.description,
+          category: opts.category,
+          type: "http" as const,
+          x402Version: 1,
+          health,
+          pricing,
+          networksSupported,
+          accepts,
+          lastUpdated: new Date().toISOString(),
+          metadata: {},
+          source: "manual" as const,
+        };
+
+        await upsertResource(db, resource);
+        console.log(`\n✓ Endpoint registered successfully!\n`);
+      }
+    );
 }

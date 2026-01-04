@@ -217,10 +217,10 @@ async function upsertPaymentRequirementTx(
       pricing.scheme,
       pricing.network,
       pricing.asset,
-      pricing.maxAmountRequired,
+      pricing.maxAmountRequired ?? "0",
       pricing.formattedAmount ?? null,
       pricing.payTo,
-      pricing.maxTimeoutSeconds,
+      pricing.maxTimeoutSeconds ?? 0,
     ],
   });
 }
