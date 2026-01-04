@@ -7,10 +7,37 @@
  * @packageDocumentation
  */
 
-// Re-export all schemas and types
-export * from "./schemas.js";
+// =============================================================================
+// Public API - Schemas and Types
+// =============================================================================
 
-// Re-export core functionality
+// Core output types - what consumers work with
+export {
+  IndexOutputSchema,
+  type IndexOutput,
+  EnrichedResourceSchema,
+  type EnrichedResource,
+  IndexSummarySchema,
+  type IndexSummary,
+} from "./schemas.js";
+
+// Configuration
+export { IndexerConfigSchema, type IndexerConfig } from "./schemas.js";
+
+// Supporting types for working with resources
+export {
+  HealthCheckResultSchema,
+  type HealthCheckResult,
+  PricingInfoSchema,
+  type PricingInfo,
+  NetworkSchema,
+  type Network,
+} from "./schemas.js";
+
+// =============================================================================
+// Public API - Core Functionality
+// =============================================================================
+
 export { runIndexer } from "./indexer.js";
 export { fetchResources, type FetchResult } from "./fetcher.js";
 export {
