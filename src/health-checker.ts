@@ -3,11 +3,13 @@
  *
  * Performs health checks on x402 endpoints to measure latency,
  * verify availability, and parse payment requirement headers.
+ *
+ * Optimized to extract both health and payment info from a single HTTP request.
  */
 
 import { validateUrl } from "./utils/url-validator.js";
 import { formatAmount } from "./utils/formatting.js";
-import { fetchWithTimeout } from "./utils/fetch-with-timeout.js";
+import { fetchWithRetry } from "./utils/fetch-with-timeout.js";
 import {
   type HealthCheckResult,
   type PricingInfo,
@@ -26,26 +28,27 @@ export interface EndpointCheckResult {
 }
 
 /**
- * Performs a health check on a single endpoint
+ * Performs a single HTTP request and extracts both health and payment info.
+ * This is more efficient than separate health check + payment fetch requests.
  */
-async function checkEndpointHealth(
+async function checkEndpointSingle(
   url: string,
   timeoutMs: number,
   logger: Logger
-): Promise<HealthCheckResult> {
+): Promise<EndpointCheckResult> {
   const checkedAt = new Date().toISOString();
   const startTime = performance.now();
 
   try {
-    // Use HEAD request first for efficiency, fall back to GET if needed
-    let response: Response;
-    try {
-      response = await fetchWithTimeout(url, { timeoutMs, method: "HEAD" });
-    } catch {
-      // Some servers don't support HEAD, try GET
-      logger.debug(`HEAD failed for ${url}, falling back to GET`);
-      response = await fetchWithTimeout(url, { timeoutMs, method: "GET" });
-    }
+    // Single GET request - extracts both health and payment info
+    const response = await fetchWithRetry(url, {
+      timeoutMs,
+      method: "GET",
+      headers: { Accept: "application/json" },
+      retries: 2,
+      retryDelayMs: 500,
+    });
+
     const endTime = performance.now();
     const latencyMs = Math.round(endTime - startTime);
 
@@ -56,12 +59,24 @@ async function checkEndpointHealth(
       `Health check ${url}: ${response.status} (${latencyMs}ms) - ${isAlive ? "alive" : "dead"}`
     );
 
-    return {
+    const health: HealthCheckResult = {
       isAlive,
       statusCode: response.status,
       latencyMs,
       checkedAt,
     };
+
+    // Extract payment info from 402 responses
+    let pricing: PricingInfo[] = [];
+    let rawPaymentRequirements: PaymentRequirements[] = [];
+
+    if (response.status === 402) {
+      const paymentInfo = await extractPaymentInfoFromResponse(response, logger);
+      pricing = paymentInfo.pricing;
+      rawPaymentRequirements = paymentInfo.requirements;
+    }
+
+    return { health, pricing, rawPaymentRequirements };
   } catch (error) {
     const endTime = performance.now();
     const latencyMs = Math.round(endTime - startTime);
@@ -71,74 +86,61 @@ async function checkEndpointHealth(
     logger.debug(`Health check ${url}: FAILED - ${errorMessage}`);
 
     return {
-      isAlive: false,
-      latencyMs,
-      error: errorMessage,
-      checkedAt,
+      health: {
+        isAlive: false,
+        latencyMs,
+        error: errorMessage,
+        checkedAt,
+      },
+      pricing: [],
+      rawPaymentRequirements: [],
     };
   }
 }
 
 /**
- * Fetches and parses payment requirements from an endpoint's 402 response
+ * Extracts payment requirements from an already-fetched 402 response
  */
-async function fetchPaymentInfo(
-  url: string,
-  timeoutMs: number,
+async function extractPaymentInfoFromResponse(
+  response: Response,
   logger: Logger
 ): Promise<{ pricing: PricingInfo[]; requirements: PaymentRequirements[] }> {
   const pricing: PricingInfo[] = [];
   const requirements: PaymentRequirements[] = [];
 
-  try {
-    const response = await fetchWithTimeout(url, {
-      timeoutMs,
-      method: "GET",
-      headers: { Accept: "application/json" },
-    });
-
-    if (response.status !== 402) {
+  // Try to get payment requirements from X-Payment header first
+  const xPaymentHeader = response.headers.get("X-Payment");
+  if (xPaymentHeader) {
+    const parsed = parseXPaymentHeader(xPaymentHeader, logger);
+    if (parsed.length > 0) {
+      requirements.push(...parsed);
+      pricing.push(...parsed.map(convertToPricingInfo));
       return { pricing, requirements };
     }
+  }
 
-    // Try to get payment requirements from X-Payment header
-    const xPaymentHeader = response.headers.get("X-Payment");
-    if (xPaymentHeader) {
-      const parsed = parseXPaymentHeader(xPaymentHeader, logger);
-      if (parsed.length > 0) {
-        requirements.push(...parsed);
-        pricing.push(...parsed.map(convertToPricingInfo));
-        return { pricing, requirements };
-      }
-    }
-
-    // Try to get payment requirements from response body
-    try {
-      const body: unknown = await response.json();
-      if (body && typeof body === "object") {
-        // Check for x402Response format
-        const x402Body = body as { accepts?: unknown[] };
-        if (Array.isArray(x402Body.accepts)) {
-          for (const accept of x402Body.accepts) {
-            const parsed = PaymentRequirementsSchema.safeParse(accept);
-            if (parsed.success) {
-              requirements.push(parsed.data);
-              pricing.push(convertToPricingInfo(parsed.data));
-            }
+  // Try to get payment requirements from response body
+  try {
+    const body: unknown = await response.json();
+    if (body && typeof body === "object") {
+      // Check for x402Response format
+      const x402Body = body as { accepts?: unknown[] };
+      if (Array.isArray(x402Body.accepts)) {
+        for (const accept of x402Body.accepts) {
+          const parsed = PaymentRequirementsSchema.safeParse(accept);
+          if (parsed.success) {
+            requirements.push(parsed.data);
+            pricing.push(convertToPricingInfo(parsed.data));
           }
         }
       }
-    } catch {
-      // Expected: 402 responses may not have JSON bodies
-      logger.debug(`${url}: Response body is not JSON (expected for some endpoints)`);
     }
-
-    return { pricing, requirements };
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    logger.debug(`Failed to fetch payment info from ${url}: ${message}`);
-    return { pricing, requirements };
+  } catch {
+    // Expected: 402 responses may not have JSON bodies
+    logger.debug("Response body is not JSON (expected for some endpoints)");
   }
+
+  return { pricing, requirements };
 }
 
 /**
@@ -198,7 +200,7 @@ function convertToPricingInfo(req: PaymentRequirements): PricingInfo {
 }
 
 /**
- * Performs a full check on an endpoint (health + payment info)
+ * Performs a full check on an endpoint (health + payment info in single request)
  */
 export async function checkEndpoint(
   url: string,
@@ -221,24 +223,8 @@ export async function checkEndpoint(
     };
   }
 
-  // Perform health check
-  const health = await checkEndpointHealth(url, timeoutMs, logger);
-
-  // If endpoint is alive, try to fetch payment info
-  let pricing: PricingInfo[] = [];
-  let rawPaymentRequirements: PaymentRequirements[] = [];
-
-  if (health.isAlive) {
-    const paymentInfo = await fetchPaymentInfo(url, timeoutMs, logger);
-    pricing = paymentInfo.pricing;
-    rawPaymentRequirements = paymentInfo.requirements;
-  }
-
-  return {
-    health,
-    pricing,
-    rawPaymentRequirements,
-  };
+  // Single request extracts both health and payment info
+  return checkEndpointSingle(url, timeoutMs, logger);
 }
 
 /**

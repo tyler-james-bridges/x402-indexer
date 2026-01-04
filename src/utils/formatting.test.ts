@@ -61,8 +61,9 @@ describe("formatAmount", () => {
     expect(formatAmount("not-a-number", USDC)).toBe("not-a-number (raw)");
   });
 
-  it("uses shortened address for unknown assets", () => {
+  it("uses shortened address for unknown assets (defaults to 18 decimals)", () => {
     const unknownAsset = "0xdeadbeef1234567890abcdef1234567890abcdef";
-    expect(formatAmount("1000000", unknownAsset)).toBe("1 0xdead...cdef");
+    // Unknown ERC20 tokens default to 18 decimals
+    expect(formatAmount("1000000000000000000", unknownAsset)).toBe("1 0xdead...cdef");
   });
 });
