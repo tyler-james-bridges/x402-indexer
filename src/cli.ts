@@ -28,6 +28,9 @@ interface CLIOptions {
   db: string;
   skipDb: boolean;
   skipJson: boolean;
+  ecosystem: boolean;
+  ecosystemUrl: string;
+  skipDiscovery: boolean;
 }
 
 async function main(): Promise<void> {
@@ -73,6 +76,25 @@ async function main(): Promise<void> {
     .option("-d, --db <path>", "SQLite database path", "./x402.db")
     .option("--skip-db", "Skip database persistence", false)
     .option("--skip-json", "Skip JSON file output", false)
+    .option(
+      "--ecosystem",
+      "Include ecosystem page scraping (default: true)",
+      true
+    )
+    .option(
+      "--no-ecosystem",
+      "Disable ecosystem page scraping"
+    )
+    .option(
+      "--ecosystem-url <url>",
+      "URL of the ecosystem page to scrape",
+      "https://www.x402.org/ecosystem"
+    )
+    .option(
+      "--skip-discovery",
+      "Skip the deprecated discovery API (recommended)",
+      false
+    )
     .action(async (options: CLIOptions) => {
       try {
         // Parse and validate configuration
@@ -88,6 +110,9 @@ async function main(): Promise<void> {
           dbPath: options.db,
           persistToDb: !options.skipDb,
           skipJsonOutput: options.skipJson,
+          includeEcosystem: options.ecosystem,
+          ecosystemUrl: options.ecosystemUrl,
+          skipDiscoveryApi: options.skipDiscovery,
         };
 
         const configResult = IndexerConfigSchema.safeParse(configInput);

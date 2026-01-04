@@ -156,7 +156,7 @@ export const EnrichedResourceSchema = z.object({
   accepts: z.array(PaymentRequirementsSchema),
   lastUpdated: z.string(),
   metadata: z.record(z.unknown()).optional(),
-  source: z.enum(["discovery_api", "partners_data", "manual"]),
+  source: z.enum(["discovery_api", "partners_data", "ecosystem", "manual"]),
 });
 
 export type EnrichedResource = z.infer<typeof EnrichedResourceSchema>;
@@ -194,6 +194,19 @@ export const IndexOutputSchema = z.object({
 export type IndexOutput = z.infer<typeof IndexOutputSchema>;
 
 // =============================================================================
+// Ecosystem Service Schema (scraped from x402.org/ecosystem)
+// =============================================================================
+
+export const EcosystemServiceSchema = z.object({
+  name: z.string(),
+  url: z.string(),
+  description: z.string(),
+  category: z.string(),
+});
+
+export type EcosystemService = z.infer<typeof EcosystemServiceSchema>;
+
+// =============================================================================
 // CLI Configuration Schema
 // =============================================================================
 
@@ -210,6 +223,11 @@ export const IndexerConfigSchema = z.object({
   dbPath: z.string().default("./x402.db"),
   persistToDb: z.boolean().default(true),
   skipJsonOutput: z.boolean().default(false),
+  // Ecosystem scraper options
+  includeEcosystem: z.boolean().default(true),
+  ecosystemUrl: z.string().url().default("https://www.x402.org/ecosystem"),
+  // Discovery API options
+  skipDiscoveryApi: z.boolean().default(false),
 });
 
 export type IndexerConfig = z.infer<typeof IndexerConfigSchema>;
