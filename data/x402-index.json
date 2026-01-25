@@ -1,16 +1,16 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-01-24T06:19:56.984Z",
+    "generatedAt": "2026-01-25T06:20:23.064Z",
     "facilitatorUrl": "https://api.cdp.coinbase.com/platform/v2/x402"
   },
   "summary": {
     "totalResources": 109,
-    "aliveCount": 83,
-    "deadCount": 26,
-    "avgLatencyMs": 1007,
-    "minLatencyMs": 80,
-    "maxLatencyMs": 9431,
+    "aliveCount": 85,
+    "deadCount": 24,
+    "avgLatencyMs": 817,
+    "minLatencyMs": 115,
+    "maxLatencyMs": 2663,
     "byCategory": {
       "Uncategorized": 100,
       "Facilitators": 9
@@ -19,7 +19,7 @@
       "base": 93,
       "eip155:8453": 11,
       "base-sepolia": 12,
-      "solana": 10,
+      "solana": 8,
       "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp": 2,
       "solana-devnet": 6,
       "monad": 1,
@@ -36,8 +36,8 @@
       "iotex": 1,
       "xdc": 1
     },
-    "indexedAt": "2026-01-24T06:19:56.797Z",
-    "indexDurationMs": 37894,
+    "indexedAt": "2026-01-25T06:20:22.882Z",
+    "indexDurationMs": 31552,
     "indexerVersion": "1.0.0"
   },
   "resources": [
@@ -49,8 +49,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 861,
-        "checkedAt": "2026-01-24T06:19:19.262Z"
+        "latencyMs": 749,
+        "checkedAt": "2026-01-25T06:19:51.647Z"
       },
       "pricing": [
         {
@@ -122,37 +122,50 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T04:20:45.53Z",
+      "lastUpdated": "2026-01-25T05:22:22.767Z",
       "metadata": {},
       "source": "discovery_api"
     },
     {
-      "url": "https://hello-world-x402.vercel.app/echo",
+      "url": "https://www.netprotocol.app/api/relay/8453/fund",
+      "description": "Fund backend wallet for relay service",
       "type": "http",
-      "x402Version": 2,
+      "x402Version": 1,
       "health": {
         "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 702,
-        "checkedAt": "2026-01-24T06:19:19.263Z"
+        "statusCode": 405,
+        "latencyMs": 384,
+        "checkedAt": "2026-01-25T06:19:51.649Z"
       },
       "pricing": [
         {
           "scheme": "exact",
-          "network": "eip155:8453",
+          "network": "base",
+          "maxAmountRequired": "5000000",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "payTo": "0x6462F8f301Bd08c206ee611aA00015bA41acc1D0",
           "maxTimeoutSeconds": 300
         }
       ],
       "networksSupported": [
-        "eip155:8453"
+        "base"
       ],
       "accepts": [
         {
           "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "network": "base",
+          "maxAmountRequired": "5000000",
+          "resource": "https://www.netprotocol.app/api/relay/8453/fund",
+          "description": "Fund backend wallet for relay service",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            }
+          },
+          "payTo": "0x6462F8f301Bd08c206ee611aA00015bA41acc1D0",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
@@ -161,59 +174,20 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T02:02:57.073Z",
+      "lastUpdated": "2026-01-25T00:25:28.181Z",
       "metadata": {},
       "source": "discovery_api"
     },
     {
-      "url": "https://hello-world-x402.vercel.app/greet",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 262,
-        "checkedAt": "2026-01-24T06:19:19.264Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T02:02:55.635Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/frontrunwatch/raw",
-      "description": "Frontrun monitoring: sandwich attacks, toxic flow, and MEV activity detection.",
+      "url": "https://emc2ai.io/x402/bitquery/rug-pull-scanner/raw",
+      "description": "Token security analysis: holder concentration, liquidity locks, risk scoring.",
       "type": "http",
       "x402Version": 1,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 2622,
-        "checkedAt": "2026-01-24T06:19:19.265Z"
+        "latencyMs": 2663,
+        "checkedAt": "2026-01-25T06:19:51.650Z"
       },
       "pricing": [
         {
@@ -234,8 +208,8 @@
           "scheme": "exact",
           "network": "base",
           "maxAmountRequired": "1000000",
-          "resource": "https://emc2ai.io/x402/bitquery/frontrunwatch/raw",
-          "description": "Frontrun monitoring: sandwich attacks, toxic flow, and MEV activity detection.",
+          "resource": "https://emc2ai.io/x402/bitquery/rug-pull-scanner/raw",
+          "description": "Token security analysis: holder concentration, liquidity locks, risk scoring.",
           "mimeType": "application/json",
           "outputSchema": {
             "input": {
@@ -253,19 +227,8 @@
                   ],
                   "type": "string"
                 },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
+                "tokenAddress": {
+                  "description": "Token contract address (for token-specific queries)",
                   "type": "string"
                 }
               },
@@ -298,7 +261,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:35:03.488Z",
+      "lastUpdated": "2026-01-24T20:00:32.678Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -310,8 +273,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 2747,
-        "checkedAt": "2026-01-24T06:19:19.266Z"
+        "latencyMs": 2628,
+        "checkedAt": "2026-01-25T06:19:51.651Z"
       },
       "pricing": [
         {
@@ -396,7 +359,477 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:34:58.996Z",
+      "lastUpdated": "2026-01-24T20:00:29Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/arbitragescanner/raw",
+      "description": "Cross-chain price discrepancies and profitable arbitrage routes.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 2583,
+        "checkedAt": "2026-01-25T06:19:51.652Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "formattedAmount": "1 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "resource": "https://emc2ai.io/x402/bitquery/arbitragescanner/raw",
+          "description": "Cross-chain price discrepancies and profitable arbitrage routes.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T20:00:25.566Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/nftanalytics/raw",
+      "description": "NFT collection analysis: mints, whales, floor prices, wash trading detection.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 691,
+        "checkedAt": "2026-01-25T06:19:54.314Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "formattedAmount": "1 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "resource": "https://emc2ai.io/x402/bitquery/nftanalytics/raw",
+          "description": "NFT collection analysis: mints, whales, floor prices, wash trading detection.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T20:00:22.505Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/investment-report/raw",
+      "description": "Multi-chain investment report with bonding curves, liquidity, and whale intel.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 689,
+        "checkedAt": "2026-01-25T06:19:54.315Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "formattedAmount": "1 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "resource": "https://emc2ai.io/x402/bitquery/investment-report/raw",
+          "description": "Multi-chain investment report with bonding curves, liquidity, and whale intel.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T20:00:11.61Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/tokensniping/raw",
+      "description": "Early token buyers analysis with bot detection and sniper identification.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 1317,
+        "checkedAt": "2026-01-25T06:19:54.315Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/tokensniping/raw",
+          "description": "Early token buyers analysis with bot detection and sniper identification.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "tokenAddress": {
+                  "description": "Token contract address (for token-specific queries)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T20:00:07.963Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/smartmoney/raw",
+      "description": "Leaderboard of top trader wallets with buy/sell flow analysis and accumulation patterns.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 1136,
+        "checkedAt": "2026-01-25T06:19:54.317Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/smartmoney/raw",
+          "description": "Leaderboard of top trader wallets with buy/sell flow analysis and accumulation patterns.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:59:58.931Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -408,8 +841,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 743,
-        "checkedAt": "2026-01-24T06:19:22.014Z"
+        "latencyMs": 1370,
+        "checkedAt": "2026-01-25T06:19:54.318Z"
       },
       "pricing": [
         {
@@ -494,7 +927,362 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:34:51.237Z",
+      "lastUpdated": "2026-01-24T19:59:53.797Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/whaleintel/raw",
+      "description": "Token-centric whale accumulation view with net capital flows and top holders.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 1039,
+        "checkedAt": "2026-01-25T06:19:55.689Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/whaleintel/raw",
+          "description": "Token-centric whale accumulation view with net capital flows and top holders.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:59:48.901Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/polymarket-chain-compare/raw",
+      "description": "Compare Polymarket API vs Polygon blockchain events for latency arbitrage, whale signals, settlement predictions.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 1105,
+        "checkedAt": "2026-01-25T06:19:55.689Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "formattedAmount": "1 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "resource": "https://emc2ai.io/x402/bitquery/polymarket-chain-compare/raw",
+          "description": "Compare Polymarket API vs Polygon blockchain events for latency arbitrage, whale signals, settlement predictions.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:57:45.558Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/polymarket-events/raw",
+      "description": "Real-time Polymarket contract events and position changes (Polygon only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 1065,
+        "checkedAt": "2026-01-25T06:19:55.690Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/polymarket-events/raw",
+          "description": "Real-time Polymarket contract events and position changes (Polygon only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:57:10.381Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/dexcapital/raw",
+      "description": "Capital-intensive traders across DEXes showing big money flows.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 688,
+        "checkedAt": "2026-01-25T06:19:55.690Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/dexcapital/raw",
+          "description": "Capital-intensive traders across DEXes showing big money flows.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:57:06.871Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -506,8 +1294,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1244,
-        "checkedAt": "2026-01-24T06:19:22.014Z"
+        "latencyMs": 690,
+        "checkedAt": "2026-01-25T06:19:55.691Z"
       },
       "pricing": [
         {
@@ -592,7 +1380,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:34:42.85Z",
+      "lastUpdated": "2026-01-24T19:56:58.772Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -604,8 +1392,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1931,
-        "checkedAt": "2026-01-24T06:19:22.016Z"
+        "latencyMs": 1072,
+        "checkedAt": "2026-01-25T06:19:56.795Z"
       },
       "pricing": [
         {
@@ -690,7 +1478,166 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:34:37.215Z",
+      "lastUpdated": "2026-01-24T19:56:42.449Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/pumpfun-graduation/raw",
+      "description": "Pump.fun tokens approaching Raydium graduation threshold (Solana only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 697,
+        "checkedAt": "2026-01-25T06:19:56.796Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "formattedAmount": "0.6 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "resource": "https://emc2ai.io/x402/bitquery/pumpfun-graduation/raw",
+          "description": "Pump.fun tokens approaching Raydium graduation threshold (Solana only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:56:36.408Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/pumpfun-volume/raw",
+      "description": "Top Pump.fun tokens by volume with buyer/seller flow (Solana only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 684,
+        "checkedAt": "2026-01-25T06:19:56.796Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "formattedAmount": "0.6 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "resource": "https://emc2ai.io/x402/bitquery/pumpfun-volume/raw",
+          "description": "Top Pump.fun tokens by volume with buyer/seller flow (Solana only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:56:29.611Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -702,8 +1649,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1863,
-        "checkedAt": "2026-01-24T06:19:22.017Z"
+        "latencyMs": 681,
+        "checkedAt": "2026-01-25T06:19:56.797Z"
       },
       "pricing": [
         {
@@ -775,7 +1722,625 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:34:06.865Z",
+      "lastUpdated": "2026-01-24T19:56:08.214Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/zora-volume/raw",
+      "description": "Top Zora Launchpad tokens by trading volume (Base only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 908,
+        "checkedAt": "2026-01-25T06:19:56.797Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "formattedAmount": "0.6 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "resource": "https://emc2ai.io/x402/bitquery/zora-volume/raw",
+          "description": "Top Zora Launchpad tokens by trading volume (Base only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:56:04.856Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/zora-launches/raw",
+      "description": "Latest Zora Launchpad token deployments with deployer intel (Base only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 689,
+        "checkedAt": "2026-01-25T06:19:57.868Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "formattedAmount": "0.6 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "resource": "https://emc2ai.io/x402/bitquery/zora-launches/raw",
+          "description": "Latest Zora Launchpad token deployments with deployer intel (Base only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:58.685Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/holderconcentration/raw",
+      "description": "Token holder distribution analysis with concentration risk metrics.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 691,
+        "checkedAt": "2026-01-25T06:19:57.868Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "formattedAmount": "0.4 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "resource": "https://emc2ai.io/x402/bitquery/holderconcentration/raw",
+          "description": "Token holder distribution analysis with concentration risk metrics.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "tokenAddress": {
+                  "description": "Token contract address (for token-specific queries)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:52.126Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/wallet-holdings/raw",
+      "description": "Complete wallet portfolio breakdown showing all token holdings and USD values.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 687,
+        "checkedAt": "2026-01-25T06:19:57.869Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "formattedAmount": "0.4 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "resource": "https://emc2ai.io/x402/bitquery/wallet-holdings/raw",
+          "description": "Complete wallet portfolio breakdown showing all token holdings and USD values.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "walletAddress": {
+                  "description": "Wallet address (for wallet-specific queries)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:48.857Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/virtual-pools/raw",
+      "description": "Virtuals Protocol agent tokens and bonding curves (Base only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 1062,
+        "checkedAt": "2026-01-25T06:19:57.869Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "formattedAmount": "0.4 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "resource": "https://emc2ai.io/x402/bitquery/virtual-pools/raw",
+          "description": "Virtuals Protocol agent tokens and bonding curves (Base only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:43Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/topvolume/raw",
+      "description": "Top gainers/losers analysis with volume, price change %, and market insights.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 684,
+        "checkedAt": "2026-01-25T06:19:57.869Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "formattedAmount": "0.4 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "resource": "https://emc2ai.io/x402/bitquery/topvolume/raw",
+          "description": "Top gainers/losers analysis with volume, price change %, and market insights.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:38.53Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/top-tokens/raw",
+      "description": "Top tokens ranked by market cap with price, volume, and supply metrics.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 688,
+        "checkedAt": "2026-01-25T06:19:58.932Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "formattedAmount": "0.4 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "resource": "https://emc2ai.io/x402/bitquery/top-tokens/raw",
+          "description": "Top tokens ranked by market cap with price, volume, and supply metrics.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:33.953Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -787,8 +2352,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1492,
-        "checkedAt": "2026-01-24T06:19:22.018Z"
+        "latencyMs": 1074,
+        "checkedAt": "2026-01-25T06:19:58.932Z"
       },
       "pricing": [
         {
@@ -873,7 +2438,388 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:34:00.84Z",
+      "lastUpdated": "2026-01-24T19:55:22.125Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/latest-pairs/raw",
+      "description": "Query latest deployed tokens on-chain with liquidity pool data.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 699,
+        "checkedAt": "2026-01-25T06:19:58.934Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "250000",
+          "formattedAmount": "0.25 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "250000",
+          "resource": "https://emc2ai.io/x402/bitquery/latest-pairs/raw",
+          "description": "Query latest deployed tokens on-chain with liquidity pool data.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T19:55:17.776Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/frontrunwatch/raw",
+      "description": "Frontrun monitoring: sandwich attacks, toxic flow, and MEV activity detection.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 688,
+        "checkedAt": "2026-01-25T06:19:58.934Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "formattedAmount": "1 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000000",
+          "resource": "https://emc2ai.io/x402/bitquery/frontrunwatch/raw",
+          "description": "Frontrun monitoring: sandwich attacks, toxic flow, and MEV activity detection.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T13:58:53.231Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/hotshots/raw",
+      "description": "Hot shot performers on Four.meme bonding curve platform (BSC only).",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 688,
+        "checkedAt": "2026-01-25T06:19:58.934Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/hotshots/raw",
+          "description": "Hot shot performers on Four.meme bonding curve platform (BSC only).",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T13:58:45.144Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/deepdive/raw",
+      "description": "Deep dive into large wallet accumulation patterns with net capital flows and top holders.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 690,
+        "checkedAt": "2026-01-25T06:20:00.007Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "formattedAmount": "0.85 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "850000",
+          "resource": "https://emc2ai.io/x402/bitquery/deepdive/raw",
+          "description": "Deep dive into large wallet accumulation patterns with net capital flows and top holders.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T13:58:37.296Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -885,8 +2831,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 719,
-        "checkedAt": "2026-01-24T06:19:23.947Z"
+        "latencyMs": 692,
+        "checkedAt": "2026-01-25T06:20:00.007Z"
       },
       "pricing": [
         {
@@ -971,81 +2917,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:31:41.54Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/pumpfun-graduation/raw",
-      "description": "Pump.fun tokens approaching Raydium graduation threshold (Solana only).",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 6735,
-        "checkedAt": "2026-01-24T06:19:23.948Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "600000",
-          "formattedAmount": "0.6 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "600000",
-          "resource": "https://emc2ai.io/x402/bitquery/pumpfun-graduation/raw",
-          "description": "Pump.fun tokens approaching Raydium graduation threshold (Solana only).",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:31:19.181Z",
+      "lastUpdated": "2026-01-24T13:57:59.635Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -1057,8 +2929,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 733,
-        "checkedAt": "2026-01-24T06:19:23.948Z"
+        "latencyMs": 683,
+        "checkedAt": "2026-01-25T06:20:00.007Z"
       },
       "pricing": [
         {
@@ -1143,7 +3015,315 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-24T01:31:10.667Z",
+      "lastUpdated": "2026-01-24T13:57:40.998Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402-cybercentry-private-data-verification.up.railway.app/verify",
+      "description": "Verify any text data using the Cybercentry Private Data Verification (CPDV) API. Returns a proof_id for Zero-Knowledge Proof (ZKP) verification via the proxy endpoint",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 312,
+        "checkedAt": "2026-01-25T06:20:00.008Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "20000",
+          "formattedAmount": "0.02 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xfEE13309251B632317ea2d475d6ABa7E7E0219e6",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "20000",
+          "resource": "https://x402-cybercentry-private-data-verification.up.railway.app/verify",
+          "description": "Verify any text data using the Cybercentry Private Data Verification (CPDV) API. Returns a proof_id for Zero-Knowledge Proof (ZKP) verification via the proxy endpoint",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "GET",
+              "queryParams": {
+                "data": {
+                  "description": "Any text data to verify",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "type": "http"
+            },
+            "output": {
+              "properties": {
+                "proof_id": {
+                  "type": "string"
+                },
+                "proof_url": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "payTo": "0xfEE13309251B632317ea2d475d6ABa7E7E0219e6",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T13:11:03.869Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/poolmoves/raw",
+      "description": "Liquidity pool movement radar detecting significant rebalancing events.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 909,
+        "checkedAt": "2026-01-25T06:20:00.009Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "formattedAmount": "0.6 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "600000",
+          "resource": "https://emc2ai.io/x402/bitquery/poolmoves/raw",
+          "description": "Liquidity pool movement radar detecting significant rebalancing events.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
+                  "enum": [
+                    "1h",
+                    "4h",
+                    "24h",
+                    "7d",
+                    "30d"
+                  ],
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T12:44:16.85Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402-cybercentry-wallet-verification.up.railway.app/verify",
+      "description": "Verify wallet addresses for sanctions, fraud, and risk using Cybercentry Wallet Verification (CWV) API",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 173,
+        "checkedAt": "2026-01-25T06:20:00.919Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "20000",
+          "formattedAmount": "0.02 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xfEE13309251B632317ea2d475d6ABa7E7E0219e6",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "20000",
+          "resource": "https://x402-cybercentry-wallet-verification.up.railway.app/verify",
+          "description": "Verify wallet addresses for sanctions, fraud, and risk using Cybercentry Wallet Verification (CWV) API",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "GET",
+              "queryParams": {
+                "data": {
+                  "description": "Wallet address to verify (Bitcoin, Ethereum, etc.)",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "type": "http"
+            },
+            "output": {
+              "type": "object"
+            }
+          },
+          "payTo": "0xfEE13309251B632317ea2d475d6ABa7E7E0219e6",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T11:39:07.89Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/echo",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 383,
+        "checkedAt": "2026-01-25T06:20:00.922Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T02:02:57.073Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/greet",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 389,
+        "checkedAt": "2026-01-25T06:20:00.924Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-24T02:02:55.635Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -1154,8 +3334,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 112,
-        "checkedAt": "2026-01-24T06:19:23.949Z"
+        "latencyMs": 437,
+        "checkedAt": "2026-01-25T06:20:00.925Z"
       },
       "pricing": [
         {
@@ -1194,8 +3374,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1037,
-        "checkedAt": "2026-01-24T06:19:23.949Z"
+        "latencyMs": 686,
+        "checkedAt": "2026-01-25T06:20:00.926Z"
       },
       "pricing": [
         {
@@ -1285,8 +3465,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1685,
-        "checkedAt": "2026-01-24T06:19:30.684Z"
+        "latencyMs": 692,
+        "checkedAt": "2026-01-25T06:20:01.613Z"
       },
       "pricing": [
         {
@@ -1383,8 +3563,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 2136,
-        "checkedAt": "2026-01-24T06:19:30.685Z"
+        "latencyMs": 689,
+        "checkedAt": "2026-01-25T06:20:01.614Z"
       },
       "pricing": [
         {
@@ -1474,361 +3654,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://emc2ai.io/x402/bitquery/arbitragescanner/raw",
-      "description": "Cross-chain price discrepancies and profitable arbitrage routes.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 2124,
-        "checkedAt": "2026-01-24T06:19:30.686Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "formattedAmount": "1 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "resource": "https://emc2ai.io/x402/bitquery/arbitragescanner/raw",
-          "description": "Cross-chain price discrepancies and profitable arbitrage routes.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:02:48.261Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/nftanalytics/raw",
-      "description": "NFT collection analysis: mints, whales, floor prices, wash trading detection.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1449,
-        "checkedAt": "2026-01-24T06:19:30.687Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "formattedAmount": "1 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "resource": "https://emc2ai.io/x402/bitquery/nftanalytics/raw",
-          "description": "NFT collection analysis: mints, whales, floor prices, wash trading detection.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:02:40.38Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/investment-report/raw",
-      "description": "Multi-chain investment report with bonding curves, liquidity, and whale intel.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 2244,
-        "checkedAt": "2026-01-24T06:19:30.688Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "formattedAmount": "1 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "resource": "https://emc2ai.io/x402/bitquery/investment-report/raw",
-          "description": "Multi-chain investment report with bonding curves, liquidity, and whale intel.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:02:28.44Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/polymarket-chain-compare/raw",
-      "description": "Compare Polymarket API vs Polygon blockchain events for latency arbitrage, whale signals, settlement predictions.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 974,
-        "checkedAt": "2026-01-24T06:19:32.932Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "formattedAmount": "1 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000000",
-          "resource": "https://emc2ai.io/x402/bitquery/polymarket-chain-compare/raw",
-          "description": "Compare Polymarket API vs Polygon blockchain events for latency arbitrage, whale signals, settlement predictions.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:00:27.052Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://emc2ai.io/x402/bitquery/earlybirds/raw",
       "description": "Early bird buyer analysis with bot detection and entry timing.",
       "type": "http",
@@ -1836,8 +3661,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1061,
-        "checkedAt": "2026-01-24T06:19:32.933Z"
+        "latencyMs": 690,
+        "checkedAt": "2026-01-25T06:20:01.614Z"
       },
       "pricing": [
         {
@@ -1927,8 +3752,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 722,
-        "checkedAt": "2026-01-24T06:19:32.933Z"
+        "latencyMs": 683,
+        "checkedAt": "2026-01-25T06:20:01.614Z"
       },
       "pricing": [
         {
@@ -2018,104 +3843,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://emc2ai.io/x402/bitquery/hotshots/raw",
-      "description": "Hot shot performers on Four.meme bonding curve platform (BSC only).",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 759,
-        "checkedAt": "2026-01-24T06:19:32.934Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "formattedAmount": "0.85 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "resource": "https://emc2ai.io/x402/bitquery/hotshots/raw",
-          "description": "Hot shot performers on Four.meme bonding curve platform (BSC only).",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:00:12.93Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://emc2ai.io/x402/bitquery/alphaleaders/raw",
       "description": "Leaderboard of alpha-generating wallets with buy/sell flow and accumulation metrics.",
       "type": "http",
@@ -2123,8 +3850,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 726,
-        "checkedAt": "2026-01-24T06:19:32.934Z"
+        "latencyMs": 686,
+        "checkedAt": "2026-01-25T06:20:01.614Z"
       },
       "pricing": [
         {
@@ -2214,561 +3941,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://emc2ai.io/x402/bitquery/polymarket-events/raw",
-      "description": "Real-time Polymarket contract events and position changes (Polygon only).",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 714,
-        "checkedAt": "2026-01-24T06:19:33.995Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "formattedAmount": "0.85 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "resource": "https://emc2ai.io/x402/bitquery/polymarket-events/raw",
-          "description": "Real-time Polymarket contract events and position changes (Polygon only).",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:59:30.59Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/tokensniping/raw",
-      "description": "Early token buyers analysis with bot detection and sniper identification.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1046,
-        "checkedAt": "2026-01-24T06:19:33.995Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "formattedAmount": "0.85 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "resource": "https://emc2ai.io/x402/bitquery/tokensniping/raw",
-          "description": "Early token buyers analysis with bot detection and sniper identification.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "tokenAddress": {
-                  "description": "Token contract address (for token-specific queries)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:59:27.146Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/smartmoney/raw",
-      "description": "Leaderboard of top trader wallets with buy/sell flow analysis and accumulation patterns.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 746,
-        "checkedAt": "2026-01-24T06:19:33.995Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "formattedAmount": "0.85 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "resource": "https://emc2ai.io/x402/bitquery/smartmoney/raw",
-          "description": "Leaderboard of top trader wallets with buy/sell flow analysis and accumulation patterns.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:59:17.815Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/dexcapital/raw",
-      "description": "Capital-intensive traders across DEXes showing big money flows.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 723,
-        "checkedAt": "2026-01-24T06:19:33.996Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "formattedAmount": "0.85 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "resource": "https://emc2ai.io/x402/bitquery/dexcapital/raw",
-          "description": "Capital-intensive traders across DEXes showing big money flows.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:59:12.748Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/whaleintel/raw",
-      "description": "Token-centric whale accumulation view with net capital flows and top holders.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 751,
-        "checkedAt": "2026-01-24T06:19:33.996Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "formattedAmount": "0.85 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "850000",
-          "resource": "https://emc2ai.io/x402/bitquery/whaleintel/raw",
-          "description": "Token-centric whale accumulation view with net capital flows and top holders.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:59:04.422Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/zora-volume/raw",
-      "description": "Top Zora Launchpad tokens by trading volume (Base only).",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 722,
-        "checkedAt": "2026-01-24T06:19:35.042Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "600000",
-          "formattedAmount": "0.6 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "600000",
-          "resource": "https://emc2ai.io/x402/bitquery/zora-volume/raw",
-          "description": "Top Zora Launchpad tokens by trading volume (Base only).",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:58:46.749Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://emc2ai.io/x402/bitquery/bagcheck/raw",
       "description": "Bag check - token holder distribution with concentration risk metrics.",
       "type": "http",
@@ -2776,8 +3948,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 753,
-        "checkedAt": "2026-01-24T06:19:35.042Z"
+        "latencyMs": 700,
+        "checkedAt": "2026-01-25T06:20:02.306Z"
       },
       "pricing": [
         {
@@ -2867,8 +4039,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 726,
-        "checkedAt": "2026-01-24T06:19:35.042Z"
+        "latencyMs": 692,
+        "checkedAt": "2026-01-25T06:20:02.306Z"
       },
       "pricing": [
         {
@@ -2958,547 +4130,14 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://emc2ai.io/x402/bitquery/holderconcentration/raw",
-      "description": "Token holder distribution analysis with concentration risk metrics.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 765,
-        "checkedAt": "2026-01-24T06:19:35.042Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "formattedAmount": "0.4 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "resource": "https://emc2ai.io/x402/bitquery/holderconcentration/raw",
-          "description": "Token holder distribution analysis with concentration risk metrics.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "tokenAddress": {
-                  "description": "Token contract address (for token-specific queries)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:58:30.978Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/wallet-holdings/raw",
-      "description": "Complete wallet portfolio breakdown showing all token holdings and USD values.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1303,
-        "checkedAt": "2026-01-24T06:19:35.043Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "formattedAmount": "0.4 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "resource": "https://emc2ai.io/x402/bitquery/wallet-holdings/raw",
-          "description": "Complete wallet portfolio breakdown showing all token holdings and USD values.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "walletAddress": {
-                  "description": "Wallet address (for wallet-specific queries)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:58:27.544Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/virtual-pools/raw",
-      "description": "Virtuals Protocol agent tokens and bonding curves (Base only).",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 751,
-        "checkedAt": "2026-01-24T06:19:36.346Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "formattedAmount": "0.4 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "resource": "https://emc2ai.io/x402/bitquery/virtual-pools/raw",
-          "description": "Virtuals Protocol agent tokens and bonding curves (Base only).",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:58:22.882Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/topvolume/raw",
-      "description": "Top gainers/losers analysis with volume, price change %, and market insights.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 736,
-        "checkedAt": "2026-01-24T06:19:36.346Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "formattedAmount": "0.4 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "resource": "https://emc2ai.io/x402/bitquery/topvolume/raw",
-          "description": "Top gainers/losers analysis with volume, price change %, and market insights.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:58:19.364Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/top-tokens/raw",
-      "description": "Top tokens ranked by market cap with price, volume, and supply metrics.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 929,
-        "checkedAt": "2026-01-24T06:19:36.346Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "formattedAmount": "0.4 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "resource": "https://emc2ai.io/x402/bitquery/top-tokens/raw",
-          "description": "Top tokens ranked by market cap with price, volume, and supply metrics.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:58:15.339Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/zora-launches/raw",
-      "description": "Latest Zora Launchpad token deployments with deployer intel (Base only).",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 860,
-        "checkedAt": "2026-01-24T06:19:36.347Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "600000",
-          "formattedAmount": "0.6 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "600000",
-          "resource": "https://emc2ai.io/x402/bitquery/zora-launches/raw",
-          "description": "Latest Zora Launchpad token deployments with deployer intel (Base only).",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                },
-                "timeperiod": {
-                  "description": "Time period for analysis (e.g., 1h, 24h, 7d, 30d)",
-                  "enum": [
-                    "1h",
-                    "4h",
-                    "24h",
-                    "7d",
-                    "30d"
-                  ],
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:55:24.905Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://hello-world-x402.vercel.app/hello",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 197,
-        "checkedAt": "2026-01-24T06:19:36.347Z"
+        "latencyMs": 115,
+        "checkedAt": "2026-01-25T06:20:02.306Z"
       },
       "pricing": [
         {
@@ -3530,93 +4169,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://emc2ai.io/x402/bitquery/latest-pairs/raw",
-      "description": "Query latest deployed tokens on-chain with liquidity pool data.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 700,
-        "checkedAt": "2026-01-24T06:19:37.276Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "250000",
-          "formattedAmount": "0.25 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "250000",
-          "resource": "https://emc2ai.io/x402/bitquery/latest-pairs/raw",
-          "description": "Query latest deployed tokens on-chain with liquidity pool data.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:39:39.131Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://x402.browserbase.com/browser/session/create",
       "description": "Create a Browserbase browser session with prepaid time. Returns a WebSocket connection URL for browser automation.",
       "type": "http",
@@ -3624,8 +4176,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 941,
-        "checkedAt": "2026-01-24T06:19:37.276Z"
+        "latencyMs": 1396,
+        "checkedAt": "2026-01-25T06:20:02.307Z"
       },
       "pricing": [
         {
@@ -3634,7 +4186,7 @@
           "maxAmountRequired": "2000",
           "formattedAmount": "0.002 USDC",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x99A754E944F7E706d35f428700e6B6AeDCF42b8D",
+          "payTo": "0x236ab22b5a05b4570Dcd96ca59928a53db92a381",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -3726,58 +4278,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://www.netprotocol.app/api/relay/8453/fund",
-      "description": "Fund backend wallet for relay service",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": false,
-        "statusCode": 405,
-        "latencyMs": 677,
-        "checkedAt": "2026-01-24T06:19:37.277Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "5000000",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x6462F8f301Bd08c206ee611aA00015bA41acc1D0",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "5000000",
-          "resource": "https://www.netprotocol.app/api/relay/8453/fund",
-          "description": "Fund backend wallet for relay service",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            }
-          },
-          "payTo": "0x6462F8f301Bd08c206ee611aA00015bA41acc1D0",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-23T23:26:00.763Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://x402-demo-discovery-endpoint.vercel.app/protected",
       "description": "Demo endpoint for x402 resource discovery",
       "type": "http",
@@ -3785,8 +4285,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1098,
-        "checkedAt": "2026-01-24T06:19:37.278Z"
+        "latencyMs": 962,
+        "checkedAt": "2026-01-25T06:20:02.308Z"
       },
       "pricing": [
         {
@@ -3836,8 +4336,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 929,
-        "checkedAt": "2026-01-24T06:19:37.279Z"
+        "latencyMs": 1032,
+        "checkedAt": "2026-01-25T06:20:03.704Z"
       },
       "pricing": [
         {
@@ -4049,8 +4549,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 149,
-        "checkedAt": "2026-01-24T06:19:38.382Z"
+        "latencyMs": 210,
+        "checkedAt": "2026-01-25T06:20:03.705Z"
       },
       "pricing": [
         {
@@ -4163,8 +4663,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 80,
-        "checkedAt": "2026-01-24T06:19:38.383Z"
+        "latencyMs": 225,
+        "checkedAt": "2026-01-25T06:20:03.706Z"
       },
       "pricing": [
         {
@@ -4202,8 +4702,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 184,
-        "checkedAt": "2026-01-24T06:19:38.384Z"
+        "latencyMs": 115,
+        "checkedAt": "2026-01-25T06:20:03.706Z"
       },
       "pricing": [
         {
@@ -4241,8 +4741,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 183,
-        "checkedAt": "2026-01-24T06:19:38.385Z"
+        "latencyMs": 120,
+        "checkedAt": "2026-01-25T06:20:03.707Z"
       },
       "pricing": [
         {
@@ -4281,8 +4781,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 534,
-        "checkedAt": "2026-01-24T06:19:38.386Z"
+        "latencyMs": 391,
+        "checkedAt": "2026-01-25T06:20:04.736Z"
       },
       "pricing": [
         {
@@ -4430,8 +4930,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 412,
-        "checkedAt": "2026-01-24T06:19:38.920Z"
+        "latencyMs": 353,
+        "checkedAt": "2026-01-25T06:20:04.738Z"
       },
       "pricing": [
         {
@@ -4470,8 +4970,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 902,
-        "checkedAt": "2026-01-24T06:19:38.921Z"
+        "latencyMs": 80,
+        "checkedAt": "2026-01-25T06:20:04.738Z"
       },
       "pricing": [
         {
@@ -4683,8 +5183,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 129,
-        "checkedAt": "2026-01-24T06:19:38.921Z"
+        "latencyMs": 4800,
+        "checkedAt": "2026-01-25T06:20:04.739Z"
       },
       "pricing": [
         {
@@ -4802,8 +5302,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 128,
-        "checkedAt": "2026-01-24T06:19:38.923Z"
+        "latencyMs": 283,
+        "checkedAt": "2026-01-25T06:20:04.740Z"
       },
       "pricing": [
         {
@@ -4958,8 +5458,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 102,
-        "checkedAt": "2026-01-24T06:19:38.924Z"
+        "latencyMs": 130,
+        "checkedAt": "2026-01-25T06:20:09.539Z"
       },
       "pricing": [
         {
@@ -5049,8 +5549,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 79,
-        "checkedAt": "2026-01-24T06:19:39.823Z"
+        "latencyMs": 127,
+        "checkedAt": "2026-01-25T06:20:09.540Z"
       },
       "pricing": [
         {
@@ -5164,8 +5664,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 70,
-        "checkedAt": "2026-01-24T06:19:39.824Z"
+        "latencyMs": 137,
+        "checkedAt": "2026-01-25T06:20:09.541Z"
       },
       "pricing": [
         {
@@ -5318,8 +5818,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 75,
-        "checkedAt": "2026-01-24T06:19:39.824Z"
+        "latencyMs": 135,
+        "checkedAt": "2026-01-25T06:20:09.542Z"
       },
       "pricing": [
         {
@@ -5438,8 +5938,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 383,
-        "checkedAt": "2026-01-24T06:19:39.824Z"
+        "latencyMs": 130,
+        "checkedAt": "2026-01-25T06:20:09.543Z"
       },
       "pricing": [
         {
@@ -5565,8 +6065,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 117,
-        "checkedAt": "2026-01-24T06:19:39.825Z"
+        "latencyMs": 75,
+        "checkedAt": "2026-01-25T06:20:09.679Z"
       },
       "pricing": [
         {
@@ -5703,8 +6203,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 67,
-        "checkedAt": "2026-01-24T06:19:40.207Z"
+        "latencyMs": 4579,
+        "checkedAt": "2026-01-25T06:20:09.679Z"
       },
       "pricing": [
         {
@@ -5841,8 +6341,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 78,
-        "checkedAt": "2026-01-24T06:19:40.208Z"
+        "latencyMs": 76,
+        "checkedAt": "2026-01-25T06:20:09.679Z"
       },
       "pricing": [
         {
@@ -5955,8 +6455,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 76,
-        "checkedAt": "2026-01-24T06:19:40.208Z"
+        "latencyMs": 1024,
+        "checkedAt": "2026-01-25T06:20:09.680Z"
       },
       "pricing": [
         {
@@ -6092,8 +6592,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 565,
-        "checkedAt": "2026-01-24T06:19:40.208Z"
+        "latencyMs": 519,
+        "checkedAt": "2026-01-25T06:20:09.680Z"
       },
       "pricing": [
         {
@@ -6314,8 +6814,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 374,
-        "checkedAt": "2026-01-24T06:19:40.209Z"
+        "latencyMs": 207,
+        "checkedAt": "2026-01-25T06:20:14.258Z"
       },
       "pricing": [
         {
@@ -6382,8 +6882,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 610,
-        "checkedAt": "2026-01-24T06:19:40.774Z"
+        "latencyMs": 677,
+        "checkedAt": "2026-01-25T06:20:14.259Z"
       },
       "pricing": [
         {
@@ -6619,8 +7119,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 437,
-        "checkedAt": "2026-01-24T06:19:40.774Z"
+        "latencyMs": 544,
+        "checkedAt": "2026-01-25T06:20:14.260Z"
       },
       "pricing": [
         {
@@ -6841,8 +7341,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 607,
-        "checkedAt": "2026-01-24T06:19:40.775Z"
+        "latencyMs": 650,
+        "checkedAt": "2026-01-25T06:20:14.261Z"
       },
       "pricing": [
         {
@@ -6966,8 +7466,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 370,
-        "checkedAt": "2026-01-24T06:19:40.776Z"
+        "latencyMs": 651,
+        "checkedAt": "2026-01-25T06:20:14.262Z"
       },
       "pricing": [
         {
@@ -7040,8 +7540,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 427,
-        "checkedAt": "2026-01-24T06:19:40.776Z"
+        "latencyMs": 381,
+        "checkedAt": "2026-01-25T06:20:14.937Z"
       },
       "pricing": [
         {
@@ -7097,8 +7597,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 103,
-        "checkedAt": "2026-01-24T06:19:41.383Z"
+        "latencyMs": 375,
+        "checkedAt": "2026-01-25T06:20:14.938Z"
       },
       "pricing": [
         {
@@ -7155,8 +7655,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 845,
-        "checkedAt": "2026-01-24T06:19:41.384Z"
+        "latencyMs": 977,
+        "checkedAt": "2026-01-25T06:20:14.938Z"
       },
       "pricing": [
         {
@@ -7207,8 +7707,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 431,
-        "checkedAt": "2026-01-24T06:19:41.385Z"
+        "latencyMs": 293,
+        "checkedAt": "2026-01-25T06:20:14.939Z"
       },
       "pricing": [
         {
@@ -7345,8 +7845,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 140,
-        "checkedAt": "2026-01-24T06:19:41.385Z"
+        "latencyMs": 375,
+        "checkedAt": "2026-01-25T06:20:14.940Z"
       },
       "pricing": [
         {
@@ -7449,8 +7949,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 922,
-        "checkedAt": "2026-01-24T06:19:41.385Z"
+        "latencyMs": 516,
+        "checkedAt": "2026-01-25T06:20:15.917Z"
       },
       "pricing": [
         {
@@ -7501,8 +8001,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 148,
-        "checkedAt": "2026-01-24T06:19:42.308Z"
+        "latencyMs": 910,
+        "checkedAt": "2026-01-25T06:20:15.918Z"
       },
       "pricing": [
         {
@@ -7554,8 +8054,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 440,
-        "checkedAt": "2026-01-24T06:19:42.309Z"
+        "latencyMs": 500,
+        "checkedAt": "2026-01-25T06:20:15.919Z"
       },
       "pricing": [
         {
@@ -7605,8 +8105,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 445,
-        "checkedAt": "2026-01-24T06:19:42.310Z"
+        "latencyMs": 584,
+        "checkedAt": "2026-01-25T06:20:15.919Z"
       },
       "pricing": [
         {
@@ -7645,8 +8145,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 458,
-        "checkedAt": "2026-01-24T06:19:42.310Z"
+        "latencyMs": 676,
+        "checkedAt": "2026-01-25T06:20:15.920Z"
       },
       "pricing": [
         {
@@ -7851,76 +8351,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://x402-cybercentry-private-data-verification.up.railway.app/verify",
-      "description": "Verify any text data using the Cybercentry Private Data Verification (CPDV) API. Returns a proof_id for Zero-Knowledge Proof (ZKP) verification via the proxy endpoint",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 357,
-        "checkedAt": "2026-01-24T06:19:42.311Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "20000",
-          "formattedAmount": "0.02 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xfEE13309251B632317ea2d475d6ABa7E7E0219e6",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "20000",
-          "resource": "https://x402-cybercentry-private-data-verification.up.railway.app/verify",
-          "description": "Verify any text data using the Cybercentry Private Data Verification (CPDV) API. Returns a proof_id for Zero-Knowledge Proof (ZKP) verification via the proxy endpoint",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "data": {
-                  "description": "Any text data to verify",
-                  "required": true,
-                  "type": "string"
-                }
-              },
-              "type": "http"
-            },
-            "output": {
-              "properties": {
-                "proof_id": {
-                  "type": "string"
-                },
-                "proof_url": {
-                  "type": "string"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0xfEE13309251B632317ea2d475d6ABa7E7E0219e6",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T07:32:14.332Z",
-      "source": "discovery_api"
-    },
-    {
       "url": "https://padelmaps.org/api/x402-crypto/gas-oracle",
       "description": "Get real-time gas prices with EIP-1559 data and recommendations",
       "type": "http",
@@ -7928,8 +8358,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 147,
-        "checkedAt": "2026-01-24T06:19:42.769Z"
+        "latencyMs": 402,
+        "checkedAt": "2026-01-25T06:20:16.830Z"
       },
       "pricing": [
         {
@@ -8089,8 +8519,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1083,
-        "checkedAt": "2026-01-24T06:19:42.770Z"
+        "latencyMs": 1171,
+        "checkedAt": "2026-01-25T06:20:16.830Z"
       },
       "pricing": [
         {
@@ -8180,8 +8610,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 319,
-        "checkedAt": "2026-01-24T06:19:42.770Z"
+        "latencyMs": 1151,
+        "checkedAt": "2026-01-25T06:20:16.831Z"
       },
       "pricing": [
         {
@@ -8264,8 +8694,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 239,
-        "checkedAt": "2026-01-24T06:19:42.771Z"
+        "latencyMs": 440,
+        "checkedAt": "2026-01-25T06:20:16.832Z"
       },
       "pricing": [
         {
@@ -8339,8 +8769,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1078,
-        "checkedAt": "2026-01-24T06:19:42.772Z"
+        "latencyMs": 1328,
+        "checkedAt": "2026-01-25T06:20:16.833Z"
       },
       "pricing": [
         {
@@ -8429,8 +8859,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1015,
-        "checkedAt": "2026-01-24T06:19:43.855Z"
+        "latencyMs": 1045,
+        "checkedAt": "2026-01-25T06:20:18.162Z"
       },
       "pricing": [
         {
@@ -8496,8 +8926,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 808,
-        "checkedAt": "2026-01-24T06:19:43.855Z"
+        "latencyMs": 902,
+        "checkedAt": "2026-01-25T06:20:18.163Z"
       },
       "pricing": [
         {
@@ -8563,8 +8993,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 906,
-        "checkedAt": "2026-01-24T06:19:43.856Z"
+        "latencyMs": 964,
+        "checkedAt": "2026-01-25T06:20:18.164Z"
       },
       "pricing": [
         {
@@ -8679,8 +9109,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1128,
-        "checkedAt": "2026-01-24T06:19:43.857Z"
+        "latencyMs": 1257,
+        "checkedAt": "2026-01-25T06:20:18.164Z"
       },
       "pricing": [
         {
@@ -8770,8 +9200,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1021,
-        "checkedAt": "2026-01-24T06:19:43.857Z"
+        "latencyMs": 1315,
+        "checkedAt": "2026-01-25T06:20:18.165Z"
       },
       "pricing": [
         {
@@ -8861,8 +9291,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1054,
-        "checkedAt": "2026-01-24T06:19:44.987Z"
+        "latencyMs": 1047,
+        "checkedAt": "2026-01-25T06:20:19.482Z"
       },
       "pricing": [
         {
@@ -8952,8 +9382,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 953,
-        "checkedAt": "2026-01-24T06:19:44.988Z"
+        "latencyMs": 1198,
+        "checkedAt": "2026-01-25T06:20:19.483Z"
       },
       "pricing": [
         {
@@ -9065,8 +9495,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 803,
-        "checkedAt": "2026-01-24T06:19:44.988Z"
+        "latencyMs": 867,
+        "checkedAt": "2026-01-25T06:20:19.484Z"
       },
       "pricing": [
         {
@@ -9132,8 +9562,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1028,
-        "checkedAt": "2026-01-24T06:19:44.989Z"
+        "latencyMs": 1172,
+        "checkedAt": "2026-01-25T06:20:19.485Z"
       },
       "pricing": [
         {
@@ -9223,8 +9653,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 9431,
-        "checkedAt": "2026-01-24T06:19:44.990Z"
+        "latencyMs": 538,
+        "checkedAt": "2026-01-25T06:20:19.485Z"
       },
       "pricing": [
         {
@@ -9268,467 +9698,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://polymarketeer.vercel.app/api/x402/polymarket/tags",
-      "description": "List all available Polymarket tags/categories with optional event counts",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 122,
-        "checkedAt": "2026-01-24T06:19:54.422Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "formattedAmount": "0.01 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xfbd7b7Ed48146aD9bEfF956212c77cE056815ad0",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://polymarketeer.vercel.app/api/x402/polymarket/tags",
-          "description": "List all available Polymarket tags/categories with optional event counts",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "include_count": "string parameter"
-              },
-              "type": "http"
-            },
-            "output": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "additionalProperties": false,
-              "properties": {
-                "data": {},
-                "error": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "data"
-              ],
-              "type": "object"
-            }
-          },
-          "payTo": "0xfbd7b7Ed48146aD9bEfF956212c77cE056815ad0",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:32:40.531Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://polymarketeer.vercel.app/api/x402/polymarket/events",
-      "description": "List Polymarket events with filtering by status, category, and volume",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 102,
-        "checkedAt": "2026-01-24T06:19:54.423Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "formattedAmount": "0.01 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xfbd7b7Ed48146aD9bEfF956212c77cE056815ad0",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://polymarketeer.vercel.app/api/x402/polymarket/events",
-          "description": "List Polymarket events with filtering by status, category, and volume",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "active": "string parameter",
-                "ascending": "string parameter",
-                "closed": "string parameter",
-                "limit": "integer parameter",
-                "offset": "integer parameter",
-                "order": "string parameter",
-                "tag_id": "string parameter"
-              },
-              "type": "http"
-            },
-            "output": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "additionalProperties": false,
-              "properties": {
-                "data": {},
-                "error": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "data"
-              ],
-              "type": "object"
-            }
-          },
-          "payTo": "0xfbd7b7Ed48146aD9bEfF956212c77cE056815ad0",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:32:38.936Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://polymarketeer.vercel.app/api/x402/kalshi/categories",
-      "description": "List all Kalshi market categories with active event counts",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 134,
-        "checkedAt": "2026-01-24T06:19:54.424Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "formattedAmount": "0.01 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xfbd7b7Ed48146aD9bEfF956212c77cE056815ad0",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://polymarketeer.vercel.app/api/x402/kalshi/categories",
-          "description": "List all Kalshi market categories with active event counts",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {},
-              "type": "http"
-            },
-            "output": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "additionalProperties": false,
-              "properties": {
-                "data": {},
-                "error": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "data"
-              ],
-              "type": "object"
-            }
-          },
-          "payTo": "0xfbd7b7Ed48146aD9bEfF956212c77cE056815ad0",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:32:34.868Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://padelmaps.org/api/x402-tools/crypto/price",
-      "description": "Get cryptocurrency price and market data",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": false,
-        "statusCode": 405,
-        "latencyMs": 180,
-        "checkedAt": "2026-01-24T06:19:54.425Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
-          "maxTimeoutSeconds": 60
-        },
-        {
-          "scheme": "exact",
-          "network": "solana",
-          "maxAmountRequired": "10000",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
-          "maxTimeoutSeconds": 60
-        }
-      ],
-      "networksSupported": [
-        "base",
-        "solana"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://padelmaps.org/api/x402-tools/crypto/price",
-          "description": "Get cryptocurrency price and market data",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "currency": {
-                  "description": "Price currency (default: usd)",
-                  "required": false,
-                  "type": "string"
-                },
-                "symbol": {
-                  "description": "Coin ID, e.g., 'bitcoin', 'ethereum'",
-                  "required": true,
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "description": "JSON response with requested data",
-              "type": "object"
-            }
-          },
-          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
-          "maxTimeoutSeconds": 60,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana",
-          "maxAmountRequired": "10000",
-          "resource": "https://padelmaps.org/api/x402-tools/crypto/price",
-          "description": "Get cryptocurrency price and market data",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "currency": {
-                  "description": "Price currency (default: usd)",
-                  "required": false,
-                  "type": "string"
-                },
-                "symbol": {
-                  "description": "Coin ID, e.g., 'bitcoin', 'ethereum'",
-                  "required": true,
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "description": "JSON response with requested data",
-              "type": "object"
-            }
-          },
-          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
-          "maxTimeoutSeconds": 60,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "name": "USD Coin",
-            "version": "SPL"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:31:39.469Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://padelmaps.org/api/x402/matches",
-      "description": "Get open padel matches in a city",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": false,
-        "statusCode": 405,
-        "latencyMs": 437,
-        "checkedAt": "2026-01-24T06:19:54.425Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
-          "maxTimeoutSeconds": 60
-        },
-        {
-          "scheme": "exact",
-          "network": "solana",
-          "maxAmountRequired": "10000",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
-          "maxTimeoutSeconds": 60
-        }
-      ],
-      "networksSupported": [
-        "base",
-        "solana"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://padelmaps.org/api/x402/matches",
-          "description": "Get open padel matches in a city",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "city": {
-                  "description": "City name, e.g., 'madrid'",
-                  "required": true,
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Max results (default: 50, max: 100)",
-                  "required": false,
-                  "type": "integer"
-                }
-              },
-              "bodyType": "json",
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "properties": {
-                "city": {
-                  "type": "string"
-                },
-                "count": {
-                  "type": "integer"
-                },
-                "matches": {
-                  "description": "List of open matches with times, prices, spots available",
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
-          "maxTimeoutSeconds": 60,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana",
-          "maxAmountRequired": "10000",
-          "resource": "https://padelmaps.org/api/x402/matches",
-          "description": "Get open padel matches in a city",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "city": {
-                  "description": "City name, e.g., 'madrid'",
-                  "required": true,
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Max results (default: 50, max: 100)",
-                  "required": false,
-                  "type": "integer"
-                }
-              },
-              "bodyType": "json",
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "properties": {
-                "city": {
-                  "type": "string"
-                },
-                "count": {
-                  "type": "integer"
-                },
-                "matches": {
-                  "description": "List of open matches with times, prices, spots available",
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
-          "maxTimeoutSeconds": 60,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "name": "USD Coin",
-            "version": "SPL"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:31:33.318Z",
-      "source": "discovery_api"
-    },
-    {
       "url": "https://api.cdp.coinbase.com/platform/v2/x402",
       "name": "CDP Facilitator",
       "description": "Best-in-class x402 facilitator. Fee-free USDC settlement on Base Mainnet. KYT/OFAC checks on every transaction.",
@@ -9738,8 +9707,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 401,
-        "latencyMs": 113,
-        "checkedAt": "2026-01-24T06:19:54.863Z"
+        "latencyMs": 119,
+        "checkedAt": "2026-01-25T06:20:20.694Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9749,7 +9718,7 @@
         "solana-devnet"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "cdp",
         "logoUrl": "/logos/cdp.png",
@@ -9789,8 +9758,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 940,
-        "checkedAt": "2026-01-24T06:19:54.864Z"
+        "latencyMs": 938,
+        "checkedAt": "2026-01-25T06:20:20.695Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9806,7 +9775,7 @@
         "CAIP-2 SVM"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "corbits",
         "logoUrl": "/logos/corbits.png",
@@ -9854,8 +9823,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 366,
-        "checkedAt": "2026-01-24T06:19:54.865Z"
+        "latencyMs": 618,
+        "checkedAt": "2026-01-25T06:20:20.696Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9863,7 +9832,7 @@
         "base-sepolia"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "mogami-facilitator",
         "logoUrl": "/logos/logo_mogami_vertical_small.png",
@@ -9902,8 +9871,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 733,
-        "checkedAt": "2026-01-24T06:19:54.865Z"
+        "latencyMs": 591,
+        "checkedAt": "2026-01-25T06:20:20.697Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9917,7 +9886,7 @@
         "polygon-amoy"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "openx402",
         "logoUrl": "/logos/openx402.png",
@@ -9961,8 +9930,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 638,
-        "checkedAt": "2026-01-24T06:19:54.866Z"
+        "latencyMs": 812,
+        "checkedAt": "2026-01-25T06:20:20.697Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9980,7 +9949,7 @@
         "iotex"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "payai",
         "logoUrl": "/logos/payai.svg",
@@ -10029,8 +9998,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 400,
-        "checkedAt": "2026-01-24T06:19:55.804Z"
+        "latencyMs": 441,
+        "checkedAt": "2026-01-25T06:20:21.633Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -10038,7 +10007,7 @@
         "base-sepolia"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "treasure-facilitator",
         "logoUrl": "/logos/treasure.png",
@@ -10075,15 +10044,15 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 395,
-        "checkedAt": "2026-01-24T06:19:55.805Z"
+        "latencyMs": 400,
+        "checkedAt": "2026-01-25T06:20:21.634Z"
       },
       "pricing": [],
       "networksSupported": [
         "base"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "worldfun-facilitator",
         "logoUrl": "/logos/worldfun.svg",
@@ -10119,8 +10088,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 393,
-        "checkedAt": "2026-01-24T06:19:55.806Z"
+        "latencyMs": 402,
+        "checkedAt": "2026-01-25T06:20:21.635Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -10128,7 +10097,7 @@
         "solana-devnet"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "x402-facilitator",
         "logoUrl": "/logos/x402-logo.png",
@@ -10166,8 +10135,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 990,
-        "checkedAt": "2026-01-24T06:19:55.806Z"
+        "latencyMs": 1244,
+        "checkedAt": "2026-01-25T06:20:21.636Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -10184,7 +10153,7 @@
         "xdc"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-24T06:19:56.797Z",
+      "lastUpdated": "2026-01-25T06:20:22.881Z",
       "metadata": {
         "slug": "x402-rs-facilitator",
         "logoUrl": "/logos/x402-rs.svg",
