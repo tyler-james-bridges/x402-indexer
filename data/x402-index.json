@@ -1,25 +1,25 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-01-25T06:20:23.064Z",
+    "generatedAt": "2026-01-26T06:24:59.450Z",
     "facilitatorUrl": "https://api.cdp.coinbase.com/platform/v2/x402"
   },
   "summary": {
     "totalResources": 109,
-    "aliveCount": 85,
-    "deadCount": 24,
-    "avgLatencyMs": 817,
-    "minLatencyMs": 115,
-    "maxLatencyMs": 2663,
+    "aliveCount": 81,
+    "deadCount": 28,
+    "avgLatencyMs": 749,
+    "minLatencyMs": 63,
+    "maxLatencyMs": 2768,
     "byCategory": {
       "Uncategorized": 100,
       "Facilitators": 9
     },
     "byNetwork": {
-      "base": 93,
-      "eip155:8453": 11,
+      "base": 92,
+      "eip155:8453": 12,
+      "solana": 12,
       "base-sepolia": 12,
-      "solana": 8,
       "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp": 2,
       "solana-devnet": 6,
       "monad": 1,
@@ -36,8 +36,8 @@
       "iotex": 1,
       "xdc": 1
     },
-    "indexedAt": "2026-01-25T06:20:22.882Z",
-    "indexDurationMs": 31552,
+    "indexedAt": "2026-01-26T06:24:59.257Z",
+    "indexDurationMs": 22439,
     "indexerVersion": "1.0.0"
   },
   "resources": [
@@ -49,8 +49,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 749,
-        "checkedAt": "2026-01-25T06:19:51.647Z"
+        "latencyMs": 869,
+        "checkedAt": "2026-01-26T06:24:37.174Z"
       },
       "pricing": [
         {
@@ -122,7 +122,1229 @@
           }
         }
       ],
-      "lastUpdated": "2026-01-25T05:22:22.767Z",
+      "lastUpdated": "2026-01-26T06:23:31.928Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://xluihnzwcmxybtygewvy.supabase.co/functions/v1/qr-code-generator",
+      "description": "Generates a QR code from input text or URL and returns it as a base64-encoded PNG image",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 304,
+        "checkedAt": "2026-01-26T06:24:37.176Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "formattedAmount": "0.01 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x02EdA2d6D29020b426a55Ca6Dc4D98e4724305b2",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "resource": "https://xluihnzwcmxybtygewvy.supabase.co/functions/v1/qr-code-generator",
+          "description": "Generates a QR code from input text or URL and returns it as a base64-encoded PNG image",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "GET",
+              "type": "http"
+            },
+            "output": {
+              "properties": {
+                "format": {
+                  "description": "The format result",
+                  "type": "string"
+                },
+                "qr_code": {
+                  "description": "The qr_code result",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "qr_code",
+                "format"
+              ],
+              "type": "object"
+            }
+          },
+          "payTo": "0x02EdA2d6D29020b426a55Ca6Dc4D98e4724305b2",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T03:39:38.464Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/test1",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 247,
+        "checkedAt": "2026-01-26T06:24:37.177Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:56:23.614Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/world",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 260,
+        "checkedAt": "2026-01-26T06:24:37.178Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:56:23.598Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/hello",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 246,
+        "checkedAt": "2026-01-26T06:24:37.179Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:56:23.569Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/greet",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 161,
+        "checkedAt": "2026-01-26T06:24:38.044Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:56:23.552Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/test3",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 63,
+        "checkedAt": "2026-01-26T06:24:38.045Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:56:23.526Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://hello-world-x402.vercel.app/test2",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 95,
+        "checkedAt": "2026-01-26T06:24:38.045Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:56:23.51Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://api.evplus.ai/api/x402/signals/bias-optimized",
+      "description": "Get bias-optimized arbitrage positions (0.1=bearish, 0.5=neutral, 0.9=bullish)",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 351,
+        "checkedAt": "2026-01-26T06:24:38.045Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "240000",
+          "formattedAmount": "0.24 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xC1A2f762F67aF72FD05e79afa23F8358A4d7dbaF",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "240000",
+          "resource": "https://api.evplus.ai/api/x402/signals/bias-optimized",
+          "description": "Get bias-optimized arbitrage positions (0.1=bearish, 0.5=neutral, 0.9=bullish)",
+          "mimeType": "",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": null
+          },
+          "payTo": "0xC1A2f762F67aF72FD05e79afa23F8358A4d7dbaF",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T02:36:30.401Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402factory.ai/base/xprofile",
+      "description": "Base X profile mini-endpoint. Fetches a full X profile and the 10 most recent tweets for a given handle, returning the raw profile data plus a trimmed tweet list with key engagement metrics and media. Cost: 0.001 USDC per request.",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 394,
+        "checkedAt": "2026-01-26T06:24:38.046Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000",
+          "formattedAmount": "0.001 USDC",
+          "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "payTo": "0x402FaCcC3fAeb72351CC2b68C7966faF5f22B0d4",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "1000",
+          "resource": "https://x402factory.ai/base/xprofile",
+          "description": "Base X profile mini-endpoint. Fetches a full X profile and the 10 most recent tweets for a given handle, returning the raw profile data plus a trimmed tweet list with key engagement metrics and media. Cost: 0.001 USDC per request.",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "handle": {
+                  "description": "X handle (username) without the @ prefix, for example WURKDOTFUN or statikheadz.",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "handle": {
+                "description": "Normalized X handle that was requested.",
+                "type": "string"
+              },
+              "ok": {
+                "description": "True on success.",
+                "type": "boolean"
+              },
+              "price_usdc": {
+                "description": "Fixed price charged for this call in USDC (6 decimals).",
+                "type": "string"
+              },
+              "profile": {
+                "description": "Full upstream X profile payload for the user, including core fields like id, rest_id, name, screen_name, description, avatar, location and counters.",
+                "type": "object"
+              },
+              "tweet_count": {
+                "description": "Number of recent tweets returned (up to 10).",
+                "type": "number"
+              },
+              "tweets": {
+                "description": "Array of up to 10 recent tweets with trimmed but useful metadata: id, text (max 3000 chars; longer texts are truncated), created_at, language, basic user info, engagement metrics, media and links.",
+                "type": "array"
+              }
+            }
+          },
+          "payTo": "0x402FaCcC3fAeb72351CC2b68C7966faF5f22B0d4",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "extra": {
+            "avatarUrl": "https://x402factory.ai/x402factoryfavoicon.jpg",
+            "chainId": 8453,
+            "decimals": 6,
+            "eip712": {
+              "name": "USD Coin",
+              "version": "2"
+            },
+            "iconUrl": "https://x402factory.ai/x402factoryfavoicon.jpg",
+            "kind": "base-xprofile",
+            "name": "USD Coin",
+            "pricing": {
+              "amount": 0.001,
+              "currency": "USDC",
+              "mode": "fixed",
+              "network": "Base"
+            },
+            "serviceDescription": "x402Factory Base endpoints for agents (notes, LLMs, TTS, Telegram, coin prices, payments, X profiles).",
+            "serviceName": "x402Factory",
+            "serviceUrl": "https://x402factory.ai",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T01:54:22.399Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://padelmaps.org/api/x402-tools/crypto/price",
+      "description": "Get cryptocurrency price and market data",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": false,
+        "statusCode": 405,
+        "latencyMs": 549,
+        "checkedAt": "2026-01-26T06:24:38.441Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
+          "maxTimeoutSeconds": 60
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "10000",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base",
+        "solana"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "resource": "https://padelmaps.org/api/x402-tools/crypto/price",
+          "description": "Get cryptocurrency price and market data",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "currency": {
+                  "description": "Price currency (default: usd)",
+                  "required": false,
+                  "type": "string"
+                },
+                "symbol": {
+                  "description": "Coin ID, e.g., 'bitcoin', 'ethereum'",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "description": "JSON response with requested data",
+              "type": "object"
+            }
+          },
+          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "10000",
+          "resource": "https://padelmaps.org/api/x402-tools/crypto/price",
+          "description": "Get cryptocurrency price and market data",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "currency": {
+                  "description": "Price currency (default: usd)",
+                  "required": false,
+                  "type": "string"
+                },
+                "symbol": {
+                  "description": "Coin ID, e.g., 'bitcoin', 'ethereum'",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "description": "JSON response with requested data",
+              "type": "object"
+            }
+          },
+          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
+          "maxTimeoutSeconds": 60,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "name": "USD Coin",
+            "version": "SPL"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T01:43:47.818Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://evaluator.openmid.xyz/api/semantic-search",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 318,
+        "checkedAt": "2026-01-26T06:24:38.442Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x16e47d275198ed65916a560bab4af6330c36ae09",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x16e47d275198ed65916a560bab4af6330c36ae09",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-26T01:21:29.186Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://padelmaps.org/api/x402-tools/weather/current",
+      "description": "Get current weather for a location",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": false,
+        "statusCode": 405,
+        "latencyMs": 539,
+        "checkedAt": "2026-01-26T06:24:38.443Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
+          "maxTimeoutSeconds": 60
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "10000",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base",
+        "solana"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "resource": "https://padelmaps.org/api/x402-tools/weather/current",
+          "description": "Get current weather for a location",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "country": {
+                  "description": "2-letter country code (e.g., 'US', 'MX', 'ES') to disambiguate cities with same name",
+                  "required": false,
+                  "type": "string"
+                },
+                "location": {
+                  "description": "City name, e.g., 'London' or 'Salamanca,MX' for disambiguation",
+                  "required": true,
+                  "type": "string"
+                },
+                "units": {
+                  "description": "metric (Celsius), imperial (Fahrenheit), or kelvin",
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "description": "JSON response with requested data",
+              "type": "object"
+            }
+          },
+          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "10000",
+          "resource": "https://padelmaps.org/api/x402-tools/weather/current",
+          "description": "Get current weather for a location",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "country": {
+                  "description": "2-letter country code (e.g., 'US', 'MX', 'ES') to disambiguate cities with same name",
+                  "required": false,
+                  "type": "string"
+                },
+                "location": {
+                  "description": "City name, e.g., 'London' or 'Salamanca,MX' for disambiguation",
+                  "required": true,
+                  "type": "string"
+                },
+                "units": {
+                  "description": "metric (Celsius), imperial (Fahrenheit), or kelvin",
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "description": "JSON response with requested data",
+              "type": "object"
+            }
+          },
+          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
+          "maxTimeoutSeconds": 60,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "name": "USD Coin",
+            "version": "SPL"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-25T20:54:13.667Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://gateway.grapevine.fyi/x402/cid/bafkreifoga2silttn6qmiqobwivqj2rn7yswqxrt7mlu4uktiyptdxmpmm",
+      "description": "0.01 USDC on base",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 869,
+        "checkedAt": "2026-01-26T06:24:38.444Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "formattedAmount": "0.01 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xbc03df2D9F44Cc552EbbFF39860f2CC4fC751d0E",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "10000",
+          "resource": "https://gateway.grapevine.fyi/x402/cid/bafkreifoga2silttn6qmiqobwivqj2rn7yswqxrt7mlu4uktiyptdxmpmm",
+          "description": "0.01 USDC on base",
+          "mimeType": "application/octet-stream",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "GET",
+              "type": "http"
+            }
+          },
+          "payTo": "0xbc03df2D9F44Cc552EbbFF39860f2CC4fC751d0E",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-25T19:32:44.689Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/bitquery/latest-pairs",
+      "description": "Query latest deployed tokens on-chain with liquidity pool data. (with AI analysis)",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 2768,
+        "checkedAt": "2026-01-26T06:24:38.445Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "formattedAmount": "0.4 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "400000",
+          "resource": "https://emc2ai.io/x402/bitquery/latest-pairs",
+          "description": "Query latest deployed tokens on-chain with liquidity pool data. (with AI analysis)",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "chain": {
+                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
+                  "enum": [
+                    "base",
+                    "ethereum",
+                    "bsc",
+                    "arbitrum",
+                    "polygon",
+                    "optimism",
+                    "solana"
+                  ],
+                  "type": "string"
+                },
+                "limit": {
+                  "description": "Maximum number of results to return (default: 10, max: 500)",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "analysis": {
+                "description": "AI-powered analysis and insights",
+                "type": "object"
+              },
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "result": {
+                "description": "Query result data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-25T19:09:01.567Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://emc2ai.io/x402/einstein/report",
+      "description": "Access to /x402/einstein/report",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 820,
+        "checkedAt": "2026-01-26T06:24:41.214Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "500000",
+          "formattedAmount": "0.5 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "500000",
+          "formattedAmount": "0.0000000000005 EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "3H8oRdbRf18b2aaMVBfgJVDhnjhiXjCVTP5ZnNmPuikb",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base",
+        "solana"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "500000",
+          "resource": "https://emc2ai.io/x402/einstein/report",
+          "description": "Access to /x402/einstein/report",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "prompt": {
+                  "description": "The prompt or question to send to Einstein AI agent",
+                  "required": true,
+                  "type": "string"
+                },
+                "roomId": {
+                  "description": "Optional room ID for conversation context",
+                  "type": "string"
+                },
+                "userId": {
+                  "description": "Optional user ID for tracking",
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "discoverable": true,
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "payment": {
+                "description": "Payment receipt information",
+                "type": "object"
+              },
+              "response": {
+                "description": "Einstein AI response data",
+                "type": "object"
+              },
+              "status": {
+                "description": "Request status (completed or error)",
+                "type": "string"
+              }
+            }
+          },
+          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
+          "maxTimeoutSeconds": 90,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "500000",
+          "resource": "https://emc2ai.io/x402/einstein/report",
+          "description": "Access to /x402/einstein/report",
+          "mimeType": "application/json",
+          "payTo": "3H8oRdbRf18b2aaMVBfgJVDhnjhiXjCVTP5ZnNmPuikb",
+          "maxTimeoutSeconds": 60,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "chain": "solana",
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-25T19:07:06.031Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://lowpaymentfee.com/api/v1/messages/119",
+      "description": "Premium API Access",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 665,
+        "checkedAt": "2026-01-26T06:24:41.215Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "20000",
+          "formattedAmount": "0.02 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x1A2B13E97f5F837C8F9FA1F95a1484B7C70d85F3",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "base"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "20000",
+          "resource": "https://lowpaymentfee.com/api/v1/messages/119",
+          "description": "Premium API Access",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "discoverable": true,
+              "method": "GET",
+              "type": "http"
+            }
+          },
+          "payTo": "0x1A2B13E97f5F837C8F9FA1F95a1484B7C70d85F3",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-25T18:56:48.92Z",
+      "metadata": {},
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://padelmaps.org/api/x402-crypto/price-feed",
+      "description": "Get token price data with market cap, volume, and price changes",
+      "type": "http",
+      "x402Version": 1,
+      "health": {
+        "isAlive": false,
+        "statusCode": 405,
+        "latencyMs": 126,
+        "checkedAt": "2026-01-26T06:24:41.216Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "50000",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
+          "maxTimeoutSeconds": 60
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "50000",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "base",
+        "solana"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "base",
+          "maxAmountRequired": "50000",
+          "resource": "https://padelmaps.org/api/x402-crypto/price-feed",
+          "description": "Get token price data with market cap, volume, and price changes",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "include_history": {
+                  "description": "Include 7-day price history (default: false)",
+                  "required": false,
+                  "type": "boolean"
+                },
+                "token": {
+                  "description": "Token symbol (ETH, BTC), name (ethereum), or contract address",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "properties": {
+                "data": {
+                  "properties": {
+                    "ath": {
+                      "description": "All-time high price and date",
+                      "type": "object"
+                    },
+                    "atl": {
+                      "description": "All-time low price and date",
+                      "type": "object"
+                    },
+                    "changes": {
+                      "description": "Price changes for 1h, 24h, 7d, 30d",
+                      "type": "object"
+                    },
+                    "market": {
+                      "description": "Market cap, volume, supply data",
+                      "type": "object"
+                    },
+                    "price": {
+                      "description": "Current price in USD",
+                      "type": "object"
+                    },
+                    "token": {
+                      "description": "Token id, symbol, name, image",
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "success": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "payTo": "0xd8bA61a0b0974db0EC8E325C7628470526558E9B",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana",
+          "maxAmountRequired": "50000",
+          "resource": "https://padelmaps.org/api/x402-crypto/price-feed",
+          "description": "Get token price data with market cap, volume, and price changes",
+          "mimeType": "application/json",
+          "outputSchema": {
+            "input": {
+              "bodyFields": {
+                "include_history": {
+                  "description": "Include 7-day price history (default: false)",
+                  "required": false,
+                  "type": "boolean"
+                },
+                "token": {
+                  "description": "Token symbol (ETH, BTC), name (ethereum), or contract address",
+                  "required": true,
+                  "type": "string"
+                }
+              },
+              "bodyType": "json",
+              "method": "POST",
+              "type": "http"
+            },
+            "output": {
+              "properties": {
+                "data": {
+                  "properties": {
+                    "ath": {
+                      "description": "All-time high price and date",
+                      "type": "object"
+                    },
+                    "atl": {
+                      "description": "All-time low price and date",
+                      "type": "object"
+                    },
+                    "changes": {
+                      "description": "Price changes for 1h, 24h, 7d, 30d",
+                      "type": "object"
+                    },
+                    "market": {
+                      "description": "Market cap, volume, supply data",
+                      "type": "object"
+                    },
+                    "price": {
+                      "description": "Current price in USD",
+                      "type": "object"
+                    },
+                    "token": {
+                      "description": "Token id, symbol, name, image",
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "success": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "payTo": "CcYVS3Jbb1JnE8xSpQQmkBWy3ttKadUmqAzNo52HeUMJ",
+          "maxTimeoutSeconds": 60,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "name": "USD Coin",
+            "version": "SPL"
+          }
+        }
+      ],
+      "lastUpdated": "2026-01-25T11:08:19.323Z",
       "metadata": {},
       "source": "discovery_api"
     },
@@ -134,8 +1356,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 384,
-        "checkedAt": "2026-01-25T06:19:51.649Z"
+        "latencyMs": 953,
+        "checkedAt": "2026-01-26T06:24:41.216Z"
       },
       "pricing": [
         {
@@ -186,8 +1408,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 2663,
-        "checkedAt": "2026-01-25T06:19:51.650Z"
+        "latencyMs": 1223,
+        "checkedAt": "2026-01-26T06:24:41.217Z"
       },
       "pricing": [
         {
@@ -273,8 +1495,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 2628,
-        "checkedAt": "2026-01-25T06:19:51.651Z"
+        "latencyMs": 687,
+        "checkedAt": "2026-01-26T06:24:42.441Z"
       },
       "pricing": [
         {
@@ -371,8 +1593,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 2583,
-        "checkedAt": "2026-01-25T06:19:51.652Z"
+        "latencyMs": 1251,
+        "checkedAt": "2026-01-26T06:24:42.442Z"
       },
       "pricing": [
         {
@@ -469,8 +1691,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 691,
-        "checkedAt": "2026-01-25T06:19:54.314Z"
+        "latencyMs": 1993,
+        "checkedAt": "2026-01-26T06:24:42.442Z"
       },
       "pricing": [
         {
@@ -567,8 +1789,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 689,
-        "checkedAt": "2026-01-25T06:19:54.315Z"
+        "latencyMs": 2016,
+        "checkedAt": "2026-01-26T06:24:42.443Z"
       },
       "pricing": [
         {
@@ -652,8 +1874,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1317,
-        "checkedAt": "2026-01-25T06:19:54.315Z"
+        "latencyMs": 1618,
+        "checkedAt": "2026-01-26T06:24:42.444Z"
       },
       "pricing": [
         {
@@ -743,8 +1965,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1136,
-        "checkedAt": "2026-01-25T06:19:54.317Z"
+        "latencyMs": 1148,
+        "checkedAt": "2026-01-26T06:24:44.459Z"
       },
       "pricing": [
         {
@@ -841,8 +2063,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1370,
-        "checkedAt": "2026-01-25T06:19:54.318Z"
+        "latencyMs": 684,
+        "checkedAt": "2026-01-26T06:24:44.459Z"
       },
       "pricing": [
         {
@@ -939,8 +2161,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1039,
-        "checkedAt": "2026-01-25T06:19:55.689Z"
+        "latencyMs": 1278,
+        "checkedAt": "2026-01-26T06:24:44.460Z"
       },
       "pricing": [
         {
@@ -1037,8 +2259,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1105,
-        "checkedAt": "2026-01-25T06:19:55.689Z"
+        "latencyMs": 689,
+        "checkedAt": "2026-01-26T06:24:44.460Z"
       },
       "pricing": [
         {
@@ -1111,8 +2333,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1065,
-        "checkedAt": "2026-01-25T06:19:55.690Z"
+        "latencyMs": 1017,
+        "checkedAt": "2026-01-26T06:24:44.460Z"
       },
       "pricing": [
         {
@@ -1196,8 +2418,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 688,
-        "checkedAt": "2026-01-25T06:19:55.690Z"
+        "latencyMs": 1062,
+        "checkedAt": "2026-01-26T06:24:45.738Z"
       },
       "pricing": [
         {
@@ -1294,8 +2516,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 690,
-        "checkedAt": "2026-01-25T06:19:55.691Z"
+        "latencyMs": 683,
+        "checkedAt": "2026-01-26T06:24:45.738Z"
       },
       "pricing": [
         {
@@ -1392,8 +2614,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1072,
-        "checkedAt": "2026-01-25T06:19:56.795Z"
+        "latencyMs": 691,
+        "checkedAt": "2026-01-26T06:24:45.739Z"
       },
       "pricing": [
         {
@@ -1490,8 +2712,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 697,
-        "checkedAt": "2026-01-25T06:19:56.796Z"
+        "latencyMs": 979,
+        "checkedAt": "2026-01-26T06:24:45.739Z"
       },
       "pricing": [
         {
@@ -1564,8 +2786,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 684,
-        "checkedAt": "2026-01-25T06:19:56.796Z"
+        "latencyMs": 685,
+        "checkedAt": "2026-01-26T06:24:45.739Z"
       },
       "pricing": [
         {
@@ -1649,8 +2871,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 681,
-        "checkedAt": "2026-01-25T06:19:56.797Z"
+        "latencyMs": 671,
+        "checkedAt": "2026-01-26T06:24:46.800Z"
       },
       "pricing": [
         {
@@ -1734,8 +2956,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 908,
-        "checkedAt": "2026-01-25T06:19:56.797Z"
+        "latencyMs": 915,
+        "checkedAt": "2026-01-26T06:24:46.801Z"
       },
       "pricing": [
         {
@@ -1819,8 +3041,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 689,
-        "checkedAt": "2026-01-25T06:19:57.868Z"
+        "latencyMs": 1164,
+        "checkedAt": "2026-01-26T06:24:46.801Z"
       },
       "pricing": [
         {
@@ -1904,8 +3126,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 691,
-        "checkedAt": "2026-01-25T06:19:57.868Z"
+        "latencyMs": 692,
+        "checkedAt": "2026-01-26T06:24:46.801Z"
       },
       "pricing": [
         {
@@ -1995,8 +3217,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 687,
-        "checkedAt": "2026-01-25T06:19:57.869Z"
+        "latencyMs": 710,
+        "checkedAt": "2026-01-26T06:24:46.801Z"
       },
       "pricing": [
         {
@@ -2082,8 +3304,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1062,
-        "checkedAt": "2026-01-25T06:19:57.869Z"
+        "latencyMs": 689,
+        "checkedAt": "2026-01-26T06:24:47.965Z"
       },
       "pricing": [
         {
@@ -2167,8 +3389,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 684,
-        "checkedAt": "2026-01-25T06:19:57.869Z"
+        "latencyMs": 676,
+        "checkedAt": "2026-01-26T06:24:47.965Z"
       },
       "pricing": [
         {
@@ -2265,8 +3487,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 688,
-        "checkedAt": "2026-01-25T06:19:58.932Z"
+        "latencyMs": 676,
+        "checkedAt": "2026-01-26T06:24:47.966Z"
       },
       "pricing": [
         {
@@ -2352,8 +3574,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1074,
-        "checkedAt": "2026-01-25T06:19:58.932Z"
+        "latencyMs": 1068,
+        "checkedAt": "2026-01-26T06:24:47.966Z"
       },
       "pricing": [
         {
@@ -2450,8 +3672,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 699,
-        "checkedAt": "2026-01-25T06:19:58.934Z"
+        "latencyMs": 683,
+        "checkedAt": "2026-01-26T06:24:47.966Z"
       },
       "pricing": [
         {
@@ -2537,8 +3759,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 688,
-        "checkedAt": "2026-01-25T06:19:58.934Z"
+        "latencyMs": 1081,
+        "checkedAt": "2026-01-26T06:24:49.034Z"
       },
       "pricing": [
         {
@@ -2635,8 +3857,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 688,
-        "checkedAt": "2026-01-25T06:19:58.934Z"
+        "latencyMs": 680,
+        "checkedAt": "2026-01-26T06:24:49.034Z"
       },
       "pricing": [
         {
@@ -2733,8 +3955,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 690,
-        "checkedAt": "2026-01-25T06:20:00.007Z"
+        "latencyMs": 680,
+        "checkedAt": "2026-01-26T06:24:49.035Z"
       },
       "pricing": [
         {
@@ -2831,8 +4053,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 692,
-        "checkedAt": "2026-01-25T06:20:00.007Z"
+        "latencyMs": 686,
+        "checkedAt": "2026-01-26T06:24:49.035Z"
       },
       "pricing": [
         {
@@ -2929,8 +4151,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 683,
-        "checkedAt": "2026-01-25T06:20:00.007Z"
+        "latencyMs": 681,
+        "checkedAt": "2026-01-26T06:24:49.035Z"
       },
       "pricing": [
         {
@@ -3027,8 +4249,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 312,
-        "checkedAt": "2026-01-25T06:20:00.008Z"
+        "latencyMs": 279,
+        "checkedAt": "2026-01-26T06:24:50.116Z"
       },
       "pricing": [
         {
@@ -3097,8 +4319,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 909,
-        "checkedAt": "2026-01-25T06:20:00.009Z"
+        "latencyMs": 684,
+        "checkedAt": "2026-01-26T06:24:50.117Z"
       },
       "pricing": [
         {
@@ -3195,8 +4417,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 173,
-        "checkedAt": "2026-01-25T06:20:00.919Z"
+        "latencyMs": 301,
+        "checkedAt": "2026-01-26T06:24:50.117Z"
       },
       "pricing": [
         {
@@ -3256,8 +4478,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 383,
-        "checkedAt": "2026-01-25T06:20:00.922Z"
+        "latencyMs": 271,
+        "checkedAt": "2026-01-26T06:24:50.118Z"
       },
       "pricing": [
         {
@@ -3289,175 +4511,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://hello-world-x402.vercel.app/greet",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 389,
-        "checkedAt": "2026-01-25T06:20:00.924Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T02:02:55.635Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://hello-world-x402.vercel.app/test3",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 437,
-        "checkedAt": "2026-01-25T06:20:00.925Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:12:29.586Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://emc2ai.io/x402/bitquery/latest-pairs",
-      "description": "Query latest deployed tokens on-chain with liquidity pool data. (with AI analysis)",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 686,
-        "checkedAt": "2026-01-25T06:20:00.926Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "formattedAmount": "0.4 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "400000",
-          "resource": "https://emc2ai.io/x402/bitquery/latest-pairs",
-          "description": "Query latest deployed tokens on-chain with liquidity pool data. (with AI analysis)",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "chain": {
-                  "description": "Blockchain to query (e.g., base, ethereum, bsc, solana)",
-                  "enum": [
-                    "base",
-                    "ethereum",
-                    "bsc",
-                    "arbitrum",
-                    "polygon",
-                    "optimism",
-                    "solana"
-                  ],
-                  "type": "string"
-                },
-                "limit": {
-                  "description": "Maximum number of results to return (default: 10, max: 500)",
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "analysis": {
-                "description": "AI-powered analysis and insights",
-                "type": "object"
-              },
-              "payment": {
-                "description": "Payment receipt information",
-                "type": "object"
-              },
-              "result": {
-                "description": "Query result data",
-                "type": "object"
-              },
-              "status": {
-                "description": "Request status (completed or error)",
-                "type": "string"
-              }
-            }
-          },
-          "payTo": "0xc9368b30BD620164FD1a05a5d99dcaf8Ae754775",
-          "maxTimeoutSeconds": 90,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T01:05:42.452Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://emc2ai.io/x402/bitquery/pricegaps/raw",
       "description": "Cross-chain price gap finder with profitable routing opportunities.",
       "type": "http",
@@ -3465,8 +4518,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 692,
-        "checkedAt": "2026-01-25T06:20:01.613Z"
+        "latencyMs": 676,
+        "checkedAt": "2026-01-26T06:24:50.118Z"
       },
       "pricing": [
         {
@@ -3563,8 +4616,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 689,
-        "checkedAt": "2026-01-25T06:20:01.614Z"
+        "latencyMs": 790,
+        "checkedAt": "2026-01-26T06:24:50.802Z"
       },
       "pricing": [
         {
@@ -3661,8 +4714,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 690,
-        "checkedAt": "2026-01-25T06:20:01.614Z"
+        "latencyMs": 678,
+        "checkedAt": "2026-01-26T06:24:50.802Z"
       },
       "pricing": [
         {
@@ -3752,8 +4805,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 683,
-        "checkedAt": "2026-01-25T06:20:01.614Z"
+        "latencyMs": 684,
+        "checkedAt": "2026-01-26T06:24:50.802Z"
       },
       "pricing": [
         {
@@ -3850,8 +4903,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 686,
-        "checkedAt": "2026-01-25T06:20:01.614Z"
+        "latencyMs": 1026,
+        "checkedAt": "2026-01-26T06:24:50.802Z"
       },
       "pricing": [
         {
@@ -3948,8 +5001,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 700,
-        "checkedAt": "2026-01-25T06:20:02.306Z"
+        "latencyMs": 674,
+        "checkedAt": "2026-01-26T06:24:50.802Z"
       },
       "pricing": [
         {
@@ -4039,8 +5092,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 692,
-        "checkedAt": "2026-01-25T06:20:02.306Z"
+        "latencyMs": 679,
+        "checkedAt": "2026-01-26T06:24:51.828Z"
       },
       "pricing": [
         {
@@ -4130,45 +5183,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://hello-world-x402.vercel.app/hello",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 115,
-        "checkedAt": "2026-01-25T06:20:02.306Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-24T00:50:48.787Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://x402.browserbase.com/browser/session/create",
       "description": "Create a Browserbase browser session with prepaid time. Returns a WebSocket connection URL for browser automation.",
       "type": "http",
@@ -4176,8 +5190,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1396,
-        "checkedAt": "2026-01-25T06:20:02.307Z"
+        "latencyMs": 889,
+        "checkedAt": "2026-01-26T06:24:51.829Z"
       },
       "pricing": [
         {
@@ -4186,7 +5200,7 @@
           "maxAmountRequired": "2000",
           "formattedAmount": "0.002 USDC",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x236ab22b5a05b4570Dcd96ca59928a53db92a381",
+          "payTo": "0xbA30B11c96AC882CeD03F06fBcEf4e984DA52e59",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -4285,8 +5299,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 962,
-        "checkedAt": "2026-01-25T06:20:02.308Z"
+        "latencyMs": 1053,
+        "checkedAt": "2026-01-26T06:24:51.830Z"
       },
       "pricing": [
         {
@@ -4336,8 +5350,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1032,
-        "checkedAt": "2026-01-25T06:20:03.704Z"
+        "latencyMs": 1041,
+        "checkedAt": "2026-01-26T06:24:51.830Z"
       },
       "pricing": [
         {
@@ -4549,8 +5563,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 210,
-        "checkedAt": "2026-01-25T06:20:03.705Z"
+        "latencyMs": 302,
+        "checkedAt": "2026-01-26T06:24:51.831Z"
       },
       "pricing": [
         {
@@ -4657,123 +5671,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://hello-world-x402.vercel.app/test2",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 225,
-        "checkedAt": "2026-01-25T06:20:03.706Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-23T07:10:43.173Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://hello-world-x402.vercel.app/test1",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 115,
-        "checkedAt": "2026-01-25T06:20:03.706Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-23T07:10:41.422Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://hello-world-x402.vercel.app/world",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 120,
-        "checkedAt": "2026-01-25T06:20:03.707Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2a47E248ee3B5f3e680b5F6B5832E5EF1206b7e3",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-23T07:04:17.751Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://x402factory.ai/base/bridge",
       "description": "Base → Solana USDC microbridge discovery. Default example uses 1.00 USDC deposited to the Base bridge wallet. Provide a Solana receiver address and an amount (min 0.01 USDC, max 50.00 USDC, steps of 0.01) to create a concrete bridge quote. The bridge charges a 2.5% commission; the remainder is delivered as USDC on Solana.",
       "type": "http",
@@ -4781,8 +5678,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 391,
-        "checkedAt": "2026-01-25T06:20:04.736Z"
+        "latencyMs": 400,
+        "checkedAt": "2026-01-26T06:24:52.885Z"
       },
       "pricing": [
         {
@@ -4930,8 +5827,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 353,
-        "checkedAt": "2026-01-25T06:20:04.738Z"
+        "latencyMs": 408,
+        "checkedAt": "2026-01-26T06:24:52.886Z"
       },
       "pricing": [
         {
@@ -4970,8 +5867,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 80,
-        "checkedAt": "2026-01-25T06:20:04.738Z"
+        "latencyMs": 72,
+        "checkedAt": "2026-01-26T06:24:52.886Z"
       },
       "pricing": [
         {
@@ -5183,8 +6080,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 4800,
-        "checkedAt": "2026-01-25T06:20:04.739Z"
+        "latencyMs": 374,
+        "checkedAt": "2026-01-26T06:24:52.887Z"
       },
       "pricing": [
         {
@@ -5302,8 +6199,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 283,
-        "checkedAt": "2026-01-25T06:20:04.740Z"
+        "latencyMs": 291,
+        "checkedAt": "2026-01-26T06:24:52.888Z"
       },
       "pricing": [
         {
@@ -5458,8 +6355,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 130,
-        "checkedAt": "2026-01-25T06:20:09.539Z"
+        "latencyMs": 71,
+        "checkedAt": "2026-01-26T06:24:53.295Z"
       },
       "pricing": [
         {
@@ -5549,8 +6446,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 127,
-        "checkedAt": "2026-01-25T06:20:09.540Z"
+        "latencyMs": 66,
+        "checkedAt": "2026-01-26T06:24:53.295Z"
       },
       "pricing": [
         {
@@ -5664,8 +6561,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 137,
-        "checkedAt": "2026-01-25T06:20:09.541Z"
+        "latencyMs": 70,
+        "checkedAt": "2026-01-26T06:24:53.295Z"
       },
       "pricing": [
         {
@@ -5818,8 +6715,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 135,
-        "checkedAt": "2026-01-25T06:20:09.542Z"
+        "latencyMs": 94,
+        "checkedAt": "2026-01-26T06:24:53.295Z"
       },
       "pricing": [
         {
@@ -5938,8 +6835,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 130,
-        "checkedAt": "2026-01-25T06:20:09.543Z"
+        "latencyMs": 97,
+        "checkedAt": "2026-01-26T06:24:53.296Z"
       },
       "pricing": [
         {
@@ -6065,8 +6962,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 75,
-        "checkedAt": "2026-01-25T06:20:09.679Z"
+        "latencyMs": 72,
+        "checkedAt": "2026-01-26T06:24:53.393Z"
       },
       "pricing": [
         {
@@ -6203,8 +7100,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 4579,
-        "checkedAt": "2026-01-25T06:20:09.679Z"
+        "latencyMs": 457,
+        "checkedAt": "2026-01-26T06:24:53.393Z"
       },
       "pricing": [
         {
@@ -6341,8 +7238,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 76,
-        "checkedAt": "2026-01-25T06:20:09.679Z"
+        "latencyMs": 75,
+        "checkedAt": "2026-01-26T06:24:53.394Z"
       },
       "pricing": [
         {
@@ -6455,8 +7352,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 1024,
-        "checkedAt": "2026-01-25T06:20:09.680Z"
+        "latencyMs": 64,
+        "checkedAt": "2026-01-26T06:24:53.394Z"
       },
       "pricing": [
         {
@@ -6592,8 +7489,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 519,
-        "checkedAt": "2026-01-25T06:20:09.680Z"
+        "latencyMs": 277,
+        "checkedAt": "2026-01-26T06:24:53.394Z"
       },
       "pricing": [
         {
@@ -6814,8 +7711,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 207,
-        "checkedAt": "2026-01-25T06:20:14.258Z"
+        "latencyMs": 258,
+        "checkedAt": "2026-01-26T06:24:53.850Z"
       },
       "pricing": [
         {
@@ -6882,8 +7779,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 677,
-        "checkedAt": "2026-01-25T06:20:14.259Z"
+        "latencyMs": 167,
+        "checkedAt": "2026-01-26T06:24:53.851Z"
       },
       "pricing": [
         {
@@ -7119,8 +8016,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 544,
-        "checkedAt": "2026-01-25T06:20:14.260Z"
+        "latencyMs": 364,
+        "checkedAt": "2026-01-26T06:24:53.852Z"
       },
       "pricing": [
         {
@@ -7341,8 +8238,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 650,
-        "checkedAt": "2026-01-25T06:20:14.261Z"
+        "latencyMs": 207,
+        "checkedAt": "2026-01-26T06:24:53.853Z"
       },
       "pricing": [
         {
@@ -7466,8 +8363,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 651,
-        "checkedAt": "2026-01-25T06:20:14.262Z"
+        "latencyMs": 241,
+        "checkedAt": "2026-01-26T06:24:53.853Z"
       },
       "pricing": [
         {
@@ -7541,7 +8438,7 @@
         "isAlive": true,
         "statusCode": 402,
         "latencyMs": 381,
-        "checkedAt": "2026-01-25T06:20:14.937Z"
+        "checkedAt": "2026-01-26T06:24:54.215Z"
       },
       "pricing": [
         {
@@ -7597,8 +8494,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 375,
-        "checkedAt": "2026-01-25T06:20:14.938Z"
+        "latencyMs": 368,
+        "checkedAt": "2026-01-26T06:24:54.216Z"
       },
       "pricing": [
         {
@@ -7655,8 +8552,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 977,
-        "checkedAt": "2026-01-25T06:20:14.938Z"
+        "latencyMs": 978,
+        "checkedAt": "2026-01-26T06:24:54.217Z"
       },
       "pricing": [
         {
@@ -7707,8 +8604,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 293,
-        "checkedAt": "2026-01-25T06:20:14.939Z"
+        "latencyMs": 413,
+        "checkedAt": "2026-01-26T06:24:54.218Z"
       },
       "pricing": [
         {
@@ -7838,110 +8735,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://x402factory.ai/base/xprofile",
-      "description": "Base X profile mini-endpoint. Fetches a full X profile and the 10 most recent tweets for a given handle, returning the raw profile data plus a trimmed tweet list with key engagement metrics and media. Cost: 0.001 USDC per request.",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 375,
-        "checkedAt": "2026-01-25T06:20:14.940Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000",
-          "formattedAmount": "0.001 USDC",
-          "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
-          "payTo": "0x402FaCcC3fAeb72351CC2b68C7966faF5f22B0d4",
-          "maxTimeoutSeconds": 60
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000",
-          "resource": "https://x402factory.ai/base/xprofile",
-          "description": "Base X profile mini-endpoint. Fetches a full X profile and the 10 most recent tweets for a given handle, returning the raw profile data plus a trimmed tweet list with key engagement metrics and media. Cost: 0.001 USDC per request.",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "handle": {
-                  "description": "X handle (username) without the @ prefix, for example WURKDOTFUN or statikheadz.",
-                  "required": true,
-                  "type": "string"
-                }
-              },
-              "bodyType": "json",
-              "method": "POST",
-              "type": "http"
-            },
-            "output": {
-              "handle": {
-                "description": "Normalized X handle that was requested.",
-                "type": "string"
-              },
-              "ok": {
-                "description": "True on success.",
-                "type": "boolean"
-              },
-              "price_usdc": {
-                "description": "Fixed price charged for this call in USDC (6 decimals).",
-                "type": "string"
-              },
-              "profile": {
-                "description": "Full upstream X profile payload for the user, including core fields like id, rest_id, name, screen_name, description, avatar, location and counters.",
-                "type": "object"
-              },
-              "tweet_count": {
-                "description": "Number of recent tweets returned (up to 10).",
-                "type": "number"
-              },
-              "tweets": {
-                "description": "Array of up to 10 recent tweets with trimmed but useful metadata: id, text (max 3000 chars; longer texts are truncated), created_at, language, basic user info, engagement metrics, media and links.",
-                "type": "array"
-              }
-            }
-          },
-          "payTo": "0x402FaCcC3fAeb72351CC2b68C7966faF5f22B0d4",
-          "maxTimeoutSeconds": 60,
-          "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
-          "extra": {
-            "avatarUrl": "https://x402factory.ai/x402factoryfavoicon.jpg",
-            "chainId": 8453,
-            "decimals": 6,
-            "eip712": {
-              "name": "USD Coin",
-              "version": "2"
-            },
-            "iconUrl": "https://x402factory.ai/x402factoryfavoicon.jpg",
-            "kind": "base-xprofile",
-            "name": "USD Coin",
-            "pricing": {
-              "amount": 0.001,
-              "currency": "USDC",
-              "mode": "fixed",
-              "network": "Base"
-            },
-            "serviceDescription": "x402Factory Base endpoints for agents (notes, LLMs, TTS, Telegram, coin prices, payments, X profiles).",
-            "serviceName": "x402Factory",
-            "serviceUrl": "https://x402factory.ai",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-22T00:11:09.717Z",
-      "metadata": {},
-      "source": "discovery_api"
-    },
-    {
       "url": "https://grapevine.dev-mypinata.cloud/x402/cid/bafybeiffjwkdfy5lemdom3jmt2cb3uixtrbptq46gkznyyoqvdgeswqebm",
       "description": "0.07 USDC on base-sepolia",
       "type": "http",
@@ -7949,8 +8742,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 516,
-        "checkedAt": "2026-01-25T06:20:15.917Z"
+        "latencyMs": 1120,
+        "checkedAt": "2026-01-26T06:24:54.218Z"
       },
       "pricing": [
         {
@@ -8001,8 +8794,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 910,
-        "checkedAt": "2026-01-25T06:20:15.918Z"
+        "latencyMs": 201,
+        "checkedAt": "2026-01-26T06:24:55.338Z"
       },
       "pricing": [
         {
@@ -8054,8 +8847,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 500,
-        "checkedAt": "2026-01-25T06:20:15.919Z"
+        "latencyMs": 582,
+        "checkedAt": "2026-01-26T06:24:55.339Z"
       },
       "pricing": [
         {
@@ -8105,8 +8898,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 584,
-        "checkedAt": "2026-01-25T06:20:15.919Z"
+        "latencyMs": 294,
+        "checkedAt": "2026-01-26T06:24:55.340Z"
       },
       "pricing": [
         {
@@ -8145,8 +8938,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 676,
-        "checkedAt": "2026-01-25T06:20:15.920Z"
+        "latencyMs": 470,
+        "checkedAt": "2026-01-26T06:24:55.341Z"
       },
       "pricing": [
         {
@@ -8358,8 +9151,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 402,
-        "checkedAt": "2026-01-25T06:20:16.830Z"
+        "latencyMs": 129,
+        "checkedAt": "2026-01-26T06:24:55.341Z"
       },
       "pricing": [
         {
@@ -8519,8 +9312,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1171,
-        "checkedAt": "2026-01-25T06:20:16.830Z"
+        "latencyMs": 926,
+        "checkedAt": "2026-01-26T06:24:55.921Z"
       },
       "pricing": [
         {
@@ -8610,8 +9403,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1151,
-        "checkedAt": "2026-01-25T06:20:16.831Z"
+        "latencyMs": 418,
+        "checkedAt": "2026-01-26T06:24:55.922Z"
       },
       "pricing": [
         {
@@ -8694,8 +9487,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 440,
-        "checkedAt": "2026-01-25T06:20:16.832Z"
+        "latencyMs": 250,
+        "checkedAt": "2026-01-26T06:24:55.922Z"
       },
       "pricing": [
         {
@@ -8769,8 +9562,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1328,
-        "checkedAt": "2026-01-25T06:20:16.833Z"
+        "latencyMs": 1134,
+        "checkedAt": "2026-01-26T06:24:55.923Z"
       },
       "pricing": [
         {
@@ -8859,8 +9652,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1045,
-        "checkedAt": "2026-01-25T06:20:18.162Z"
+        "latencyMs": 1131,
+        "checkedAt": "2026-01-26T06:24:55.924Z"
       },
       "pricing": [
         {
@@ -8919,785 +9712,6 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://chrombot-x402-qf0bnhmrg-eval-engine.vercel.app/ping",
-      "description": "Ping the server to check if it's alive",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 902,
-        "checkedAt": "2026-01-25T06:20:18.163Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "formattedAmount": "0.01 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x21dfc81726538fCFd7DFb5E4D14aAB4475ef8694",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://chrombot-x402-qf0bnhmrg-eval-engine.vercel.app/ping",
-          "description": "Ping the server to check if it's alive",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "type": "http"
-            },
-            "output": {
-              "input": {
-                "bodyFields": {},
-                "bodyType": "json",
-                "method": "GET",
-                "type": "http"
-              },
-              "properties": {
-                "message": {
-                  "description": "Pong",
-                  "type": "string"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0x21dfc81726538fCFd7DFb5E4D14aAB4475ef8694",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:42:50.022Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://bazaaro-agent.vercel.app/api/list",
-      "description": "Lists x402 services supported by Bazaaro with optional price filtering",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 964,
-        "checkedAt": "2026-01-25T06:20:18.164Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000",
-          "formattedAmount": "0.001 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x159A514CbA2941D3Fb5F3BC06237eA3531200748",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "1000",
-          "resource": "https://bazaaro-agent.vercel.app/api/list",
-          "description": "Lists x402 services supported by Bazaaro with optional price filtering",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "bodyFields": {
-                "maxUsdcPrice": {
-                  "description": "Optional maximum price filter in USDC (e.g., 1.0 to only show services under $1.00)",
-                  "required": false,
-                  "type": "number"
-                }
-              },
-              "bodyType": "json",
-              "discoverable": true,
-              "method": "GET",
-              "type": "http"
-            },
-            "output": {
-              "properties": {
-                "cacheTimestamp": {
-                  "description": "When the service cache was last updated",
-                  "type": "string"
-                },
-                "items": {
-                  "description": "List of available x402 services",
-                  "items": {
-                    "properties": {
-                      "costCurrency": {
-                        "description": "Currency (typically 'USDC')",
-                        "type": "string"
-                      },
-                      "costDisplay": {
-                        "description": "Human-readable cost (e.g., '$0.10')",
-                        "type": "string"
-                      },
-                      "costValue": {
-                        "description": "Numeric cost value in USDC",
-                        "type": "number"
-                      },
-                      "description": {
-                        "description": "Service description",
-                        "type": "string"
-                      },
-                      "resource": {
-                        "description": "The x402 resource URL",
-                        "type": "string"
-                      }
-                    },
-                    "type": "object"
-                  },
-                  "type": "array"
-                },
-                "success": {
-                  "description": "Whether the request was successful",
-                  "type": "boolean"
-                },
-                "timestamp": {
-                  "description": "ISO timestamp of the response",
-                  "type": "string"
-                },
-                "totalCount": {
-                  "description": "Total number of services returned",
-                  "type": "number"
-                }
-              },
-              "required": [
-                "success",
-                "timestamp",
-                "items",
-                "totalCount"
-              ],
-              "type": "object"
-            }
-          },
-          "payTo": "0x159A514CbA2941D3Fb5F3BC06237eA3531200748",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:42:45.504Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://recoup-api-git-sweetmantech-myc-3557-0ab8ac-recoupable-ad724970.vercel.app/api/x402/image/generate",
-      "description": "Generate an image from a text prompt using AI",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1257,
-        "checkedAt": "2026-01-25T06:20:18.164Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "formattedAmount": "0.01111 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "resource": "https://recoup-api-git-sweetmantech-myc-3557-0ab8ac-recoupable-ad724970.vercel.app/api/x402/image/generate",
-          "description": "Generate an image from a text prompt using AI",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "prompt": "Text prompt describing the image to generate"
-              },
-              "type": "http"
-            },
-            "output": {
-              "description": "GenerateImageResult containing the generated images and metadata",
-              "properties": {
-                "arweaveResult": {
-                  "description": "Arweave transaction result",
-                  "type": "object"
-                },
-                "imageUrl": {
-                  "description": "Fetchable URL for the uploaded image",
-                  "type": "string"
-                },
-                "images": {
-                  "description": "Array of all generated images",
-                  "items": {
-                    "description": "Generated image",
-                    "properties": {
-                      "base64": {
-                        "description": "Image as base64 encoded string",
-                        "type": "string"
-                      },
-                      "mediaType": {
-                        "description": "IANA media type of the image",
-                        "type": "string"
-                      }
-                    },
-                    "type": "object"
-                  },
-                  "type": "array"
-                },
-                "usage": {
-                  "description": "Token usage information for the image generation",
-                  "type": "object"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:41:28.46Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://recoup-api-git-sweetmantech-myc-3550-b3eea0-recoupable-ad724970.vercel.app/api/x402/image/generate",
-      "description": "Generate an image from a text prompt using AI",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1315,
-        "checkedAt": "2026-01-25T06:20:18.165Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "formattedAmount": "0.01111 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x749B7b7A6944d72266Be9500FC8C221B6A7554Ce",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "resource": "https://recoup-api-git-sweetmantech-myc-3550-b3eea0-recoupable-ad724970.vercel.app/api/x402/image/generate",
-          "description": "Generate an image from a text prompt using AI",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "prompt": "Text prompt describing the image to generate"
-              },
-              "type": "http"
-            },
-            "output": {
-              "description": "GenerateImageResult containing the generated images and metadata",
-              "properties": {
-                "arweaveResult": {
-                  "description": "Arweave transaction result",
-                  "type": "object"
-                },
-                "imageUrl": {
-                  "description": "Fetchable URL for the uploaded image",
-                  "type": "string"
-                },
-                "images": {
-                  "description": "Array of all generated images",
-                  "items": {
-                    "description": "Generated image",
-                    "properties": {
-                      "base64": {
-                        "description": "Image as base64 encoded string",
-                        "type": "string"
-                      },
-                      "mediaType": {
-                        "description": "IANA media type of the image",
-                        "type": "string"
-                      }
-                    },
-                    "type": "object"
-                  },
-                  "type": "array"
-                },
-                "usage": {
-                  "description": "Token usage information for the image generation",
-                  "type": "object"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0x749B7b7A6944d72266Be9500FC8C221B6A7554Ce",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:40:28.674Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://recoup-api-git-sweetmantech-myc-3556-9d6261-recoupable-ad724970.vercel.app/api/x402/image/generate",
-      "description": "Generate an image from a text prompt using AI",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1047,
-        "checkedAt": "2026-01-25T06:20:19.482Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "formattedAmount": "0.01111 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "resource": "https://recoup-api-git-sweetmantech-myc-3556-9d6261-recoupable-ad724970.vercel.app/api/x402/image/generate",
-          "description": "Generate an image from a text prompt using AI",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "prompt": "Text prompt describing the image to generate"
-              },
-              "type": "http"
-            },
-            "output": {
-              "description": "GenerateImageResult containing the generated images and metadata",
-              "properties": {
-                "arweaveResult": {
-                  "description": "Arweave transaction result",
-                  "type": "object"
-                },
-                "imageUrl": {
-                  "description": "Fetchable URL for the uploaded image",
-                  "type": "string"
-                },
-                "images": {
-                  "description": "Array of all generated images",
-                  "items": {
-                    "description": "Generated image",
-                    "properties": {
-                      "base64": {
-                        "description": "Image as base64 encoded string",
-                        "type": "string"
-                      },
-                      "mediaType": {
-                        "description": "IANA media type of the image",
-                        "type": "string"
-                      }
-                    },
-                    "type": "object"
-                  },
-                  "type": "array"
-                },
-                "usage": {
-                  "description": "Token usage information for the image generation",
-                  "type": "object"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:39:16.641Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://recoup-api-git-sweetmantech-myc-3562-37a0ab-recoupable-ad724970.vercel.app/api/x402/image/generate",
-      "description": "Generate an image from a text prompt using AI",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1198,
-        "checkedAt": "2026-01-25T06:20:19.483Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "formattedAmount": "0.01111 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "resource": "https://recoup-api-git-sweetmantech-myc-3562-37a0ab-recoupable-ad724970.vercel.app/api/x402/image/generate",
-          "description": "Generate an image from a text prompt using AI",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "prompt": "Text prompt describing the image to generate"
-              },
-              "type": "http"
-            },
-            "output": {
-              "description": "GenerateImageResult containing the generated image and metadata",
-              "properties": {
-                "arweaveError": {
-                  "description": "Error message if Arweave upload failed (optional)",
-                  "type": "string"
-                },
-                "arweaveResult": {
-                  "description": "Arweave transaction result (nullable)",
-                  "type": "object"
-                },
-                "image": {
-                  "description": "Generated image file",
-                  "properties": {
-                    "base64": {
-                      "description": "Image as base64 encoded string",
-                      "type": "string"
-                    },
-                    "mediaType": {
-                      "description": "IANA media type of the image",
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                },
-                "imageUrl": {
-                  "description": "Fetchable URL for the uploaded image (nullable)",
-                  "type": "string"
-                },
-                "moment": {
-                  "description": "In Process moment creation result (nullable)",
-                  "type": "object"
-                },
-                "usage": {
-                  "description": "Token usage information for the image generation",
-                  "properties": {
-                    "inputTokens": {
-                      "description": "Number of tokens used for the prompt",
-                      "type": "number"
-                    },
-                    "outputTokens": {
-                      "description": "Number of tokens used for the output",
-                      "type": "number"
-                    },
-                    "reasoningTokens": {
-                      "description": "Number of tokens used for the reasoning",
-                      "type": "number"
-                    },
-                    "totalTokens": {
-                      "description": "Number of tokens used for the total",
-                      "type": "number"
-                    }
-                  },
-                  "type": "object"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:34:10.594Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://chrombot-x402.vercel.app/ping",
-      "description": "Ping the server to check if it's alive",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 867,
-        "checkedAt": "2026-01-25T06:20:19.484Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "formattedAmount": "0.01 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x21dfc81726538fCFd7DFb5E4D14aAB4475ef8694",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://chrombot-x402.vercel.app/ping",
-          "description": "Ping the server to check if it's alive",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "type": "http"
-            },
-            "output": {
-              "input": {
-                "bodyFields": {},
-                "bodyType": "json",
-                "method": "GET",
-                "type": "http"
-              },
-              "properties": {
-                "message": {
-                  "description": "Pong",
-                  "type": "string"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0x21dfc81726538fCFd7DFb5E4D14aAB4475ef8694",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:34:06.074Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://recoup-api-git-sweetmantech-myc-3552-32e6b7-recoupable-ad724970.vercel.app/api/x402/image/generate",
-      "description": "Generate an image from a text prompt using AI",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 1172,
-        "checkedAt": "2026-01-25T06:20:19.485Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "formattedAmount": "0.01111 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "11110",
-          "resource": "https://recoup-api-git-sweetmantech-myc-3552-32e6b7-recoupable-ad724970.vercel.app/api/x402/image/generate",
-          "description": "Generate an image from a text prompt using AI",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "queryParams": {
-                "prompt": "Text prompt describing the image to generate"
-              },
-              "type": "http"
-            },
-            "output": {
-              "description": "GenerateImageResult containing the generated images and metadata",
-              "properties": {
-                "arweaveResult": {
-                  "description": "Arweave transaction result",
-                  "type": "object"
-                },
-                "imageUrl": {
-                  "description": "Fetchable URL for the uploaded image",
-                  "type": "string"
-                },
-                "images": {
-                  "description": "Array of all generated images",
-                  "items": {
-                    "description": "Generated image",
-                    "properties": {
-                      "base64": {
-                        "description": "Image as base64 encoded string",
-                        "type": "string"
-                      },
-                      "mediaType": {
-                        "description": "IANA media type of the image",
-                        "type": "string"
-                      }
-                    },
-                    "type": "object"
-                  },
-                  "type": "array"
-                },
-                "usage": {
-                  "description": "Token usage information for the image generation",
-                  "type": "object"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "payTo": "0xbAf31935ED514e8F7da81D0A730AB5362DEEEEb7",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:32:56.333Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.creative-tim.com/api/shadcn-block",
-      "description": "Get ShadCN UI component blocks and templates",
-      "type": "http",
-      "x402Version": 1,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 538,
-        "checkedAt": "2026-01-25T06:20:19.485Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "formattedAmount": "0.01 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x45ac00Db8BDD4b837AbBBF75888CBdFE6B6D8943",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "base"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "base",
-          "maxAmountRequired": "10000",
-          "resource": "https://x402.creative-tim.com/api/shadcn-block",
-          "description": "Get ShadCN UI component blocks and templates",
-          "mimeType": "application/json",
-          "outputSchema": {
-            "input": {
-              "discoverable": true,
-              "method": "GET",
-              "type": "http"
-            }
-          },
-          "payTo": "0x45ac00Db8BDD4b837AbBBF75888CBdFE6B6D8943",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-01-21T05:32:51.068Z",
-      "source": "discovery_api"
-    },
-    {
       "url": "https://api.cdp.coinbase.com/platform/v2/x402",
       "name": "CDP Facilitator",
       "description": "Best-in-class x402 facilitator. Fee-free USDC settlement on Base Mainnet. KYT/OFAC checks on every transaction.",
@@ -9707,8 +9721,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 401,
-        "latencyMs": 119,
-        "checkedAt": "2026-01-25T06:20:20.694Z"
+        "latencyMs": 170,
+        "checkedAt": "2026-01-26T06:24:57.059Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9718,7 +9732,7 @@
         "solana-devnet"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "cdp",
         "logoUrl": "/logos/cdp.png",
@@ -9758,8 +9772,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 938,
-        "checkedAt": "2026-01-25T06:20:20.695Z"
+        "latencyMs": 1413,
+        "checkedAt": "2026-01-26T06:24:57.060Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9775,7 +9789,7 @@
         "CAIP-2 SVM"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "corbits",
         "logoUrl": "/logos/corbits.png",
@@ -9823,8 +9837,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 618,
-        "checkedAt": "2026-01-25T06:20:20.696Z"
+        "latencyMs": 670,
+        "checkedAt": "2026-01-26T06:24:57.060Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9832,7 +9846,7 @@
         "base-sepolia"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "mogami-facilitator",
         "logoUrl": "/logos/logo_mogami_vertical_small.png",
@@ -9871,8 +9885,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 591,
-        "checkedAt": "2026-01-25T06:20:20.697Z"
+        "latencyMs": 547,
+        "checkedAt": "2026-01-26T06:24:57.061Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9886,7 +9900,7 @@
         "polygon-amoy"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "openx402",
         "logoUrl": "/logos/openx402.png",
@@ -9930,8 +9944,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 812,
-        "checkedAt": "2026-01-25T06:20:20.697Z"
+        "latencyMs": 803,
+        "checkedAt": "2026-01-26T06:24:57.062Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -9949,7 +9963,7 @@
         "iotex"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "payai",
         "logoUrl": "/logos/payai.svg",
@@ -9998,8 +10012,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 441,
-        "checkedAt": "2026-01-25T06:20:21.633Z"
+        "latencyMs": 339,
+        "checkedAt": "2026-01-26T06:24:58.473Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -10007,7 +10021,7 @@
         "base-sepolia"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "treasure-facilitator",
         "logoUrl": "/logos/treasure.png",
@@ -10044,15 +10058,15 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 400,
-        "checkedAt": "2026-01-25T06:20:21.634Z"
+        "latencyMs": 374,
+        "checkedAt": "2026-01-26T06:24:58.474Z"
       },
       "pricing": [],
       "networksSupported": [
         "base"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "worldfun-facilitator",
         "logoUrl": "/logos/worldfun.svg",
@@ -10088,8 +10102,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 402,
-        "checkedAt": "2026-01-25T06:20:21.635Z"
+        "latencyMs": 380,
+        "checkedAt": "2026-01-26T06:24:58.474Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -10097,7 +10111,7 @@
         "solana-devnet"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "x402-facilitator",
         "logoUrl": "/logos/x402-logo.png",
@@ -10135,8 +10149,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 1244,
-        "checkedAt": "2026-01-25T06:20:21.636Z"
+        "latencyMs": 780,
+        "checkedAt": "2026-01-26T06:24:58.476Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -10153,7 +10167,7 @@
         "xdc"
       ],
       "accepts": [],
-      "lastUpdated": "2026-01-25T06:20:22.881Z",
+      "lastUpdated": "2026-01-26T06:24:59.257Z",
       "metadata": {
         "slug": "x402-rs-facilitator",
         "logoUrl": "/logos/x402-rs.svg",
