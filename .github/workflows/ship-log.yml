@@ -1,0 +1,47 @@
+name: Ship Log
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [closed]
+    branches: [main, master]
+  release:
+    types: [published]
+
+jobs:
+  ship-log:
+    if: >
+      (github.event_name == 'push') ||
+      (github.event_name == 'release') ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to shipped-log
+        env:
+          WEBHOOK_URL: ${{ secrets.SHIPPED_LOG_WEBHOOK }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          REPO="${{ github.event.repository.name }}"
+
+          if [ "${{ github.event_name }}" = "release" ]; then
+            TITLE="Release ${{ github.event.release.tag_name }}"
+            URL="${{ github.event.release.html_url }}"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            TITLE="PR #${{ github.event.pull_request.number }} merged: ${{ github.event.pull_request.title }}"
+            URL="${{ github.event.pull_request.html_url }}"
+          else
+            # Push to main - use commit info
+            SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
+            TITLE="pushed: ${{ github.event.head_commit.message }}"
+            # Truncate long commit messages
+            TITLE=$(echo "$TITLE" | head -1 | cut -c1-120)
+            URL="${{ github.event.head_commit.url }}"
+          fi
+
+          OWNER="${{ github.event.sender.login }}"
+          CONTENT="${DATE} | ${REPO} | ${TITLE} | ${URL} | ${OWNER}"
+
+          curl -s -H "Content-Type: application/json" \
+            -d "{\"content\": \"${CONTENT}\"}" \
+            "$WEBHOOK_URL"
