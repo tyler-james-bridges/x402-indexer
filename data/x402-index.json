@@ -1,16 +1,16 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-23T08:58:19.924Z",
+    "generatedAt": "2026-06-24T08:52:25.268Z",
     "facilitatorUrl": "https://api.cdp.coinbase.com/platform/v2/x402"
   },
   "summary": {
     "totalResources": 109,
-    "aliveCount": 90,
-    "deadCount": 19,
-    "avgLatencyMs": 284,
-    "minLatencyMs": 56,
-    "maxLatencyMs": 1716,
+    "aliveCount": 92,
+    "deadCount": 17,
+    "avgLatencyMs": 228,
+    "minLatencyMs": 48,
+    "maxLatencyMs": 1609,
     "byCategory": {
       "Uncategorized": 100,
       "Facilitators": 9
@@ -18,7 +18,7 @@
     "byNetwork": {
       "eip155:8453": 97,
       "eip155:137": 27,
-      "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp": 46,
+      "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp": 50,
       "eip155:4217": 1,
       "stellar:pubnet": 1,
       "eip155:143": 1,
@@ -46,8 +46,8 @@
       "iotex": 1,
       "xdc": 1
     },
-    "indexedAt": "2026-06-23T08:58:19.771Z",
-    "indexDurationMs": 13018,
+    "indexedAt": "2026-06-24T08:52:25.073Z",
+    "indexDurationMs": 11185,
     "indexerVersion": "1.0.0"
   },
   "resources": [
@@ -58,8 +58,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 327,
-        "checkedAt": "2026-06-23T08:58:07.378Z"
+        "latencyMs": 292,
+        "checkedAt": "2026-06-24T08:52:14.298Z"
       },
       "pricing": [
         {
@@ -157,140 +157,11 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
           }
         }
       ],
-      "lastUpdated": "2026-06-22T17:06:05.972Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.exa.ai/search",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 82,
-        "checkedAt": "2026-06-23T08:58:07.379Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x6d6E695b09861467c7d462f5AAF31cF3540B9192",
-          "maxTimeoutSeconds": 60
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "12Ec2cJmfR1C9uwejzxcuMhUgEC7wDrLgm1wBvvR5w9E",
-          "maxTimeoutSeconds": 60
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x6d6E695b09861467c7d462f5AAF31cF3540B9192",
-          "maxTimeoutSeconds": 60,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "acceptId": "legacy",
-            "breakdown": {
-              "search": 0.006999999999999999
-            },
-            "name": "USD Coin",
-            "totalUsd": 0.006999999999999999,
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "12Ec2cJmfR1C9uwejzxcuMhUgEC7wDrLgm1wBvvR5w9E",
-          "maxTimeoutSeconds": 60,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "acceptId": "solana-usdc-mainnet",
-            "breakdown": {
-              "search": 0.006999999999999999
-            },
-            "feePayer": "GVJJ7rdGiXr5xaYbRwRbjfaJL7fmwRygFi1H6aGqDveb",
-            "name": "USD Coin",
-            "totalUsd": 0.006999999999999999,
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-23T08:36:05.592Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://skills.onesource.io/api/chain/ens/:input",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 546,
-        "checkedAt": "2026-06-23T08:58:07.381Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
-          "maxTimeoutSeconds": 3600
-        },
-        {
-          "scheme": "batch-settlement",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
-          "maxTimeoutSeconds": 3600
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
-          "maxTimeoutSeconds": 3600,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "credentialTypes": [
-              "authorization"
-            ],
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "batch-settlement",
-          "network": "eip155:8453",
-          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
-          "maxTimeoutSeconds": 3600,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "receiverAuthorizer": "0x11dF9F6280632aB8F12926b3f569E493EaEcf81b",
-            "version": "2",
-            "withdrawDelay": 86400
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-10T05:40:22.493Z",
+      "lastUpdated": "2026-06-24T08:48:35.833Z",
       "source": "discovery_api"
     },
     {
@@ -300,8 +171,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 321,
-        "checkedAt": "2026-06-23T08:58:07.382Z"
+        "latencyMs": 295,
+        "checkedAt": "2026-06-24T08:52:14.301Z"
       },
       "pricing": [
         {
@@ -385,7 +256,136 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T16:39:31.92Z",
+      "lastUpdated": "2026-06-24T08:48:38.296Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://api.exa.ai/search",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 277,
+        "checkedAt": "2026-06-24T08:52:14.302Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x6d6E695b09861467c7d462f5AAF31cF3540B9192",
+          "maxTimeoutSeconds": 60
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "12Ec2cJmfR1C9uwejzxcuMhUgEC7wDrLgm1wBvvR5w9E",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x6d6E695b09861467c7d462f5AAF31cF3540B9192",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "acceptId": "legacy",
+            "breakdown": {
+              "search": 0.006999999999999999
+            },
+            "name": "USD Coin",
+            "totalUsd": 0.006999999999999999,
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "12Ec2cJmfR1C9uwejzxcuMhUgEC7wDrLgm1wBvvR5w9E",
+          "maxTimeoutSeconds": 60,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "acceptId": "solana-usdc-mainnet",
+            "breakdown": {
+              "search": 0.006999999999999999
+            },
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP",
+            "name": "USD Coin",
+            "totalUsd": 0.006999999999999999,
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T08:46:18.133Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://skills.onesource.io/api/chain/ens/:input",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 457,
+        "checkedAt": "2026-06-24T08:52:14.304Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
+          "maxTimeoutSeconds": 3600
+        },
+        {
+          "scheme": "batch-settlement",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
+          "maxTimeoutSeconds": 3600
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
+          "maxTimeoutSeconds": 3600,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "credentialTypes": [
+              "authorization"
+            ],
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "batch-settlement",
+          "network": "eip155:8453",
+          "payTo": "0x52E29e0d2Aa49bfBfC548C0A9F2196F4aa51f3ea",
+          "maxTimeoutSeconds": 3600,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "receiverAuthorizer": "0x11dF9F6280632aB8F12926b3f569E493EaEcf81b",
+            "version": "2",
+            "withdrawDelay": 86400
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-10T05:40:22.493Z",
       "source": "discovery_api"
     },
     {
@@ -395,8 +395,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 647,
-        "checkedAt": "2026-06-23T08:58:07.383Z"
+        "latencyMs": 460,
+        "checkedAt": "2026-06-24T08:52:14.305Z"
       },
       "pricing": [
         {
@@ -456,8 +456,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 119,
-        "checkedAt": "2026-06-23T08:58:08.031Z"
+        "latencyMs": 50,
+        "checkedAt": "2026-06-24T08:52:14.765Z"
       },
       "pricing": [
         {
@@ -517,8 +517,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 116,
-        "checkedAt": "2026-06-23T08:58:08.031Z"
+        "latencyMs": 48,
+        "checkedAt": "2026-06-24T08:52:14.766Z"
       },
       "pricing": [
         {
@@ -578,8 +578,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 288,
-        "checkedAt": "2026-06-23T08:58:08.032Z"
+        "latencyMs": 194,
+        "checkedAt": "2026-06-24T08:52:14.766Z"
       },
       "pricing": [
         {
@@ -633,14 +633,127 @@
       "source": "discovery_api"
     },
     {
+      "url": "https://x402.ottoai.services/funding-rates",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 109,
+        "checkedAt": "2026-06-24T08:52:14.768Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "eip155:137",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T03:01:09.236Z",
+      "source": "discovery_api"
+    },
+    {
       "url": "https://skills.onesource.io/api/chain/block/:number",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 270,
-        "checkedAt": "2026-06-23T08:58:08.033Z"
+        "latencyMs": 189,
+        "checkedAt": "2026-06-24T08:52:14.769Z"
       },
       "pricing": [
         {
@@ -700,8 +813,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 465,
-        "checkedAt": "2026-06-23T08:58:08.035Z"
+        "latencyMs": 49,
+        "checkedAt": "2026-06-24T08:52:14.961Z"
       },
       "pricing": [
         {
@@ -761,8 +874,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 118,
-        "checkedAt": "2026-06-23T08:58:08.501Z"
+        "latencyMs": 48,
+        "checkedAt": "2026-06-24T08:52:14.962Z"
       },
       "pricing": [
         {
@@ -822,8 +935,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 344,
-        "checkedAt": "2026-06-23T08:58:08.501Z"
+        "latencyMs": 218,
+        "checkedAt": "2026-06-24T08:52:14.962Z"
       },
       "pricing": [
         {
@@ -896,120 +1009,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T17:06:31.903Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.ottoai.services/funding-rates",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 179,
-        "checkedAt": "2026-06-23T08:58:08.503Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "eip155:137",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T17:06:44.218Z",
+      "lastUpdated": "2026-06-24T00:10:19.853Z",
       "source": "discovery_api"
     },
     {
@@ -1019,8 +1019,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 176,
-        "checkedAt": "2026-06-23T08:58:08.503Z"
+        "latencyMs": 101,
+        "checkedAt": "2026-06-24T08:52:14.963Z"
       },
       "pricing": [
         {
@@ -1118,11 +1118,11 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
           }
         }
       ],
-      "lastUpdated": "2026-06-21T17:22:53.99Z",
+      "lastUpdated": "2026-06-23T22:25:49.958Z",
       "source": "discovery_api"
     },
     {
@@ -1132,8 +1132,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 299,
-        "checkedAt": "2026-06-23T08:58:08.504Z"
+        "latencyMs": 183,
+        "checkedAt": "2026-06-24T08:52:14.964Z"
       },
       "pricing": [
         {
@@ -1179,12 +1179,12 @@
               "xSettlementAccountSupported": true
             },
             "feePayer": "AepWpq3GQwL8CeKMtZyKtKPa7W91Coygh3ropAJapVdU",
-            "recentBlockhash": "5vgyaXo9orwFYyZjpW3B5xPgwLQeNevCmRBTcR576tF8",
+            "recentBlockhash": "12dEJzUN3iTAugo3aE8Rj4t9mp4wSwejCNyUM9qLpyny",
             "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T03:13:21.959Z",
+      "lastUpdated": "2026-06-24T08:38:57.967Z",
       "source": "discovery_api"
     },
     {
@@ -1194,8 +1194,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 254,
-        "checkedAt": "2026-06-23T08:58:08.847Z"
+        "latencyMs": 123,
+        "checkedAt": "2026-06-24T08:52:15.182Z"
       },
       "pricing": [
         {
@@ -1251,7 +1251,7 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "D6ZhtNQ5nT9ZnTHUbqXZsTx5MH2rPFiBBggX4hY1WePM",
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP",
             "resource": "https://api.anchor-x402.com/v1/screen"
           }
         },
@@ -1268,7 +1268,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T17:54:57.852Z",
+      "lastUpdated": "2026-06-23T23:26:49.665Z",
       "source": "discovery_api"
     },
     {
@@ -1278,8 +1278,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 184,
-        "checkedAt": "2026-06-23T08:58:08.849Z"
+        "latencyMs": 123,
+        "checkedAt": "2026-06-24T08:52:15.183Z"
       },
       "pricing": [
         {
@@ -1363,7 +1363,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T17:06:28.114Z",
+      "lastUpdated": "2026-06-24T00:12:11.76Z",
       "source": "discovery_api"
     },
     {
@@ -1373,8 +1373,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 164,
-        "checkedAt": "2026-06-23T08:58:08.849Z"
+        "latencyMs": 101,
+        "checkedAt": "2026-06-24T08:52:15.184Z"
       },
       "pricing": [
         {
@@ -1472,11 +1472,350 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
           }
         }
       ],
-      "lastUpdated": "2026-06-22T17:06:10.042Z",
+      "lastUpdated": "2026-06-24T02:41:00.499Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.ottoai.services/kol-sentiment",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 123,
+        "checkedAt": "2026-06-24T08:52:15.185Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "eip155:137",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T03:01:19.685Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.ottoai.services/token-details",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 124,
+        "checkedAt": "2026-06-24T08:52:15.186Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "eip155:137",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T23:20:25.853Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.ottoai.services/tradfi-data",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 107,
+        "checkedAt": "2026-06-24T08:52:15.311Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "eip155:137",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T03:26:38.062Z",
       "source": "discovery_api"
     },
     {
@@ -1486,8 +1825,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 119,
-        "checkedAt": "2026-06-23T08:58:08.850Z"
+        "latencyMs": 74,
+        "checkedAt": "2026-06-24T08:52:15.311Z"
       },
       "pricing": [
         {
@@ -1533,125 +1872,12 @@
               "xSettlementAccountSupported": true
             },
             "feePayer": "AepWpq3GQwL8CeKMtZyKtKPa7W91Coygh3ropAJapVdU",
-            "recentBlockhash": "BfHWBKM2g56aTqppLMa2Chydpwxc2K9zGnfLzcAEYcG1",
+            "recentBlockhash": "Cfx3TmFi4ELWQBKcSA523aySpHkHJ9FQY9uuWZ5WWUdz",
             "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T06:03:22.467Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.ottoai.services/token-details",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 215,
-        "checkedAt": "2026-06-23T08:58:08.850Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "eip155:137",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T13:22:57.88Z",
+      "lastUpdated": "2026-06-24T06:03:08.615Z",
       "source": "discovery_api"
     },
     {
@@ -1661,8 +1887,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 152,
-        "checkedAt": "2026-06-23T08:58:09.102Z"
+        "latencyMs": 103,
+        "checkedAt": "2026-06-24T08:52:15.311Z"
       },
       "pricing": [
         {
@@ -1707,233 +1933,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T03:34:41.718Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.ottoai.services/kol-sentiment",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 161,
-        "checkedAt": "2026-06-23T08:58:09.102Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "eip155:137",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T17:06:17.734Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.ottoai.services/tradfi-data",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 166,
-        "checkedAt": "2026-06-23T08:58:09.103Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "eip155:137",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-23T00:13:23.903Z",
+      "lastUpdated": "2026-06-23T19:21:45.797Z",
       "source": "discovery_api"
     },
     {
@@ -1943,8 +1943,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 170,
-        "checkedAt": "2026-06-23T08:58:09.103Z"
+        "latencyMs": 101,
+        "checkedAt": "2026-06-24T08:52:15.312Z"
       },
       "pricing": [
         {
@@ -2042,11 +2042,49 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
           }
         }
       ],
-      "lastUpdated": "2026-06-22T21:23:37.987Z",
+      "lastUpdated": "2026-06-23T23:04:33.922Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://blockrun.ai/api/v1/pm/polymarket/markets",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 116,
+        "checkedAt": "2026-06-24T08:52:15.313Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T08:34:29.832Z",
       "source": "discovery_api"
     },
     {
@@ -2056,8 +2094,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 294,
-        "checkedAt": "2026-06-23T08:58:09.103Z"
+        "latencyMs": 392,
+        "checkedAt": "2026-06-24T08:52:15.429Z"
       },
       "pricing": [
         {
@@ -2133,45 +2171,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T15:10:28.983Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://blockrun.ai/api/v1/pm/polymarket/markets",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 159,
-        "checkedAt": "2026-06-23T08:58:09.399Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-23T02:53:59.798Z",
+      "lastUpdated": "2026-06-23T12:29:56.098Z",
       "source": "discovery_api"
     },
     {
@@ -2181,8 +2181,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 188,
-        "checkedAt": "2026-06-23T08:58:09.400Z"
+        "latencyMs": 207,
+        "checkedAt": "2026-06-24T08:52:15.430Z"
       },
       "pricing": [
         {
@@ -2209,45 +2209,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T05:39:37.815Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://blockrun.ai/api/v1/exa/search",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 233,
-        "checkedAt": "2026-06-23T08:58:09.401Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-23T07:13:51.84Z",
+      "lastUpdated": "2026-06-23T17:14:41.974Z",
       "source": "discovery_api"
     },
     {
@@ -2257,8 +2219,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 45,
-        "checkedAt": "2026-06-23T08:58:09.402Z"
+        "latencyMs": 78,
+        "checkedAt": "2026-06-24T08:52:15.431Z"
       },
       "pricing": [
         {
@@ -2308,14 +2270,14 @@
             "breakdown": {
               "text": 0.001
             },
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F",
+            "feePayer": "D6ZhtNQ5nT9ZnTHUbqXZsTx5MH2rPFiBBggX4hY1WePM",
             "name": "USD Coin",
             "totalUsd": 0.001,
             "version": "2"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T05:38:47.809Z",
+      "lastUpdated": "2026-06-24T08:27:55.904Z",
       "source": "discovery_api"
     },
     {
@@ -2325,8 +2287,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 471,
-        "checkedAt": "2026-06-23T08:58:09.402Z"
+        "latencyMs": 421,
+        "checkedAt": "2026-06-24T08:52:15.431Z"
       },
       "pricing": [
         {
@@ -2367,25 +2329,25 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:11:37.891Z",
+      "lastUpdated": "2026-06-24T00:28:00.138Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://x402.twit.sh/tweets/search",
+      "url": "https://blockrun.ai/api/v1/exa/search",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 338,
-        "checkedAt": "2026-06-23T08:58:09.874Z"
+        "latencyMs": 122,
+        "checkedAt": "2026-06-24T08:52:15.432Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
+          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -2396,7 +2358,7 @@
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
+          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
@@ -2405,45 +2367,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-21T14:01:30.119Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.twit.sh/users/by/username",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 343,
-        "checkedAt": "2026-06-23T08:58:09.875Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-21T14:10:49.732Z",
+      "lastUpdated": "2026-06-24T04:30:41.627Z",
       "source": "discovery_api"
     },
     {
@@ -2453,8 +2377,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 167,
-        "checkedAt": "2026-06-23T08:58:09.876Z"
+        "latencyMs": 198,
+        "checkedAt": "2026-06-24T08:52:15.853Z"
       },
       "pricing": [
         {
@@ -2552,11 +2476,87 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
           }
         }
       ],
-      "lastUpdated": "2026-06-22T04:08:07.894Z",
+      "lastUpdated": "2026-06-23T18:27:21.755Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.twit.sh/users/by/username",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 180,
+        "checkedAt": "2026-06-24T08:52:15.854Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T23:15:26.156Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.twit.sh/tweets/search",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 189,
+        "checkedAt": "2026-06-24T08:52:15.855Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x9dBA414637c611a16BEa6f0796BFcbcBdc410df8",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T08:42:05.882Z",
       "source": "discovery_api"
     },
     {
@@ -2566,8 +2566,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 706,
-        "checkedAt": "2026-06-23T08:58:09.876Z"
+        "latencyMs": 365,
+        "checkedAt": "2026-06-24T08:52:15.856Z"
       },
       "pricing": [
         {
@@ -2612,83 +2612,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T08:21:57.698Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://blockrun.ai/api/v1/pm/polymarket/activity",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 82,
-        "checkedAt": "2026-06-23T08:58:09.877Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-18T04:22:59.572Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://x402.clashofcoins.com/agent-wallet/x402/fund",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 192,
-        "checkedAt": "2026-06-23T08:58:10.582Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x93862e5b2b1fa10a01772e7e9ca7cdc7deb5ca25",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x93862e5b2b1fa10a01772e7e9ca7cdc7deb5ca25",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-04-29T16:36:53.967Z",
+      "lastUpdated": "2026-06-24T01:54:00.149Z",
       "source": "discovery_api"
     },
     {
@@ -2698,8 +2622,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 482,
-        "checkedAt": "2026-06-23T08:58:10.583Z"
+        "latencyMs": 358,
+        "checkedAt": "2026-06-24T08:52:15.856Z"
       },
       "pricing": [
         {
@@ -2744,7 +2668,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T04:45:51.872Z",
+      "lastUpdated": "2026-06-24T04:58:00.055Z",
       "source": "discovery_api"
     },
     {
@@ -2754,8 +2678,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 131,
-        "checkedAt": "2026-06-23T08:58:10.585Z"
+        "latencyMs": 84,
+        "checkedAt": "2026-06-24T08:52:16.221Z"
       },
       "pricing": [
         {
@@ -2811,7 +2735,7 @@
           "maxTimeoutSeconds": 300,
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "extra": {
-            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP",
+            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F",
             "resource": "https://api.anchor-x402.com/v1/resolve/name"
           }
         },
@@ -2828,7 +2752,45 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-20T13:00:01.965Z",
+      "lastUpdated": "2026-06-24T00:24:01.68Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.clashofcoins.com/agent-wallet/x402/fund",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 370,
+        "checkedAt": "2026-06-24T08:52:16.221Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x93862e5b2b1fa10a01772e7e9ca7cdc7deb5ca25",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x93862e5b2b1fa10a01772e7e9ca7cdc7deb5ca25",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-04-29T16:36:53.967Z",
       "source": "discovery_api"
     },
     {
@@ -2838,8 +2800,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 161,
-        "checkedAt": "2026-06-23T08:58:10.585Z"
+        "latencyMs": 98,
+        "checkedAt": "2026-06-24T08:52:16.222Z"
       },
       "pricing": [
         {
@@ -2866,7 +2828,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T14:40:03.789Z",
+      "lastUpdated": "2026-06-24T04:00:47.929Z",
       "source": "discovery_api"
     },
     {
@@ -2876,8 +2838,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 200,
-        "checkedAt": "2026-06-23T08:58:10.585Z"
+        "latencyMs": 92,
+        "checkedAt": "2026-06-24T08:52:16.222Z"
       },
       "pricing": [
         {
@@ -2922,7 +2884,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T06:06:56.222Z",
+      "lastUpdated": "2026-06-24T03:01:26.044Z",
       "source": "discovery_api"
     },
     {
@@ -2932,8 +2894,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 125,
-        "checkedAt": "2026-06-23T08:58:11.066Z"
+        "latencyMs": 85,
+        "checkedAt": "2026-06-24T08:52:16.223Z"
       },
       "pricing": [
         {
@@ -3016,8 +2978,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 90,
-        "checkedAt": "2026-06-23T08:58:11.066Z"
+        "latencyMs": 67,
+        "checkedAt": "2026-06-24T08:52:16.592Z"
       },
       "pricing": [
         {
@@ -3044,7 +3006,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T02:53:59.778Z",
+      "lastUpdated": "2026-06-24T08:34:29.61Z",
       "source": "discovery_api"
     },
     {
@@ -3054,8 +3016,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 180,
-        "checkedAt": "2026-06-23T08:58:11.066Z"
+        "latencyMs": 123,
+        "checkedAt": "2026-06-24T08:52:16.593Z"
       },
       "pricing": [
         {
@@ -3139,7 +3101,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T00:10:25.867Z",
+      "lastUpdated": "2026-06-23T22:14:53.52Z",
       "source": "discovery_api"
     },
     {
@@ -3149,8 +3111,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 162,
-        "checkedAt": "2026-06-23T08:58:11.066Z"
+        "latencyMs": 115,
+        "checkedAt": "2026-06-24T08:52:16.593Z"
       },
       "pricing": [
         {
@@ -3256,14 +3218,127 @@
       "source": "discovery_api"
     },
     {
+      "url": "https://x402.ottoai.services/mega-report",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 113,
+        "checkedAt": "2026-06-24T08:52:16.593Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "eip155:137",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T09:29:49.89Z",
+      "source": "discovery_api"
+    },
+    {
       "url": "https://api.molty.cash/0xmesuthere/a2a",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 666,
-        "checkedAt": "2026-06-23T08:58:11.067Z"
+        "latencyMs": 689,
+        "checkedAt": "2026-06-24T08:52:16.593Z"
       },
       "pricing": [
         {
@@ -3430,7 +3505,59 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T13:09:32.007Z",
+      "lastUpdated": "2026-06-24T02:19:47.838Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://api.stocktrends.com/v1/stim/latest",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 187,
+        "checkedAt": "2026-06-24T08:52:17.282Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "resource": {
+              "description": "Latest Stock Trends Inference Model (ST-IM) outputs for a symbol: forward return expectations and statistical distributions across 4-week, 13-week, and 40-week horizons. Use /v1/meta/stim for ST-IM provenance, base-period context, and interpretation limits.",
+              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
+              "mimeType": "application/json",
+              "serviceName": "Stock Trends Market Intelligence",
+              "tags": [
+                "finance",
+                "market-intelligence",
+                "equities",
+                "quantitative-finance",
+                "agentic"
+              ],
+              "url": "https://api.stocktrends.com/v1/stim/latest"
+            },
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T03:30:02.205Z",
       "source": "discovery_api"
     },
     {
@@ -3441,8 +3568,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 292,
-        "checkedAt": "2026-06-23T08:58:11.733Z"
+        "latencyMs": 71,
+        "checkedAt": "2026-06-24T08:52:17.283Z"
       },
       "pricing": [
         {
@@ -3502,127 +3629,90 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://x402.ottoai.services/mega-report",
+      "url": "https://blockrun.ai/api/v1/pm/polymarket/activity",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 175,
-        "checkedAt": "2026-06-23T08:58:11.734Z"
+        "latencyMs": 72,
+        "checkedAt": "2026-06-24T08:52:17.283Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
           "maxTimeoutSeconds": 300
         }
       ],
       "networksSupported": [
-        "eip155:8453",
-        "eip155:137",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+        "eip155:8453"
       ],
       "accepts": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
             "name": "USD Coin",
             "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-          "extra": {
-            "assetTransferMethod": "permit2",
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F"
           }
         }
       ],
-      "lastUpdated": "2026-06-18T11:50:38.502Z",
+      "lastUpdated": "2026-06-18T04:22:59.572Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://api.stocktrends.com/v1/stim/latest",
+      "url": "https://agentres.dev/api/book",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 405,
+        "latencyMs": 139,
+        "checkedAt": "2026-06-24T08:52:17.284Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2DD94d7CB82cb882E7599f020661A77AdF9fDaF7",
+          "maxTimeoutSeconds": 3600
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2DD94d7CB82cb882E7599f020661A77AdF9fDaF7",
+          "maxTimeoutSeconds": 3600,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T14:57:11.841Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://api.stocktrends.com/v1/prices/history",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 218,
-        "checkedAt": "2026-06-23T08:58:11.734Z"
+        "latencyMs": 258,
+        "checkedAt": "2026-06-24T08:52:17.284Z"
       },
       "pricing": [
         {
@@ -3646,7 +3736,7 @@
           "extra": {
             "name": "USD Coin",
             "resource": {
-              "description": "Latest Stock Trends Inference Model (ST-IM) outputs for a symbol: forward return expectations and statistical distributions across 4-week, 13-week, and 40-week horizons. Use /v1/meta/stim for ST-IM provenance, base-period context, and interpretation limits.",
+              "description": "Historical weekly price series for a Stock Trends symbol.",
               "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
               "mimeType": "application/json",
               "serviceName": "Stock Trends Market Intelligence",
@@ -3657,13 +3747,13 @@
                 "quantitative-finance",
                 "agentic"
               ],
-              "url": "https://api.stocktrends.com/v1/stim/latest"
+              "url": "https://api.stocktrends.com/v1/prices/history"
             },
             "version": "2"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T00:14:03.956Z",
+      "lastUpdated": "2026-06-24T01:53:24.072Z",
       "source": "discovery_api"
     },
     {
@@ -3673,8 +3763,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 164,
-        "checkedAt": "2026-06-23T08:58:11.734Z"
+        "latencyMs": 107,
+        "checkedAt": "2026-06-24T08:52:17.543Z"
       },
       "pricing": [
         {
@@ -3780,14 +3870,14 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://api.stocktrends.com/v1/prices/history",
+      "url": "https://api.stocktrends.com/v1/indicators/latest",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 383,
-        "checkedAt": "2026-06-23T08:58:11.735Z"
+        "latencyMs": 173,
+        "checkedAt": "2026-06-24T08:52:17.543Z"
       },
       "pricing": [
         {
@@ -3811,7 +3901,7 @@
           "extra": {
             "name": "USD Coin",
             "resource": {
-              "description": "Historical weekly price series for a Stock Trends symbol.",
+              "description": "Latest Stock Trends indicator snapshot for a symbol. Stock Trends indicators are part of a multi-decade classification framework with records extending back to 1980. Their value comes from consistent semantics across market history: trend state, trend persistence, relative performance, relative performance direction, and volume activity are encoded in a stable doctrine designed for longitudinal research.",
               "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
               "mimeType": "application/json",
               "serviceName": "Stock Trends Market Intelligence",
@@ -3822,13 +3912,13 @@
                 "quantitative-finance",
                 "agentic"
               ],
-              "url": "https://api.stocktrends.com/v1/prices/history"
+              "url": "https://api.stocktrends.com/v1/indicators/latest"
             },
             "version": "2"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T00:36:17.85Z",
+      "lastUpdated": "2026-06-24T03:30:11.909Z",
       "source": "discovery_api"
     },
     {
@@ -3838,8 +3928,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 532,
-        "checkedAt": "2026-06-23T08:58:12.118Z"
+        "latencyMs": 264,
+        "checkedAt": "2026-06-24T08:52:17.543Z"
       },
       "pricing": [
         {
@@ -3885,50 +3975,12 @@
               "xSettlementAccountSupported": true
             },
             "feePayer": "AepWpq3GQwL8CeKMtZyKtKPa7W91Coygh3ropAJapVdU",
-            "recentBlockhash": "GzwcvEbmnUmH7sJErvvgSA1Gj99hasfWgYtamVWDF7y6",
+            "recentBlockhash": "AXK4iAk4hSeMY1Cm2Yq1uWpM44uoLpoammhfaZkq3vZY",
             "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T08:02:53.727Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://agentres.dev/api/book",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 405,
-        "latencyMs": 333,
-        "checkedAt": "2026-06-23T08:58:12.120Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2DD94d7CB82cb882E7599f020661A77AdF9fDaF7",
-          "maxTimeoutSeconds": 3600
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2DD94d7CB82cb882E7599f020661A77AdF9fDaF7",
-          "maxTimeoutSeconds": 3600,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-17T00:44:55.954Z",
+      "lastUpdated": "2026-06-23T10:24:36.153Z",
       "source": "discovery_api"
     },
     {
@@ -3938,8 +3990,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 177,
-        "checkedAt": "2026-06-23T08:58:12.121Z"
+        "latencyMs": 112,
+        "checkedAt": "2026-06-24T08:52:17.544Z"
       },
       "pricing": [
         {
@@ -4051,8 +4103,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 87,
-        "checkedAt": "2026-06-23T08:58:12.121Z"
+        "latencyMs": 66,
+        "checkedAt": "2026-06-24T08:52:17.544Z"
       },
       "pricing": [
         {
@@ -4083,21 +4135,77 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://omniac.0000402.xyz/ask",
+      "url": "https://orbisapi.com/proxy/climate-finance-api-bebe7e",
       "type": "http",
       "x402Version": 2,
       "health": {
-        "isAlive": false,
-        "statusCode": 405,
-        "latencyMs": 967,
-        "checkedAt": "2026-06-23T08:58:12.121Z"
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 122,
+        "checkedAt": "2026-06-24T08:52:17.808Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xeE72B902Af7466023595512e3359BB5bF312977c",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:55:11.704Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://blockrun.ai/api/v1/pm/polymarket/events",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 60,
+        "checkedAt": "2026-06-24T08:52:17.809Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -4108,7 +4216,7 @@
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0xeE72B902Af7466023595512e3359BB5bF312977c",
+          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
@@ -4117,56 +4225,37 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-18T04:36:12.362Z",
+      "lastUpdated": "2026-06-24T00:28:07.994Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://api.run402.com/tiers/v1/prototype",
+      "url": "https://sandbox.node4all.com/v1/x402-test",
       "type": "http",
       "x402Version": 2,
       "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 304,
-        "checkedAt": "2026-06-23T08:58:13.088Z"
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 75,
+        "checkedAt": "2026-06-24T08:52:17.810Z"
       },
       "pricing": [
         {
           "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
           "network": "eip155:84532",
           "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
-          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
-          "maxTimeoutSeconds": 300
+          "payTo": "0xd275612Bf0BB35638432c4D95eAA8D5d22346Ca6",
+          "maxTimeoutSeconds": 60
         }
       ],
       "networksSupported": [
-        "eip155:8453",
         "eip155:84532"
       ],
       "accepts": [
         {
           "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
           "network": "eip155:84532",
-          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
-          "maxTimeoutSeconds": 300,
+          "payTo": "0xd275612Bf0BB35638432c4D95eAA8D5d22346Ca6",
+          "maxTimeoutSeconds": 60,
           "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
           "extra": {
             "name": "USDC",
@@ -4174,7 +4263,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T04:15:28.413Z",
+      "lastUpdated": "2026-06-24T01:55:02.355Z",
       "source": "discovery_api"
     },
     {
@@ -4184,8 +4273,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 177,
-        "checkedAt": "2026-06-23T08:58:13.089Z"
+        "latencyMs": 131,
+        "checkedAt": "2026-06-24T08:52:17.810Z"
       },
       "pricing": [
         {
@@ -4291,66 +4380,14 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://api.stocktrends.com/v1/indicators/latest",
+      "url": "https://orbisapi.com/proxy/crypto-freelance-guide-api-be8637",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 282,
-        "checkedAt": "2026-06-23T08:58:13.090Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Latest Stock Trends indicator snapshot for a symbol. Stock Trends indicators are part of a multi-decade classification framework with records extending back to 1980. Their value comes from consistent semantics across market history: trend state, trend persistence, relative performance, relative performance direction, and volume activity are encoded in a stable doctrine designed for longitudinal research.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/indicators/latest"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-23T00:13:40.149Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://orbisapi.com/proxy/climate-finance-api-bebe7e",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 130,
-        "checkedAt": "2026-06-23T08:58:13.090Z"
+        "latencyMs": 143,
+        "checkedAt": "2026-06-24T08:52:17.811Z"
       },
       "pricing": [
         {
@@ -4395,59 +4432,64 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-21T01:30:41.057Z",
+      "lastUpdated": "2026-06-23T07:23:48.064Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://api.stocktrends.com/v1/market/regime/latest",
+      "url": "https://api.run402.com/tiers/v1/prototype",
       "type": "http",
       "x402Version": 2,
       "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 276,
-        "checkedAt": "2026-06-23T08:58:13.091Z"
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 154,
+        "checkedAt": "2026-06-24T08:52:17.954Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
+          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:84532",
+          "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
           "maxTimeoutSeconds": 300
         }
       ],
       "networksSupported": [
-        "eip155:8453"
+        "eip155:8453",
+        "eip155:84532"
       ],
       "accepts": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
+          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
             "name": "USD Coin",
-            "resource": {
-              "description": "Current market regime classification derived from the distribution of Stock Trends trend codes across active signals.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/market/regime/latest"
-            },
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:84532",
+          "payTo": "0x059D091D51a0f011c9872EaA63Df538F5cE15945",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+          "extra": {
+            "name": "USDC",
             "version": "2"
           }
         }
       ],
-      "lastUpdated": "2026-06-22T19:06:41.897Z",
+      "lastUpdated": "2026-06-24T02:00:54.312Z",
       "source": "discovery_api"
     },
     {
@@ -4458,8 +4500,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 1027,
-        "checkedAt": "2026-06-23T08:58:13.392Z"
+        "latencyMs": 1609,
+        "checkedAt": "2026-06-24T08:52:17.955Z"
       },
       "pricing": [
         {
@@ -4468,7 +4510,7 @@
           "maxAmountRequired": "2000",
           "formattedAmount": "0.002 USDC",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xbA88F6fbF400097a3D6Ac6a434194Af7e4804F73",
+          "payTo": "0x5cc0237DF39CbF5610D2385955b035f17EE86a3E",
           "maxTimeoutSeconds": 300
         },
         {
@@ -4477,7 +4519,7 @@
           "maxAmountRequired": "2000",
           "formattedAmount": "0.000000000000002 EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
           "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "8LnqbDfv6o6VJdiGNFVXwffybpmifr8a5w9WSG1HBSTN",
+          "payTo": "BpvXEh1FvSKKSkZb5AqcPbtTQyH9LTW2N5w3JHF5p8yf",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -4579,21 +4621,21 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://blockrun.ai/api/v1/pm/polymarket/events",
+      "url": "https://api.stocktrends.com/v1/market/regime/latest",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 81,
-        "checkedAt": "2026-06-23T08:58:13.393Z"
+        "latencyMs": 192,
+        "checkedAt": "2026-06-24T08:52:17.956Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -4604,16 +4646,30 @@
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0x6E007731870EDe419CfB31889Cd5C4493CEcb04c",
+          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
             "name": "USD Coin",
+            "resource": {
+              "description": "Current market regime classification derived from the distribution of Stock Trends trend codes across active signals.",
+              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
+              "mimeType": "application/json",
+              "serviceName": "Stock Trends Market Intelligence",
+              "tags": [
+                "finance",
+                "market-intelligence",
+                "equities",
+                "quantitative-finance",
+                "agentic"
+              ],
+              "url": "https://api.stocktrends.com/v1/market/regime/latest"
+            },
             "version": "2"
           }
         }
       ],
-      "lastUpdated": "2026-06-22T13:17:23.72Z",
+      "lastUpdated": "2026-06-23T17:05:36.198Z",
       "source": "discovery_api"
     },
     {
@@ -4623,8 +4679,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 88,
-        "checkedAt": "2026-06-23T08:58:13.394Z"
+        "latencyMs": 73,
+        "checkedAt": "2026-06-24T08:52:17.956Z"
       },
       "pricing": [
         {
@@ -4651,63 +4707,83 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T07:57:43.79Z",
+      "lastUpdated": "2026-06-23T15:02:14.288Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://orbisapi.com/proxy/crypto-freelance-guide-api-be8637",
+      "url": "https://public.zapper.xyz/x402/portfolio-totals",
       "type": "http",
       "x402Version": 2,
       "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 56,
-        "checkedAt": "2026-06-23T08:58:13.394Z"
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 233,
+        "checkedAt": "2026-06-24T08:52:17.956Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10
         }
       ],
       "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+        "eip155:8453"
       ],
       "accepts": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300,
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
             "name": "USD Coin",
             "version": "2"
           }
-        },
+        }
+      ],
+      "lastUpdated": "2026-06-24T01:57:05.886Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://public.zapper.xyz/x402/token-balances",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 99,
+        "checkedAt": "2026-06-24T08:52:19.564Z"
+      },
+      "pricing": [
         {
           "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
-            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+            "name": "USD Coin",
+            "version": "2"
           }
         }
       ],
-      "lastUpdated": "2026-06-23T07:23:48.064Z",
+      "lastUpdated": "2026-06-24T01:57:05.805Z",
       "source": "discovery_api"
     },
     {
@@ -4717,8 +4793,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 276,
-        "checkedAt": "2026-06-23T08:58:13.394Z"
+        "latencyMs": 264,
+        "checkedAt": "2026-06-24T08:52:19.565Z"
       },
       "pricing": [
         {
@@ -4879,7 +4955,63 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-23T00:23:03.712Z",
+      "lastUpdated": "2026-06-24T06:51:09.676Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/blockchain-network-health-api-01f455",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 75,
+        "checkedAt": "2026-06-24T08:52:19.566Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-21T01:35:48.634Z",
       "source": "discovery_api"
     },
     {
@@ -4889,8 +5021,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 188,
-        "checkedAt": "2026-06-23T08:58:14.420Z"
+        "latencyMs": 126,
+        "checkedAt": "2026-06-24T08:52:19.566Z"
       },
       "pricing": [
         {
@@ -4978,21 +5110,21 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://dripstack.com/api/v1/publications/:publicationSlug/:postSlug",
+      "url": "https://blockrun.ai/api/v1/exa/contents",
       "type": "http",
       "x402Version": 2,
       "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 190,
-        "checkedAt": "2026-06-23T08:58:14.420Z"
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 66,
+        "checkedAt": "2026-06-24T08:52:19.566Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xBF22b6DdB5A08c823856A779f1004eEa60C5aB92",
+          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -5003,7 +5135,7 @@
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0xBF22b6DdB5A08c823856A779f1004eEa60C5aB92",
+          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
@@ -5012,18 +5144,169 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-13T12:33:04.546Z",
+      "lastUpdated": "2026-06-23T09:46:49.769Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://orbisapi.com/proxy/blockchain-network-health-api-01f455",
+      "url": "https://public.zapper.xyz/x402/transaction-details",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 88,
+        "checkedAt": "2026-06-24T08:52:19.830Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-22T04:06:07.962Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://x402.ottoai.services/llm-research",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 58,
-        "checkedAt": "2026-06-23T08:58:14.421Z"
+        "latencyMs": 121,
+        "checkedAt": "2026-06-24T08:52:19.830Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "eip155:137",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0x0E84dDEdAaE6A779c462C22a59F301EC31B6b808",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+          "extra": {
+            "assetTransferMethod": "permit2",
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "6XcSfqJHr9vNW2vbiRaMqUYVm7shDgLepca54wUTDPN5",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "D6ZhtNQ5nT9ZnTHUbqXZsTx5MH2rPFiBBggX4hY1WePM"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T18:55:14.366Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/hyre-agent",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 74,
+        "checkedAt": "2026-06-24T08:52:19.830Z"
       },
       "pricing": [
         {
@@ -5068,132 +5351,18 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-21T01:35:48.634Z",
+      "lastUpdated": "2026-06-23T16:39:43.708Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://public.zapper.xyz/x402/transaction-details",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 121,
-        "checkedAt": "2026-06-23T08:58:14.421Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
-          "maxTimeoutSeconds": 10
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
-          "maxTimeoutSeconds": 10,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T04:06:07.962Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://blockrun.ai/api/v1/exa/contents",
+      "url": "https://api-dev-v2.ixs.finance/x402/vaults",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 81,
-        "checkedAt": "2026-06-23T08:58:14.422Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xe9030014F5DAe217d0A152f02A043567b16c1aBf",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-23T07:13:53.714Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://sandbox.node4all.com/v1/x402-test",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 220,
-        "checkedAt": "2026-06-23T08:58:14.610Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:84532",
-          "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
-          "payTo": "0xd275612Bf0BB35638432c4D95eAA8D5d22346Ca6",
-          "maxTimeoutSeconds": 60
-        }
-      ],
-      "networksSupported": [
-        "eip155:84532"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:84532",
-          "payTo": "0xd275612Bf0BB35638432c4D95eAA8D5d22346Ca6",
-          "maxTimeoutSeconds": 60,
-          "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
-          "extra": {
-            "name": "USDC",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-20T00:49:54.318Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.linkedpanda.com/agent/v1/profiles/enrich",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 519,
-        "checkedAt": "2026-06-23T08:58:14.611Z"
+        "latencyMs": 1127,
+        "checkedAt": "2026-06-24T08:52:19.830Z"
       },
       "pricing": [
         {
@@ -5202,7 +5371,7 @@
           "maxAmountRequired": "0",
           "formattedAmount": "0 USDC",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xe740D5701749D262dA5E4Fcb9f814c5B6D91Cf46",
+          "payTo": "0xE341Add833F9d62082e97eA260BAA6546Cd09F73",
           "maxTimeoutSeconds": 300
         }
       ],
@@ -5213,7 +5382,7 @@
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0xe740D5701749D262dA5E4Fcb9f814c5B6D91Cf46",
+          "payTo": "0xE341Add833F9d62082e97eA260BAA6546Cd09F73",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
@@ -5222,7 +5391,219 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T17:29:46.298Z",
+      "lastUpdated": "2026-06-23T16:53:50.645Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/emergency-fund-calculator-api-fb28e4",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 96,
+        "checkedAt": "2026-06-24T08:52:19.831Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:56:39.894Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/personal-finance-agent-api-33fa4f",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 69,
+        "checkedAt": "2026-06-24T08:52:20.958Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:53:39.872Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://agents.allium.so/api/v1/explorer/queries/run-async",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 403,
+        "latencyMs": 131,
+        "checkedAt": "2026-06-24T08:52:20.959Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x0e352420616de6c9b4fb30691536544d6bdf389c",
+          "maxTimeoutSeconds": 1782236662
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "Aj4jCshZTsSzXUdznTSvdc4j7qRjSLKU1bW2Dnqx521M",
+          "maxTimeoutSeconds": 1782236662
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:196",
+          "asset": "0x74b7f16337b8972027f6196a17a631ac6de26d22",
+          "payTo": "0x61Fdbe66c1AEaF491b8e121C83070aa750DDCada",
+          "maxTimeoutSeconds": 1782236662
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cc03d5c3359",
+          "payTo": "0xF5B59aA4D23621B382Ac56465e2a78432CE768CA",
+          "maxTimeoutSeconds": 1782236662
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "eip155:196",
+        "eip155:137"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x0e352420616de6c9b4fb30691536544d6bdf389c",
+          "maxTimeoutSeconds": 1782236662,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "stripe_mode": "custody",
+            "stripe_payment_intent_id": "pi_3TlYM1IfpVe57BNU0VEykk6b",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "Aj4jCshZTsSzXUdznTSvdc4j7qRjSLKU1bW2Dnqx521M",
+          "maxTimeoutSeconds": 1782236662,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "BENrLoUbndxoNMUS5JXApGMtNykLjFXXixMtpDwDR9SP",
+            "name": "USDC",
+            "stripe_mode": "custody",
+            "stripe_payment_intent_id": "pi_3TlYM1IfpVe57BNU0VEykk6b",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:196",
+          "payTo": "0x61Fdbe66c1AEaF491b8e121C83070aa750DDCada",
+          "maxTimeoutSeconds": 1782236662,
+          "asset": "0x74b7f16337b8972027f6196a17a631ac6de26d22",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "eip155:137",
+          "payTo": "0xF5B59aA4D23621B382Ac56465e2a78432CE768CA",
+          "maxTimeoutSeconds": 1782236662,
+          "asset": "0x3c499c542cEF5E3811e1192ce70d8cc03d5c3359",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T17:43:22.502Z",
       "source": "discovery_api"
     },
     {
@@ -5232,8 +5613,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 136,
-        "checkedAt": "2026-06-23T08:58:14.612Z"
+        "latencyMs": 113,
+        "checkedAt": "2026-06-24T08:52:20.960Z"
       },
       "pricing": [
         {
@@ -5310,159 +5691,24 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://orbisapi.com/proxy/hyre-agent",
+      "url": "https://weather.payapi.market/current",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 63,
-        "checkedAt": "2026-06-23T08:58:14.612Z"
+        "latencyMs": 610,
+        "checkedAt": "2026-06-24T08:52:20.961Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
+          "maxAmountRequired": "0",
+          "formattedAmount": "0 USDC",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "payTo": "0xFFc458dB291b4ABcE020fE3de4f91F2770E537b1",
           "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T02:06:15.884Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://agents.allium.so/api/v1/explorer/queries/run-async",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 403,
-        "latencyMs": 187,
-        "checkedAt": "2026-06-23T08:58:14.613Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x716dcd7accfe386b3b5a27746f86eecf81aa9be4",
-          "maxTimeoutSeconds": 1781928435
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "k2mbNWbKWuQxW9tCUL3jszFjKmnPRqnENC4c2dZdgyR",
-          "maxTimeoutSeconds": 1781928435
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:196",
-          "asset": "0x74b7f16337b8972027f6196a17a631ac6de26d22",
-          "payTo": "0x61Fdbe66c1AEaF491b8e121C83070aa750DDCada",
-          "maxTimeoutSeconds": 1781928435
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-        "eip155:196"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x716dcd7accfe386b3b5a27746f86eecf81aa9be4",
-          "maxTimeoutSeconds": 1781928435,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "stripe_mode": "custody",
-            "stripe_payment_intent_id": "pi_3TkGAcIfpVe57BNU0BFFLHrI",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "k2mbNWbKWuQxW9tCUL3jszFjKmnPRqnENC4c2dZdgyR",
-          "maxTimeoutSeconds": 1781928435,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F",
-            "name": "USDC",
-            "stripe_mode": "custody",
-            "stripe_payment_intent_id": "pi_3TkGAcIfpVe57BNU0BFFLHrI",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:196",
-          "payTo": "0x61Fdbe66c1AEaF491b8e121C83070aa750DDCada",
-          "maxTimeoutSeconds": 1781928435,
-          "asset": "0x74b7f16337b8972027f6196a17a631ac6de26d22",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-20T04:06:15.144Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://public.zapper.xyz/x402/token-balances",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 54,
-        "checkedAt": "2026-06-23T08:58:15.132Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
-          "maxTimeoutSeconds": 10
         }
       ],
       "networksSupported": [
@@ -5472,72 +5718,16 @@
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
-          "maxTimeoutSeconds": 10,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T04:06:15.895Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://orbisapi.com/proxy/trade-finance-risk-score-api-d53631",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 56,
-        "checkedAt": "2026-06-23T08:58:15.132Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "payTo": "0xFFc458dB291b4ABcE020fE3de4f91F2770E537b1",
           "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
             "name": "USD Coin",
             "version": "2"
           }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
-          }
         }
       ],
-      "lastUpdated": "2026-06-14T16:05:48.147Z",
+      "lastUpdated": "2026-06-23T18:28:22.021Z",
       "source": "discovery_api"
     },
     {
@@ -5547,8 +5737,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 71,
-        "checkedAt": "2026-06-23T08:58:15.132Z"
+        "latencyMs": 68,
+        "checkedAt": "2026-06-24T08:52:20.962Z"
       },
       "pricing": [
         {
@@ -5597,14 +5787,92 @@
       "source": "discovery_api"
     },
     {
+      "url": "https://makespdf.com/api/v1/markdown",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 895,
+        "checkedAt": "2026-06-24T08:52:21.572Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "maxAmountRequired": "0",
+          "formattedAmount": "0 USDC",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x9bB96Acb3fD11D8949D862736B96e7e12D319DC4",
+          "maxTimeoutSeconds": 60
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x9bB96Acb3fD11D8949D862736B96e7e12D319DC4",
+          "maxTimeoutSeconds": 60,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T15:03:48.001Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://web-production-78e17.up.railway.app/v1/summarize",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 105,
+        "checkedAt": "2026-06-24T08:52:21.573Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x8fC4006534801c17A3368075A1Fb3b3C511EdB1F",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x8fC4006534801c17A3368075A1Fb3b3C511EdB1F",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T00:26:35.735Z",
+      "source": "discovery_api"
+    },
+    {
       "url": "https://orbisapi.com/proxy/credit-score-guide-api-228bf8",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 72,
-        "checkedAt": "2026-06-23T08:58:15.134Z"
+        "latencyMs": 71,
+        "checkedAt": "2026-06-24T08:52:21.574Z"
       },
       "pricing": [
         {
@@ -5653,14 +5921,164 @@
       "source": "discovery_api"
     },
     {
+      "url": "https://orbisapi.com/proxy/finance-month-end-close-risk-api-074994",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 70,
+        "checkedAt": "2026-06-24T08:52:21.574Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:34:39.895Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/web-content-type-classifier-api-e987d6",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 117,
+        "checkedAt": "2026-06-24T08:52:21.574Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:09:27.656Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://public.zapper.xyz/x402/defi-balances",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": false,
+        "statusCode": 404,
+        "latencyMs": 88,
+        "checkedAt": "2026-06-24T08:52:22.468Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
+          "maxTimeoutSeconds": 10,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-24T01:57:05.795Z",
+      "source": "discovery_api"
+    },
+    {
       "url": "https://x402.ottoai.services/yield-recommendations",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 184,
-        "checkedAt": "2026-06-23T08:58:15.135Z"
+        "latencyMs": 124,
+        "checkedAt": "2026-06-24T08:52:22.468Z"
       },
       "pricing": [
         {
@@ -5754,8 +6172,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 216,
-        "checkedAt": "2026-06-23T08:58:15.320Z"
+        "latencyMs": 264,
+        "checkedAt": "2026-06-24T08:52:22.468Z"
       },
       "pricing": [
         {
@@ -5804,41 +6222,227 @@
       "source": "discovery_api"
     },
     {
-      "url": "https://public.zapper.xyz/x402/portfolio-totals",
+      "url": "https://orbisapi.com/proxy/budget-planner-api-20d687",
       "type": "http",
       "x402Version": 2,
       "health": {
-        "isAlive": false,
-        "statusCode": 404,
-        "latencyMs": 51,
-        "checkedAt": "2026-06-23T08:58:15.321Z"
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 77,
+        "checkedAt": "2026-06-24T08:52:22.469Z"
       },
       "pricing": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
-          "maxTimeoutSeconds": 10
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
         }
       ],
       "networksSupported": [
-        "eip155:8453"
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
       ],
       "accepts": [
         {
           "scheme": "exact",
           "network": "eip155:8453",
-          "payTo": "0x43a2a720cd0911690c248075f4a29a5e7716f758",
-          "maxTimeoutSeconds": 10,
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
           "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "extra": {
             "name": "USD Coin",
             "version": "2"
           }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
         }
       ],
-      "lastUpdated": "2026-06-21T04:05:19.018Z",
+      "lastUpdated": "2026-06-23T16:43:34.349Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/insurance-calculator-api-0bcee0",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 68,
+        "checkedAt": "2026-06-24T08:52:22.470Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-22T02:08:15.712Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/microfinance-guide-api-583c22",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 73,
+        "checkedAt": "2026-06-24T08:52:22.733Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:18:45.309Z",
+      "source": "discovery_api"
+    },
+    {
+      "url": "https://orbisapi.com/proxy/sustainable-finance-api-749019",
+      "type": "http",
+      "x402Version": 2,
+      "health": {
+        "isAlive": true,
+        "statusCode": 402,
+        "latencyMs": 90,
+        "checkedAt": "2026-06-24T08:52:22.734Z"
+      },
+      "pricing": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300
+        }
+      ],
+      "networksSupported": [
+        "eip155:8453",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
+      "accepts": [
+        {
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
+          "maxTimeoutSeconds": 300,
+          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "extra": {
+            "name": "USD Coin",
+            "version": "2"
+          }
+        },
+        {
+          "scheme": "exact",
+          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
+          "maxTimeoutSeconds": 300,
+          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "extra": {
+            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
+          }
+        }
+      ],
+      "lastUpdated": "2026-06-23T16:57:47.991Z",
       "source": "discovery_api"
     },
     {
@@ -5848,8 +6452,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 115,
-        "checkedAt": "2026-06-23T08:58:15.321Z"
+        "latencyMs": 251,
+        "checkedAt": "2026-06-24T08:52:22.734Z"
       },
       "pricing": [
         {
@@ -5904,8 +6508,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 286,
-        "checkedAt": "2026-06-23T08:58:15.322Z"
+        "latencyMs": 256,
+        "checkedAt": "2026-06-24T08:52:22.735Z"
       },
       "pricing": [
         {
@@ -5946,7 +6550,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:11:42.082Z",
+      "lastUpdated": "2026-06-23T17:06:08Z",
       "source": "discovery_api"
     },
     {
@@ -5956,8 +6560,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 405,
-        "latencyMs": 286,
-        "checkedAt": "2026-06-23T08:58:15.322Z"
+        "latencyMs": 304,
+        "checkedAt": "2026-06-24T08:52:22.736Z"
       },
       "pricing": [
         {
@@ -5998,7 +6602,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:12:08.066Z",
+      "lastUpdated": "2026-06-23T17:06:34.15Z",
       "source": "discovery_api"
     },
     {
@@ -6008,8 +6612,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 210,
-        "checkedAt": "2026-06-23T08:58:15.608Z"
+        "latencyMs": 176,
+        "checkedAt": "2026-06-24T08:52:23.041Z"
       },
       "pricing": [
         {
@@ -6050,7 +6654,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:11:17.893Z",
+      "lastUpdated": "2026-06-23T17:05:43.935Z",
       "source": "discovery_api"
     },
     {
@@ -6060,8 +6664,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 430,
-        "checkedAt": "2026-06-23T08:58:15.608Z"
+        "latencyMs": 369,
+        "checkedAt": "2026-06-24T08:52:23.041Z"
       },
       "pricing": [
         {
@@ -6102,18 +6706,18 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:11:13.926Z",
+      "lastUpdated": "2026-06-23T17:05:40.353Z",
       "source": "discovery_api"
     },
     {
-      "url": "https://orbisapi.com/proxy/emergency-fund-calculator-api-fb28e4",
+      "url": "https://orbisapi.com/proxy/financial-health-checker-api-5b5ddf",
       "type": "http",
       "x402Version": 2,
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 56,
-        "checkedAt": "2026-06-23T08:58:15.610Z"
+        "latencyMs": 74,
+        "checkedAt": "2026-06-24T08:52:23.043Z"
       },
       "pricing": [
         {
@@ -6158,63 +6762,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T02:25:53.601Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://orbisapi.com/proxy/insurance-calculator-api-0bcee0",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 59,
-        "checkedAt": "2026-06-23T08:58:15.610Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T02:08:15.712Z",
+      "lastUpdated": "2026-06-23T17:02:27.944Z",
       "source": "discovery_api"
     },
     {
@@ -6224,8 +6772,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 511,
-        "checkedAt": "2026-06-23T08:58:15.610Z"
+        "latencyMs": 346,
+        "checkedAt": "2026-06-24T08:52:23.043Z"
       },
       "pricing": [
         {
@@ -6266,7 +6814,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:12:30.636Z",
+      "lastUpdated": "2026-06-23T17:06:58.028Z",
       "source": "discovery_api"
     },
     {
@@ -6276,8 +6824,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 402,
-        "latencyMs": 286,
-        "checkedAt": "2026-06-23T08:58:16.122Z"
+        "latencyMs": 503,
+        "checkedAt": "2026-06-24T08:52:23.044Z"
       },
       "pricing": [
         {
@@ -6318,543 +6866,7 @@
           }
         }
       ],
-      "lastUpdated": "2026-06-22T00:12:24.46Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.stocktrends.com/v1/leadership/rotation/history",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 280,
-        "checkedAt": "2026-06-23T08:58:16.123Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Historical sector leadership rotation derived from Stock Trends trend distribution, relative performance, and trend maturity measures.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/leadership/rotation/history"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T00:12:20.008Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.stocktrends.com/v1/market/regime/forecast",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 678,
-        "checkedAt": "2026-06-23T08:58:16.123Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Deterministic forward regime outlook derived from recent weekly regime score direction and consistency.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/market/regime/forecast"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T00:12:15.862Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.stocktrends.com/v1/portfolio/construct",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": false,
-        "statusCode": 405,
-        "latencyMs": 792,
-        "checkedAt": "2026-06-23T08:58:16.124Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Constructs a deterministic equal-weight portfolio from eligible Stock Trends signal candidates.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/portfolio/construct"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T00:11:46.036Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.stocktrends.com/v1/agent/screener/top",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 676,
-        "checkedAt": "2026-06-23T08:58:16.125Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Ranked Stock Trends signal screener for agent workflows, using trend state, trend persistence, trend maturity, relative performance, and volume signal fields.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/agent/screener/top"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T00:11:26.193Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.stocktrends.com/v1/selections/latest",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 282,
-        "checkedAt": "2026-06-23T08:58:16.916Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Latest base ST-IM selection universe ranked by prob13wk descending, without the published STIM Select threshold filter.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/selections/latest"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T00:11:21.85Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.stocktrends.com/v1/selections/published/latest",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 273,
-        "checkedAt": "2026-06-23T08:58:16.916Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0xAEeb8EaBdC05532a26123045f99D208EB1cC00ab",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": {
-              "description": "Latest published STIM Select list using the documented three-horizon ST-IM lower-bound criteria and prob13wk publication threshold.",
-              "iconUrl": "https://developer.stocktrends.com/images/stmi-icon.png",
-              "mimeType": "application/json",
-              "serviceName": "Stock Trends Market Intelligence",
-              "tags": [
-                "finance",
-                "market-intelligence",
-                "equities",
-                "quantitative-finance",
-                "agentic"
-              ],
-              "url": "https://api.stocktrends.com/v1/selections/published/latest"
-            },
-            "version": "2"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T00:12:33.928Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://orbisapi.com/proxy/web-content-type-classifier-api-e987d6",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 57,
-        "checkedAt": "2026-06-23T08:58:16.916Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x2bb72231EeD303cc91a462A1fA738b42B6a9ac6d",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "GX6SKV6NahzGAocGs1uiAjFATUsdeEqT4dsEjwU6UrUE"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T02:41:19.571Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.anchor-x402.com/v1/tldr",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 126,
-        "checkedAt": "2026-06-23T08:58:16.917Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "maxAmountRequired": "0",
-          "formattedAmount": "0 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "maxAmountRequired": "0",
-          "formattedAmount": "0 EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6apuZvJQ51Led9iEjnHw6f5jfnXL4qjt8S1h58PeXzuR",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "maxAmountRequired": "0",
-          "formattedAmount": "0 0x431D...7BDB",
-          "asset": "0x431D5dfF03120AFA4bDf332c61A6e1766eF37BDB",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-        "eip155:137"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": "https://api.anchor-x402.com/v1/tldr",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6apuZvJQ51Led9iEjnHw6f5jfnXL4qjt8S1h58PeXzuR",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "GVJJ7rdGiXr5xaYbRwRbjfaJL7fmwRygFi1H6aGqDveb",
-            "resource": "https://api.anchor-x402.com/v1/tldr"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x431D5dfF03120AFA4bDf332c61A6e1766eF37BDB",
-          "extra": {
-            "name": "JPY Coin",
-            "resource": "https://api.anchor-x402.com/v1/tldr",
-            "version": "1"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T16:01:35.514Z",
-      "source": "discovery_api"
-    },
-    {
-      "url": "https://api.anchor-x402.com/v1/roll",
-      "type": "http",
-      "x402Version": 2,
-      "health": {
-        "isAlive": true,
-        "statusCode": 402,
-        "latencyMs": 269,
-        "checkedAt": "2026-06-23T08:58:16.917Z"
-      },
-      "pricing": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "maxAmountRequired": "0",
-          "formattedAmount": "0 USDC",
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "maxAmountRequired": "0",
-          "formattedAmount": "0 EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "payTo": "6apuZvJQ51Led9iEjnHw6f5jfnXL4qjt8S1h58PeXzuR",
-          "maxTimeoutSeconds": 300
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "maxAmountRequired": "0",
-          "formattedAmount": "0 0x431D...7BDB",
-          "asset": "0x431D5dfF03120AFA4bDf332c61A6e1766eF37BDB",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300
-        }
-      ],
-      "networksSupported": [
-        "eip155:8453",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-        "eip155:137"
-      ],
-      "accepts": [
-        {
-          "scheme": "exact",
-          "network": "eip155:8453",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-          "extra": {
-            "name": "USD Coin",
-            "resource": "https://api.anchor-x402.com/v1/roll",
-            "version": "2"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-          "payTo": "6apuZvJQ51Led9iEjnHw6f5jfnXL4qjt8S1h58PeXzuR",
-          "maxTimeoutSeconds": 300,
-          "asset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-          "extra": {
-            "feePayer": "BFK9TLC3edb13K6v4YyH3DwPb5DSUpkWvb7XnqCL9b4F",
-            "resource": "https://api.anchor-x402.com/v1/roll"
-          }
-        },
-        {
-          "scheme": "exact",
-          "network": "eip155:137",
-          "payTo": "0x127462e296fAc1A7F5cF33bA57bB2f0FFf5cD0B6",
-          "maxTimeoutSeconds": 300,
-          "asset": "0x431D5dfF03120AFA4bDf332c61A6e1766eF37BDB",
-          "extra": {
-            "name": "JPY Coin",
-            "resource": "https://api.anchor-x402.com/v1/roll",
-            "version": "1"
-          }
-        }
-      ],
-      "lastUpdated": "2026-06-22T16:01:16.678Z",
+      "lastUpdated": "2026-06-23T17:06:52.853Z",
       "source": "discovery_api"
     },
     {
@@ -6867,8 +6879,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 401,
-        "latencyMs": 109,
-        "checkedAt": "2026-06-23T08:58:17.198Z"
+        "latencyMs": 42,
+        "checkedAt": "2026-06-24T08:52:23.548Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -6878,7 +6890,7 @@
         "solana-devnet"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "cdp",
         "logoUrl": "/logos/cdp.png",
@@ -6918,8 +6930,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 1716,
-        "checkedAt": "2026-06-23T08:58:17.199Z"
+        "latencyMs": 791,
+        "checkedAt": "2026-06-24T08:52:23.549Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -6935,7 +6947,7 @@
         "CAIP-2 SVM"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "corbits",
         "logoUrl": "/logos/corbits.png",
@@ -6983,8 +6995,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 393,
-        "checkedAt": "2026-06-23T08:58:17.200Z"
+        "latencyMs": 133,
+        "checkedAt": "2026-06-24T08:52:23.549Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -6992,7 +7004,7 @@
         "base-sepolia"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "mogami-facilitator",
         "logoUrl": "/logos/logo_mogami_vertical_small.png",
@@ -7031,8 +7043,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 222,
-        "checkedAt": "2026-06-23T08:58:17.201Z"
+        "latencyMs": 319,
+        "checkedAt": "2026-06-24T08:52:23.550Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -7046,7 +7058,7 @@
         "polygon-amoy"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "openx402",
         "logoUrl": "/logos/openx402.png",
@@ -7090,8 +7102,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 328,
-        "checkedAt": "2026-06-23T08:58:17.202Z"
+        "latencyMs": 177,
+        "checkedAt": "2026-06-24T08:52:23.551Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -7109,7 +7121,7 @@
         "iotex"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "payai",
         "logoUrl": "/logos/payai.svg",
@@ -7158,8 +7170,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 618,
-        "checkedAt": "2026-06-23T08:58:18.915Z"
+        "latencyMs": 647,
+        "checkedAt": "2026-06-24T08:52:24.340Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -7167,7 +7179,7 @@
         "base-sepolia"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "treasure-facilitator",
         "logoUrl": "/logos/treasure.png",
@@ -7204,15 +7216,15 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 295,
-        "checkedAt": "2026-06-23T08:58:18.916Z"
+        "latencyMs": 479,
+        "checkedAt": "2026-06-24T08:52:24.341Z"
       },
       "pricing": [],
       "networksSupported": [
         "base"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "worldfun-facilitator",
         "logoUrl": "/logos/worldfun.svg",
@@ -7248,8 +7260,8 @@
       "health": {
         "isAlive": false,
         "statusCode": 404,
-        "latencyMs": 261,
-        "checkedAt": "2026-06-23T08:58:18.917Z"
+        "latencyMs": 368,
+        "checkedAt": "2026-06-24T08:52:24.341Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -7257,7 +7269,7 @@
         "solana-devnet"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "x402-facilitator",
         "logoUrl": "/logos/x402-logo.png",
@@ -7295,8 +7307,8 @@
       "health": {
         "isAlive": true,
         "statusCode": 200,
-        "latencyMs": 851,
-        "checkedAt": "2026-06-23T08:58:18.918Z"
+        "latencyMs": 729,
+        "checkedAt": "2026-06-24T08:52:24.342Z"
       },
       "pricing": [],
       "networksSupported": [
@@ -7313,7 +7325,7 @@
         "xdc"
       ],
       "accepts": [],
-      "lastUpdated": "2026-06-23T08:58:19.770Z",
+      "lastUpdated": "2026-06-24T08:52:25.072Z",
       "metadata": {
         "slug": "x402-rs-facilitator",
         "logoUrl": "/logos/x402-rs.svg",
